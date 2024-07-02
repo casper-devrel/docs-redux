@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcspr_docs=self.webpackChunkcspr_docs||[]).push([[4292],{8028:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/docs-redux/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
