@@ -1,5 +1,6 @@
 const docsOnlyMode = process.env.DOCS_MODE || true;
-const routePrefix = !docsOnlyMode ? "docs" : "";
+let routePrefix = !docsOnlyMode ? "docs" : "";
+routePrefix = "docs";
 
 module.exports = {
     title: "",
@@ -10,21 +11,21 @@ module.exports = {
     },
     items: [
         {
-            to: `${routePrefix}/intro.md`,
-            activeBasePath: `${routePrefix}/intro.md`,
+            to: `${routePrefix}/intro`,
+            activeBasePath: `${routePrefix}/intro`,
             label: "Home",
             position: "left",
         },
         {
-            to: `${routePrefix}/tutorial-extras`,
-            activeBasePath: `${routePrefix}/tutorial-extras`,
-            label: "Tutorial - Extras",
+            to: `${routePrefix}/category/tutorial---basics`,
+            activeBasePath: `${routePrefix}/category/tutorial---basics`,
+            label: "Tutorial - Basics",
             position: "left",
         },
         {
-            to: `${routePrefix}/tutorial-basics`,
-            activeBasePath: `${routePrefix}/tutorial-basics`,
-            label: "Tutorial - Basics",
+            to: `${routePrefix}/category/tutorial---extras`,
+            activeBasePath: `${routePrefix}/category/tutorial---extras`,
+            label: "Tutorial - Extras",
             position: "left",
         },
         // {
