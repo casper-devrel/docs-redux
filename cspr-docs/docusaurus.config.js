@@ -10,6 +10,7 @@ require("dotenv").config({
 const {
   themeNavbarConfig,
   themeFooterConfig,
+  themeAlgoliaConfig,
 } = require("./config");
 
 const { getEditUrl } = require("./src/utils/docs");
@@ -69,6 +70,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      algolia: themeAlgoliaConfig,
       navbar: themeNavbarConfig,
       footer: themeFooterConfig,
       prism: {
