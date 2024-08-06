@@ -18,7 +18,7 @@ From node version 2.0, Casper networks provide host-side support for the factory
 
 ### Further Reading
 
-- [Writing Contracts](../../casper/developers/writing-onchain-code/simple-contract.md)
+- [Writing Contracts](../developers/writing-onchain-code/simple-contract.md)
 - [Sending a Transaction](../developers/cli/sending-transactions.md)
 - [Installing Smart Contracts](../developers/cli/installing-contracts.md)
 - [Calling Smart Contracts](../developers/writing-onchain-code/calling-contracts.md)

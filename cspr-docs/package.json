@@ -3,9 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "set-env:dev" : "NODE_ENV=dev",
+    "set-env:tst" : "NODE_ENV=tst",
+    "set-env:prod" : "NODE_ENV=prod",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "docusaurus build",
+    "build": "yarn set-env:prod && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",

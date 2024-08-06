@@ -62,11 +62,11 @@ module.exports = {
             type: "search",
             position: "right",
         },
-        {
-            type: "docsVersionDropdown",
-            position: "right",
-            dropdownActiveClassDisabled: true,
-        },
+        // {
+        //     type: "docsVersionDropdown",
+        //     position: "right",
+        //     dropdownActiveClassDisabled: true,
+        // },
         {
             href: "https://support.casperlabs.io/",
             label: "Support",
