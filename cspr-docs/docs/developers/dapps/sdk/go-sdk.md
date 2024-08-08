@@ -46,7 +46,7 @@ import (
 )
 
 func main() {
-    client := sse.NewClient("https://<Node Address and Port>/events")
+    client := sse.NewClient("https://<Node Address and Port>/events/main")
     defer client.Stop()
     client.RegisterHandler(
         sse.DeployProcessedEventType,

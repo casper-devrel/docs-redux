@@ -8,15 +8,11 @@
 
 ## Account {#account}
 
-An Account is a structure that represents a user on a Casper network. Information on creating an account can be found [here](../design/casper-design.md#accounts-head). Casper's Condor release introduces the concept of an [addressable entity](#addressable-entity), which contains an account entity type that supersedes legacy accounts.
+An Account is a structure that represents a user on a Casper network. Information on creating an account can be found [here](../design/casper-design.md#accounts-head).
 
 ## Account Hash {#account-hash}
 
 The account hash is a 32-byte hash of the public key representing the user account. Information on generating an account hash can be found [here](https://support.casperlabs.io/hc/en-gb/articles/13781616975131-How-do-I-generate-an-account-hash-).
-
-## Addressable Entity {#addressable-entity}
-
-An addressable entity is a post-2.0 type that merges the concept of an `Account` and a `Contract`, bringing in features from both. More information can be found [here](../addressable-entity.md).
 
 ## AssemblyScript {#assemblyscript}
 

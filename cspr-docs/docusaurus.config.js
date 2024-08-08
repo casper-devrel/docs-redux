@@ -3,13 +3,7 @@
 // (when paired with `@ts-check`).
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
-const cfgPath = process.env.NODE_ENV ? `./env/.${process.env.NODE_ENV}.env` : `.env`;
-console.debug(cfgPath);
-
-require("dotenv").config({
-  path: cfgPath
-});
-
+const globalConfig = require("./cfg-global");
 const {
   themeNavbarConfig,
   themeFooterConfig,
@@ -17,19 +11,6 @@ const {
 } = require("./config");
 
 const { getEditUrl } = require("./src/utils/docs");
-
-const docsOnlyMode = process.env.DOCS_MODE || true;
-const routePrefix = docsOnlyMode ? "/docs" : "/";
-const projectName = "docs-redux";
-const baseUrl = docsOnlyMode ? routePrefix : `/${projectName}`;
-console.debug(`Process.env: ${process.env.NODE_ENV}`);
-console.debug(baseUrl);
-console.debug(process.env.DOCS_MODE);
-console.debug(process.env.LOCAL);
-console.debug(process.env.PORT);
-const url = process.env.LOCAL ? 'http://localhost' : 'https://casper-devrel.github.io';
-
-
 import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
@@ -37,22 +18,21 @@ const config = {
   title: 'Casper Docs - Redux',
   tagline: 'Casper documentation',
   favicon: 'icon/favicon.ico',
-
-  // Set the production url of your site here
-  url: url,
+  url: globalConfig.siteUrl,
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: baseUrl,
-
+  baseUrl: '/',
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  projectName: 'docs-redux',
-  organizationName: 'casper-devrel',
-  trailingSlash: false,
-
+  projectName: 'Casper Docs v2.0',
+  organizationName: 'Casper Association',
+  trailingSlash: true,
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-
+  onDuplicateRoutes: "throw",
+  markdown: {
+    format: "detect"
+  },
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
@@ -60,18 +40,17 @@ const config = {
   //   defaultLocale: 'en',
   //   locales: ['en'],
   // },
-
   presets: [
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          // sidebarPath: './config/sidebar.config.js',
-          sidebarPath: './sidebars.js',
-        },
-        blog: {
-          showReadingTime: true,
+          sidebarPath: './config/sidebar.config.js',
+          //sidebarPath: './sidebars.js',
+          path: "docs",
+          routeBasePath: globalConfig.routePrefix, // IMPORTANT: Turn on docs-only mode
+          exclude: ["./contract-dsl/archived", "./economics/archived", "./theory"]
         },
         theme: {
           customCss: './src/css/custom.css',

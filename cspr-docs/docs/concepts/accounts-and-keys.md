@@ -6,7 +6,7 @@ title: Accounts and Keys
 
 The Casper blockchain uses an on-chain [account-based model](./design/casper-design.md#accounts-head), uniquely identified by an `AccountHash` derived from a specific `PublicKey`. The `AccountHash` is a 32-byte hash derived from any of the supported `PublicKey` variants below to standardize keys that can vary in length.
 
-By default, a transactional interaction with the blockchain takes the form of a `Transaction` cryptographically signed by the key-pair corresponding to the `PublicKey` used to create the account.
+By default, a transactional interaction with the blockchain takes the form of a `Deploy` cryptographically signed by the key-pair corresponding to the `PublicKey` used to create the account.
 
 The Casper platform supports two types of keys for creating accounts and signing transactions: 
 - [Ed25519](#eddsa-keys) keys, which use the Edwards-curve Digital Signature Algorithm (EdDSA) and are 66 bytes long
@@ -18,7 +18,7 @@ You can also [generate an account hash](#generating-an-account-hash) from a publ
 
 ## Creating Accounts and Keys {#creating-accounts-and-keys}
 
-When you create an account on the Casper blockchain, a cryptographic key-pair will be created when using either the [Casper command-line client](#option-1-key-generation-using-the-casper-client) or a block explorer.
+When you create an account on the Casper blockchain, a cryptographic key-pair will be created when using either the [Casper command-line client](#option-1-key-generation-using-the-casper-client) or a block explorer. Developers must use the Casper command-line client as described below. Otherwise, they won't have access to the secret key file needed during development.
 
 :::note
 
@@ -105,6 +105,8 @@ Start by creating an account using the [Casper Wallet](https://www.casperwallet.
 
 :::caution
 
+Developers must generate keys using the [Casper command-line client](#option-1-key-generation-using-the-casper-client) to access the `secret_key.pem` file.
+
 The Casper Signer has been replaced with the Casper Wallet and will be deprecated. We recommend migrating all your Casper accounts to the Casper Wallet as outlined [here](https://www.casperwallet.io/user-guide/signer-user-start-here).
 
 :::
@@ -151,11 +153,11 @@ casper-client transfer \
 
 :::tip
 
-The payment amount varies based on each transaction and network [chainspec](../concepts/glossary/C.md#chainspec).
+The payment amount varies based on each deploy and network [chainspec](../concepts/glossary/C.md#chainspec).
 
 :::
 
-The Casper command-line client requires the secret key in *PEM* format to send a transaction from this account. If you want to use existing Ethereum keys with the command-line client, a conversion to *PEM* format is needed.
+The Casper command-line client requires the secret key in *PEM* format to send a Deploy from this account. If you want to use existing Ethereum keys with the command-line client, a conversion to *PEM* format is needed.
 
 The following example is a JS script that generates a *PEM* file, using a [key encoder](https://github.com/stacks-network/key-encoder-js) and Node.js. To install these components, do the following:
 

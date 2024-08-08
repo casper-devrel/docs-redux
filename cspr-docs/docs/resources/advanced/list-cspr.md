@@ -175,9 +175,9 @@ Exchanges seeking to integrate CSPR staking mechanisms will need to understand t
 
 Staking operations consists of two parts:
 
-1) [Creating a deploy object](../../developers/cli/sending-transactions.md)
+1) [Creating a deploy object](../../developers/cli/sending-deploys.md)
     
-2) [Signing the deploy](../../developers/dapps/signing-a-transaction.md)
+2) [Signing the deploy](../../developers/dapps/signing-a-deploy.md)
 
 The staking deploy requires the following information:
 - The delegator's public key

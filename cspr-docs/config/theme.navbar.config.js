@@ -1,7 +1,9 @@
-const docsOnlyMode = process.env.DOCS_MODE || true;
-let routePrefix = !docsOnlyMode ? "docs" : "";
-routePrefix = "docs";
+const globalConfig = require("../cfg-global");
+console.log(globalConfig);
+console.log(`globalConfig: ${globalConfig}`);
 
+
+const routePrefix = globalConfig.routePrefix;
 module.exports = {
     title: "",
     logo: {

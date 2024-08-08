@@ -22,9 +22,7 @@ This section shows you how to write session code and smart contracts in Rust and
 |[Smart Contracts and Session Code](./contract-vs-session.md)       | Understand what session code is and when you would use it over contract code |
 |[Writing Session Code](./writing-session-code.md)      | An introduction to writing session code|
 |[Unit Testing Session Code](./testing-session-code.md)      | Steps to test session code using the unit testing framework|
-|[Contract-Level Events](./emitting-contract-events.md)      | Enabling smart contracts to emit messages while executing on the blockchain |
 |[Using Contract Hash vs. Package Hash](./contract-hash-vs-package-hash.md)| Advantages and disadvantages of using `contract_hash` vs. `contract_package_hash` when calling a contract|
-|[The Factory Pattern for Smart Contracts](./factory-pattern.md)| Learn to implement the contract factory pattern on a Casper network |
 |[Best Practices for Casper Smart Contract Authors](./best-practices.md)| An outline of best practices when developing smart contracts on a Casper network|
 
 ## Interacting with Contracts on the Blockchain
@@ -50,6 +48,6 @@ The following tutorials outline some aspects of writing smart contracts on a Cas
 |[NFTs on Casper with the CEP-78 NFT Standard](https://github.com/casper-ecosystem/cep-78-enhanced-nft/blob/dev/README.md) | Implementing the Casper CEP-78 NFT standard     |
 |[Fungible Tokens on Casper](https://github.com/casper-ecosystem/cep18/blob/master/docs/full-tutorial.md)              | Implement the Casper Fungible Token standard                         |
 |[Interacting with Runtime Return Values](../../resources/advanced/return-values-tutorial.md)| Learning how to return a value using contract code         |
-|[Working with Authorization Keys](../../resources/advanced/list-auth-keys-tutorial.md)| Retrieving and using the authorization keys associated with a transaction         |
+|[Working with Authorization Keys](../../resources/advanced/list-auth-keys-tutorial.md)| Retrieving and using the authorization keys associated with a deploy         |
 |[Safely Transfer Tokens to a Contract](../../resources/advanced/transfer-token-to-contract.md) | How to handle tokens via a contract                     |
 
