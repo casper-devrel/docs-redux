@@ -3,7 +3,7 @@
 // (when paired with `@ts-check`).
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
-const globalConfig = require("./cfg-global");
+const globalConfig = require("./global.config.js");
 const {
   themeNavbarConfig,
   themeFooterConfig,
@@ -16,7 +16,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Casper Docs - Redux',
-  tagline: 'Casper documentation',
+  tagline: 'Casper Documentation',
   favicon: 'icon/favicon.ico',
   url: globalConfig.siteUrl,
   // Set the /<baseUrl>/ pathname under which your site is served
