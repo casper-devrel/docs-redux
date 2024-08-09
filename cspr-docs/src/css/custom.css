@@ -5,6 +5,8 @@
  */
 
 /* You can override the default Infima variables here. */
+
+/* 
 :root {
   --ifm-color-primary: #2e8555;
   --ifm-color-primary-dark: #29784c;
@@ -27,11 +29,9 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-}
+} 
 
 [data-theme='light'] .DocSearch {
-  /* --docsearch-primary-color: var(--ifm-color-primary); */
-  /* --docsearch-text-color: var(--ifm-font-color-base); */
   --docsearch-muted-color: var(--ifm-color-secondary-darkest);
   --docsearch-container-background: rgba(94, 100, 112, 0.7);
   /* Modal */
@@ -65,58 +65,4 @@
   --docsearch-key-gradient: linear-gradient(-26.5deg,
       var(--ifm-color-emphasis-200) 0%,
       var(--ifm-color-emphasis-100) 100%);
-}
-
-div#footer {
-  padding: 30px 0;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 1.5;
-  background-color: var(--casper-color-dark-purple);
-  display: flex;
-  justify-content: center;
-}
-
-div#footer > .container,
-.container-fluid {
-  margin: 0 20px;
-  max-width: var(--maxContentWidth);
-}
-
-div#footer-bottom > ul {
-  list-style: none;
-}
-
-div#footer-bottom > a {
-  text-decoration: none;
-  color: var(--casper-color-white);
-
-  &:hover {
-    color: var(--casper-color-light-red);
-  }
-}
-
-.footer-logo {
-  width: 150px;
-  margin-right: 40px;
-  opacity: 0.5;
-}
-
-.footer-top {
-  padding: 50px 0 30px;
-}
-
-
-
-
-.footer-bottom {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding-top: 30px;
-  border-top: 1px solid var(--casper-color-slate);
-  color: var(--casper-color-grey);
-
-}
+} 
