@@ -4,14 +4,11 @@ console.debug(`cfgPath: ${cfgPath}`);
 require("dotenv").config({ path: cfgPath });
 
 const docsOnlyMode = process.env.DOCS_MODE == "true";
-const routePrefix = docsOnlyMode ? "/docs/" : "";
-console.debug(`docsOnlyMode: ${docsOnlyMode}`);
-console.debug(`routePrefix: ${routePrefix}`);
-const projectName = "docs-redux";
-const url = (!process.env.URL) ? 'http://localhost' : process.env.URL;
-const baseUrl = docsOnlyMode ? "/" : `/${projectName}`;
-console.debug(`url: ${url}`);
-console.debug(`baseUrl: ${baseUrl}`);
+const routePrefix = process.env.ROUTE_PREFIX;
+const projectName = process.env.PROJECT_NAME;
+const url = process.env.URL;
+const baseUrl = process.env.BASE_URL;
+const isLocal = process.env.LOCAL == "true";
 
 const globalConfig = {
     cfgPath : cfgPath,
@@ -19,6 +16,7 @@ const globalConfig = {
     routePrefix: routePrefix,
     projectName : projectName,
     siteUrl: url,
-    baseUrl: baseUrl
+    baseUrl: baseUrl,
+    isLocal: isLocal
 }
 export default globalConfig;

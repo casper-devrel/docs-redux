@@ -1,8 +1,4 @@
-const globalConfig = require("../cfg-global");
-console.log(globalConfig);
-console.log(`globalConfig: ${globalConfig}`);
-
-
+const globalConfig = require("../global.config");
 const routePrefix = globalConfig.routePrefix;
 module.exports = {
     title: "",
@@ -12,24 +8,6 @@ module.exports = {
         srcDark: "/icon/Casper_Wordmark_White_RGB.png",
     },
     items: [
-        //{
-        //    to: `${routePrefix}/intro`,
-        //    activeBasePath: `${routePrefix}/intro`,
-        //    label: "Home",
-        //    position: "left",
-        //},
-        //{
-        //    to: `${routePrefix}/category/tutorial---basics`,
-        //    activeBasePath: `${routePrefix}/category/tutorial---basics`,
-        //    label: "Tutorial - Basics",
-        //    position: "left",
-        //},
-        //{
-        //    to: `${routePrefix}/category/tutorial---extras`,
-        //    activeBasePath: `${routePrefix}/category/tutorial---extras`,
-        //    label: "Tutorial - Extras",
-        //    position: "left",
-        //},
          {
              to: `${routePrefix}/concepts`,
              activeBasePath: `${routePrefix}/concepts`,
