@@ -9,9 +9,7 @@ slug: /deploy-and-deploy-lifecycle
 
 A [Deploy](./serialization-standard.md#serialization-standard-deploy) is a data structure containing Wasm and the requester's signature(s). Additionally, the deploy header contains additional metadata about the deploy itself. A deploy’s structure is as follows:
 
-<p align="center">
-<img src={"/image/design/deploy-structure.png"} alt="Image showing the deploy data structure" width="500"/>
-</p>
+![Structure of a Deploy](./deploy-and-deploy-lifecycle/deploy-structure.png)
 
 - Body: Containing payment code and session code (more details on these below)
 - Header: containing
@@ -82,6 +80,4 @@ Payment and session code can be independently specified, so different methods of
 
 The following diagram summarizes the deploy lifecycle.
 
-<p align="center">
-<img src={"/image/design/deploy-lifecycle.png"} alt="Image showing the deploy lifecycle" /> 
-</p>
+![Image showing the deploy lifecycle](./deploy-and-deploy-lifecycle/deploy-lifecycle.png)
