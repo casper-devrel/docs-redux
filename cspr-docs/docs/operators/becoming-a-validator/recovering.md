@@ -98,7 +98,7 @@ The `activate_bid` entry point expects one argument:
 
 7. `validator_public_key`: The hexadecimal public key of the validator reactivating its bid. **This key must match the secret key that signs the bid activation request**
 
-The command will return a deploy hash, which is needed to verify the deploy's processing results. Refer to the [Deploy Status](../../resources/beginner/querying-network.md#deploy-status) section for more details.
+The command will return a deploy hash, which is needed to verify the deploy's processing results. Refer to the [Deploy Status](../../resources/beginner/querying-network.md#querying-deploys) section for more details.
 
 :::tip
 
@@ -174,6 +174,6 @@ Check that the deploy was successful with the `casper-client get-deploy <deploy_
 
 ## Checking the Bid Activation {#checking-the-bid-activation}
 
-Once your deploy processes, you can [check your bid](recovering.md#detecting-the-eviction-using-the-casper-client) again. You should now see `"inactive": false` in the output.
+Once your deploy processes, you can [check your bid](recovering.md) again. You should now see `"inactive": false` in the output.
 
 If you wait until the next Era starts, you should also see your public key as a future validator on the [Validators](https://cspr.live/validators) tab.

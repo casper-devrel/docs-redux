@@ -333,8 +333,8 @@ casper-client put-deploy \
 
 There are two ways to call versioned contracts:
 
-1. [Calling Contracts by Package Hash](/developers/writing-onchain-code/calling-contracts/#StoredVersionedContractByHash)
-2. [Calling Contracts by Package Name](/developers/writing-onchain-code/calling-contracts/#StoredVersionedContractByName)
+1. [Calling Contracts by Package Hash](/developers/writing-onchain-code/calling-contracts/#stored-versioned-contract-by-hash)
+2. [Calling Contracts by Package Name](/developers/writing-onchain-code/calling-contracts/#stored-versioned-contract-by-name)
 
 :::
 
@@ -350,7 +350,7 @@ Disabled contract versions can no longer be executed. As such, if there is only 
 
 [Enable_contract_version](https://docs.rs/casper-contract/latest/casper_contract/contract_api/storage/fn.enable_contract_version.html) allows you to re-enable a previously disabled contract version.
 
-::note
+:::note
 
 Be aware that calling a contract package will use the most recent contract version. It is not necessary to disable a previous contract version, unless you have a specific need to do so.
 

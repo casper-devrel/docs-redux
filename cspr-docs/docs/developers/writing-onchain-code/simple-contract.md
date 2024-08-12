@@ -4,7 +4,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## What is a Smart Contract?
 
-A smart contract is a self-contained program installed on a blockchain. In the context of a Casper network, a smart contract consists of contract code installed on-chain using a [Deploy](../../concepts/design/casper-design.md#execution-semantics-deploys). Casper smart contracts are programs that run on a Casper network. They interact with accounts and other contracts through entry points, allowing for various triggers, conditions, and logic.
+A smart contract is a self-contained program installed on a blockchain. In the context of a Casper network, a smart contract consists of contract code installed on-chain using a [Deploy](../../concepts/design/casper-design.md#execution-semantics-head). Casper smart contracts are programs that run on a Casper network. They interact with accounts and other contracts through entry points, allowing for various triggers, conditions, and logic.
 
 Smart contracts exist as stored on-chain logic, allowing disparate users to call the included entry points. These contracts can, in turn, call one another to perform interconnected operations and create more complex programs. The decentralized nature of blockchain technology means that these smart contracts do not suffer from any single point of failure. Even if a Casper node leaves the network, other nodes will continue to allow the contract to operate as intended.
 
@@ -55,7 +55,7 @@ The `cargo casper` command will generate an example contract in the contract dir
 
 :::tip
 
-If you are a beginner, [creating the structure automatically](#creating-the-project-automatically) with `cargo casper` is recommended and the command creates everything you need to start coding.
+If you are a beginner, [creating the structure automatically](#automatic-project-setup) with `cargo casper` is recommended and the command creates everything you need to start coding.
 
 :::
 
@@ -131,7 +131,7 @@ nightly-2022-08-03
 
 :::tip
 
-If you are a beginner, [creating the structure automatically](#creating-the-project-automatically) with `cargo casper` is recommended, and the command creates everything you need to start coding.
+If you are a beginner, [creating the structure automatically](#automatic-project-setup) with `cargo casper` is recommended, and the command creates everything you need to start coding.
 
 :::
 

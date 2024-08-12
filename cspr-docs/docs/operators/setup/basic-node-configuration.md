@@ -211,7 +211,7 @@ cors_origin = ''
 
 ## Rust Client Installation {#client-installation}
 
-The [Prerequisites](../../developers/prerequisites.md#the-casper-command-line-client) page lists installation instructions for the Casper client, which is useful for generating keys and retrieving information from the network.
+The [Prerequisites](../../developers/prerequisites.md#install-casper-client) page lists installation instructions for the Casper client, which is useful for generating keys and retrieving information from the network.
 
 ## Creating Keys and Funding Accounts {#create-fund-keys}
 

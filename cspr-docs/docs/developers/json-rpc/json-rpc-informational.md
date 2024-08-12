@@ -396,7 +396,7 @@ This method returns raw bytes for chainspec files.
 |Parameter|Type|Description|
 |---------|----|-----------| 
 |api_version|String|The RPC API version.|
-|[chainspec_bytes](types_chain.md#ChainspecRawBytes)|Object|The raw bytes of the chainspec.toml, genesis accounts.toml, and global_state.toml files.|
+|[chainspec_bytes](types_chain.md#chainspecrawbytes)|Object|The raw bytes of the chainspec.toml, genesis accounts.toml, and global_state.toml files.|
 
 <details>
 
@@ -425,7 +425,7 @@ Please note that adding a `--vv` flag will return the full chainspec bytes.
 
 ## info_get_deploy {#info-get-deploy}
 
-This method retrieves a [Deploy](../../concepts/design/casper-design.md#execution-semantics-deploys) from a network. It requires a `deploy_hash` to query the Deploy.
+This method retrieves a [Deploy](../../concepts/design/casper-design.md#execution-semantics-head) from a network. It requires a `deploy_hash` to query the Deploy.
 
 |Parameter|Type|Description|
 |---------|----|-----------|
@@ -793,7 +793,7 @@ This method returns a JSON representation of an [Account](../../concepts/design/
 |---------|----|-----------|    
 |api_version|String|The RPC API version.|
 |[account](types_chain.md#account)|Object|A JSON representation of the Account structure.| 
-|[merkle_proof](types_chain.md#merkleproof)|String|The merkle proof.|
+|[merkle_proof](types_chain.md#merkle-proof)|String|The merkle proof.|
 
 <details>
 
@@ -988,8 +988,8 @@ This method returns the current status of a node.
 |Parameter|Type|Description|
 |---------|----|-----------| 
 |api_version|String|The RPC API version.|
-|[available_block_range](types_chain.md#AvailableBlockRange)|Object|The available block range in storage.|
-|[block_sync](types_chain.md#BlockSynchronizerStatus)|Object|The status of the block synchronizer builders.|
+|[available_block_range](types_chain.md#availableblockrange)|Object|The available block range in storage.|
+|[block_sync](types_chain.md#blocksynchronizerstatus)|Object|The status of the block synchronizer builders.|
 |build_version|String|The compiled node version.|
 |chainspec_name|String|The chainspec name, used to identify the currently connected network.|
 |[last_added_block_info](types_chain.md#minimalblockinfo)|Object|The minimal info of the last Block from the linear chain.|

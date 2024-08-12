@@ -120,7 +120,7 @@ The status of the block synchronizer.
 
 * `Historical` The status of syncing a historical block, if any.
 
-    * [`block_hash`](#blockhash-blockhash) The block hash.
+    * [`block_hash`](#blockhash) The block hash.
 
     * `block_height` The height of the block, if known.
 
@@ -128,7 +128,7 @@ The status of the block synchronizer.
 
 * `Forward` The status of syncing a forward block, if any.
 
-    * [`block_hash`](#blockhash-blockhash) The block hash.
+    * [`block_hash`](#blockhash) The block hash.
 
     * `block_height` The height of the block, if known.
 
@@ -164,7 +164,7 @@ Required Parameters:
 
 The hash address of the contract.
 
-## ContractPackage {#contractpackge}
+## ContractPackage {#contractpackage}
 
 Contract definition, metadata and security container.
 
@@ -328,7 +328,7 @@ Required Parameters:
 
 * `name`
 
-* [`ret`](#cltype)
+* [`ret`](types_cl.md)
 
 ## EntryPointAccess {#entrypointaccess}
 
@@ -338,7 +338,7 @@ Enum describing the possible access control options for a contract entry point.
 
 * [`Groups`](#group) Only callers from the authorized, listed groups may call this entry point. Note: If this list is empty then this entry point is not callable from outside the contract.
 
-## EntryPointType {#entrypointype}
+## EntryPointType {#entrypointtype}
 
 Context of an entry point execution.
 
@@ -356,7 +356,7 @@ Auction metadata. Intended to be recorded at each era.
 
 Required Parameters:
 
-* [`seigniorage_allocation`](#seigniorageallocation-seigniorageallocation) Information about a seigniorage allocation.
+* [`seigniorage_allocation`](#seigniorageallocation) Information about a seigniorage allocation.
 
 ## EraSummary {#erasummary}
 
@@ -460,7 +460,7 @@ The journal of execution transforms from a single Deploy.
 
 Required Parameters:
 
-* [`operations`](#oepration)
+* [`operations`](#operation)
 
 * [`transforms`](#transformentry)
 
@@ -634,7 +634,7 @@ Required Parameters:
 
 * [`era_id`](#eraid)
 
-* [`validator_weights`](#jsonvalidatorsweights)
+* [`validator_weights`](#jsonvalidatorweights)
 
 ## JsonExecutionResult {#jsonexecutionresult}
 
@@ -754,7 +754,7 @@ Parameter to an entry point.
 
 Required Parameters:
 
-* [`cl_type`](#cltype)
+* [`cl_type`](types_cl.md)
 
 * `name`
 
@@ -846,7 +846,7 @@ Hex-encoded cryptographic signature, including the algorithm tag prefix.
 
 Representation of a value stored in global state. `Account`, `Contract` and `ContractPackage` have their own `json_compatibility` representation (see their docs for further info).
 
-* [`CLValue`](#clvalue) A Casper-specific value.
+* [`CLValue`](types_cl.md) A Casper-specific value.
 
 * [`Account`](#account) An Account.
 
@@ -862,7 +862,7 @@ Representation of a value stored in global state. `Account`, `Contract` and `Con
 
 * [`EraInfo`](#erainfo) Auction metadata.
 
-* [`Bid`](#bid-bid) A bid.
+* [`Bid`](#bid) A bid.
 
 * [`Withdraw`](#unbondingpurse) A withdraw.
 
@@ -906,7 +906,7 @@ Hex-encoded transfer address.
 
 The actual transformation performed while executing a Deploy.
 
-* `WriteCLValue` Write the given [CLValue](#clvalue) to global state.
+* `WriteCLValue` Write the given [CLValue](types_cl.md#clvalue) to global state.
 
 * `WriteAccount` Writes the given [Account](#accounthash) to global state.
 

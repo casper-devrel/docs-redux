@@ -136,11 +136,11 @@ After customizing your instance of the CEP-18 token contract, it's time to insta
 
 Here are the basic steps to install the Casper Fungible Token contract on a Casper Network.
 
-- [Clone the contract](#cloning-the-token-contract-cloning-the-token-contract)
-- [Get the IP address of a node](#getting-an-ip-address-from-a-testnet-peer-getting-an-ip-address)
-- [View the network state](#viewing-the-network-status-viewing-network-status)
-- [Install the contract via a deploy](#installing-the-contract-deploying-the-contract)
-- [View the network state](#querying-the-network-status-querying-the-network-status)
+- [Clone the contract](#cloning-the-token-contract)
+- [Get the IP address of a node](#getting-an-ip-address-from-a-testnet-peer)
+- [View the network state](#viewing-the-network-status)
+- [Install the contract via a deploy](#installing-the-contract)
+- [View the network state](#querying-the-network-status)
 
 ### Cloning the Token Contract {#cloning-the-token-contract}
 

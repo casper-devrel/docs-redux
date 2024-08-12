@@ -4,9 +4,9 @@ title: Sending Deploys
 
 # Sending Deploys using the Casper Client
 
-To install smart contracts on the blockchain, you can send your Wasm to the network via a [Deploy](../../concepts/design/casper-design.md#execution-semantics-deploys). To do this, you will need to meet a few prerequisites:
+To install smart contracts on the blockchain, you can send your Wasm to the network via a [Deploy](../../concepts/design/casper-design.md#execution-semantics-head). To do this, you will need to meet a few prerequisites:
 
-- You will need a client to interact with the network, such as the [default Casper client](../prerequisites.md#the-casper-command-line-client)
+- You will need a client to interact with the network, such as the [default Casper client](../prerequisites.md#install-casper-client)
 - Ensure you have an [Account](../prerequisites.md#setting-up-an-account) and its associated [keys](../../concepts/accounts-and-keys.md) This account will pay for the Deploy, and its secret key will sign the Deploy
 - Ensure this account has enough CSPR tokens to pay for the Deploy
 
@@ -22,7 +22,7 @@ CSPR tokens are used to pay for deploys on the Casper Mainnet and Testnet. There
 
 ## Monitoring the Event Stream for Deploys
 
-If you want to follow the [lifecycle](../../concepts/design/casper-design.md#execution-semantics-phases) of the Deploy, you can start monitoring a node's event stream. This section will focus only on DeployAccepted events, but there are other event types described [here](../dapps/monitor-and-consume-events.md). You need the following information to proceed:
+If you want to follow the [lifecycle](../../concepts/design/casper-design.md#execution-semantics-head) of the Deploy, you can start monitoring a node's event stream. This section will focus only on DeployAccepted events, but there are other event types described [here](../dapps/monitor-and-consume-events.md). You need the following information to proceed:
 
 - The IP address of a [peer](../prerequisites.md#acquire-node-address-from-network-peers) on the network
 - The port specified as the `event_stream_server.address` in the node's *config.toml*, which is by default 9999 on Mainnet and Testnet
@@ -388,6 +388,6 @@ If your test configuration matches your production [chainspec](../../concepts/gl
 
 Please be aware that sending a deploy always requires payment. This is true regardless of the validity of included Wasm.
 
-If the deploy failure occurs after session execution begins, the penalty payment of 2.5 CSPR is included in the gas costs of the [failed execution](../../concepts/serialization-standard.md#executionresult-executionresult).
+If the deploy failure occurs after session execution begins, the penalty payment of 2.5 CSPR is included in the gas costs of the [failed execution](../../concepts/serialization-standard.md#executionresult).
 
 However, if the failure occurs prior to session execution, the penalty payment will not appear within the gas cost of the deploy. Instead, the system automatically deducts the 2.5 CSPR from the sending account's main purse.

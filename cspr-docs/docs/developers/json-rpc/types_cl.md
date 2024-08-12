@@ -40,4 +40,4 @@ A Casper value, i.e. a value which can be stored and manipulated by smart contra
 
 * `bytes` A Casper serialized representation of the underlying value. For more information, reference the [Serialization Standard](../../concepts/serialization-standard.md).
 
-* [`cl_type`](#cltype)
+* `cl_type`

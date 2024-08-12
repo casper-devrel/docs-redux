@@ -16,7 +16,7 @@ An Account is a structure that represents a user on a Casper network. The accoun
 
     The account's main purse `URef`. You may find information on `URef` serialization [here](#clvalue-uref).
 
--   [`associated_keys`](#associated-keys)
+-   [`associated_keys`](#associatedkey)
 
 -   [`action_thresholds`](#action-thresholds)
 
@@ -266,12 +266,12 @@ Payment and Session are both defined as `ExecutableDeployItems`. More informatio
     -   `StoredContractByName { name: "U5A74bSZH8abT8HqVaK9", entry_point: "gIetSxltnRDvMhWdxTqQ", args: 07beadc3da884faa17454a }`
     -   `0x0214000000553541373462535a483861625438487156614b39140000006749657453786c746e5244764d685764785471510b00000007beadc3da884faa17454a`
 
--   StoredVersionedContractByHash serializes such that the first byte within the serialized buffer is 3u8. However, the field version within the enum serializes as an [Option](#option-clvalue-option) CLValue.
+-   StoredVersionedContractByHash serializes such that the first byte within the serialized buffer is 3u8. However, the field version within the enum serializes as an [Option](#clvalue-option) CLValue.
 
     -   `StoredVersionedContractByHash { hash: b348fdd0d0b3f66468687df93141b5924f6bb957d5893c08b60d5a78d0b9a423, version: None, entry_point: "PsLz5c7JsqT8BK8ll0kF", args: 3d0d7f193f70740386cb78b383e2e30c4f976cf3fa834bafbda4ed9dbfeb52ce1777817e8ed8868cfac6462b7cd31028aa5a7a60066db35371a2f8 }`
     -   `0x03b348fdd0d0b3f66468687df93141b5924f6bb957d5893c08b60d5a78d0b9a423001400000050734c7a3563374a73715438424b386c6c306b463b0000003d0d7f193f70740386cb78b383e2e30c4f976cf3fa834bafbda4ed9dbfeb52ce1777817e8ed8868cfac6462b7cd31028aa5a7a60066db35371a2f8`
 
--   StoredVersionedContractByName serializes such that the first byte within the serialized buffer is 4u8. The name and entry_point are serialized as a [String](#string-clvalue-string) CLValue, with the version field serializing as an [Option](#option-clvalue-option).
+-   StoredVersionedContractByName serializes such that the first byte within the serialized buffer is 4u8. The name and entry_point are serialized as a [String](#clvalue-string) CLValue, with the version field serializing as an [Option](#clvalue-option).
 
     -   `StoredVersionedContractByName { name: "lWJWKdZUEudSakJzw1tn", version: Some(1632552656), entry_point: "S1cXRT3E1jyFlWBAIVQ8", args: 9975e6957ea6b07176c7d8471478fb28df9f02a61689ef58234b1a3cffaebf9f303e3ef60ae0d8 }`
     -   `0x04140000006c574a574b645a5545756453616b4a7a7731746e01d0c64e61140000005331635852543345316a79466c57424149565138270000009975e6957ea6b07176c7d8471478fb28df9f02a61689ef58234b1a3cffaebf9f303e3ef60ae0d8`
@@ -380,7 +380,7 @@ They are serialized as a `BTreeMap` where the first 4 bytes represent a `u32` va
 
 In this chapter, we describe what constitutes a "key", the permissions model for the keys, and how they are serialized.
 
-A _key_ in [Global State](./design/casper-design.md#global-state-head) is one of the following data types:
+A _key_ in [Global State](./global-state.md) is one of the following data types:
 
 -   32-byte account identifier (called an "account identity key")
 -   32-byte immutable contract identifier (called a "hash key")
@@ -562,7 +562,7 @@ The actual transformation performed while executing a deploy. It serializes as a
 | Transform Type       | Serialization | Description                                                                  |
 |----------------------|---------------|------------------------------------------------------------------------------|
 |Identity              | 0             | A transform having no effect.                                                |
-|Write_CLValue         | 1             | Writes the given [`CLValue`](#clvalue-calvalue) to global state.             |
+|Write_CLValue         | 1             | Writes the given [`CLValue`](#clvalue-clvalue) to global state.             |
 |Write_Account         | 2             | Write the given [`Account`](#account-hash) to global state.                  |
 |Write_Contract_WASM   | 3             | Writes a smart [contract as Wasm](#contractwasmhash) to global state.        |
 |Write_Contract        | 4             | Writes a smart [contract](#contracthash) to global state.                    | 
@@ -745,7 +745,7 @@ A `Map` serializes as a list of key-value tuples. There must be a well-defined o
     
 :::warning
 
-When passing a URef to another entity on chain, you must ensure that the `AccessRights` are set correctly. If the URef represents a [purse](./glossary/P.md#purse-purse), `AccessRights` impact who can deposit and withdraw CSPR.
+When passing a URef to another entity on chain, you must ensure that the `AccessRights` are set correctly. If the URef represents a [purse](./glossary/P.md#purse), `AccessRights` impact who can deposit and withdraw CSPR.
 
 :::
     

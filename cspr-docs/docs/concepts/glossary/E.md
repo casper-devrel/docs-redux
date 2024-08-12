@@ -12,7 +12,7 @@ The ecosystem layer in Casper encompasses dApp design and operation.
 
 ## Entry point {#entry-point}
 
-See [EntryPoint](../../developers/json-rpc/types_chain.md#entrypoint) and [Defining the Contract Entry Points](../../developers/writing-onchain-code/simple-contract.md#step-4-defining-the-contract-entry-points).
+See [EntryPoint](../../developers/json-rpc/types_chain.md#entrypoint) and [Defining the Contract Entry Points](./../../developers/writing-onchain-code/simple-contract.md).
 
 ## Era {#era}
 

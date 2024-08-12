@@ -11,7 +11,7 @@ Prior knowledge of Unix-based operating systems and proficiency with `systemd` a
 
 Operators should know the [hardware requirements](./setup/hardware.md) before running a node.
 
-Also, the [network requirements](./setup/install-node.md/#network-requirements) specify how to open ports and modify the network firewall to which the node is connected. This step is necessary to allow incoming connections, enabling communication among nodes.
+Also, the [network requirements](./setup/install-node.md#network-requirements) specify how to open ports and modify the network firewall to which the node is connected. This step is necessary to allow incoming connections, enabling communication among nodes.
 
 Review the [node's configuration](./setup/basic-node-configuration.md) first. Then, you can follow the node [installation instructions](./setup/install-node.md).
 

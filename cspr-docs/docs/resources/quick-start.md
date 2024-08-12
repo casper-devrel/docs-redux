@@ -19,7 +19,7 @@ Here is a list of commands for developers who already meet the prerequisites and
 
    `cargo install cargo-casper`
 
-6. Install the [Casper client](../developers/prerequisites.md#the-casper-command-line-client): 
+6. Install the [Casper client](../developers/prerequisites.md#install-casper-client): 
 
    `cargo install casper-client`
 
