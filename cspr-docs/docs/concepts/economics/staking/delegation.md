@@ -18,11 +18,7 @@ For example, the chainspec file in release 1.3.2 will contain the following info
 
 <p align="center"><img src={useBaseUrl("/image/economic-delegationCost.png")}  alt="cost" width="400" class="center"/></p>
 
-<p align="center">
-
-**Figure 1**: Delegation cost is defined in the chainspec.toml file of a Casper network
-
-</p>
+<p align="center">**Figure 1**: Delegation cost is defined in the chainspec.toml file of a Casper network</p>
 
 Delegation fees may change over time, so, it is essential to stay up to date. To do so, select the latest release in [Github](https://github.com/casper-network/casper-node), and navigate to the chainspec.toml file.
 
@@ -38,11 +34,9 @@ It is essential to have enough funds in your account's main purse when you set u
 
 As a result, when performing a [delegation using the command line](../../../developers/cli/delegate.md), we recommend you specify a little more than the base transaction payment to ensure that the transaction will go through without failure.
 
-<p align="center"><img src={useBaseUrl("/image/economic-delegationDetails.png")}  alt="details" width="400" /> </p>
+![Delegation Details](/image/economic-delegationDetails.png)
 
-<p align="center">
-
-**Figure 2** : On Testnet or Mainnet, the transaction fee for a delegation is a little bit higher than 2.5 CSPR </p>
+<p align="center">**Figure 2** : On Testnet or Mainnet, the transaction fee for a delegation is a little bit higher than 2.5 CSPR </p>
 
 ---
 

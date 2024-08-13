@@ -9,7 +9,7 @@ This topic explains the usage of authorization keys when signing a deploy and ho
 Let's review the difference between associated keys to an Account and authorization keys for a Deploy.
 
 - Associated keys are public keys that are associated with a given account. To understand associated keys and how they are linked to an account, read about [associated keys and weights](../concepts/design/casper-design.md#accounts-associated-keys-weights) and try the [Two-Party Multi-Signature](../resources/advanced/two-party-multi-sig.md) tutorial.
-- Authorization keys are public keys used to sign a deploy and are listed in the Deploy's `approvals`. Authorization keys are a subset of the associated keys of the account under which the deploy is executed. 
+- Authorization keys are public keys used to sign a deploy and are listed in the Deploy's `approvals`. Authorization keys are a subset of the associated keys of the account under which the deploy is executed.
 - When a node receives a deploy, it checks that the deploy has the required authorization keys under `approvals` before including it in a block.
 - Different deploys executing the same smart contract can have different authorization keys.
 
