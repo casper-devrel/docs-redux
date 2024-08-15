@@ -1,0 +1,9 @@
+melpadden:
+  name: Mel Padden
+  page: true 
+  title: Head of Developer Relations for Casper Association
+  url: https://github.com/melpadden
+  image_url: https://github.com/melpadden.png
+  socials:
+    x: melpadden
+  permalink: '/melpadden'

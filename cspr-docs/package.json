@@ -16,7 +16,7 @@
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
-    "gh-pages": "yarn build:prod && npx gh-pages -d build",
+    "gh-pages": "npx gh-pages -d build",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "version-gen": "yarn docusaurus docs:version 1.5.6"

@@ -3,15 +3,7 @@ title: Casper Docs Redux!
 description: The first blog post using the new Docs portal.
 slug: welcome-docs-redux
 date: 2024-08-15T18:00
-authors:
-  - name: Mel Padden
-    title: Head of Developer Relations for Casper Association
-    url: https://github.com/melpadden
-    image_url: https://github.com/melpadden.png
-    socials:
-      x: melpadden
-      github: melpadden
-
+authors: [ melpadden ]
 tags: [hello, new docs, docs-redux]
 hide_table_of_contents: false
 ---

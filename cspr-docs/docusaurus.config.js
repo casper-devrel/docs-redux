@@ -51,7 +51,7 @@ const config = {
           path: "docs",
           sidebarPath: './config/sidebar.config.js',
           //sidebarPath: './sidebars.auto.js',
-          routeBasePath: "/", // IMPORTANT: Turn on docs-only mode
+          routeBasePath: (!globalConfig.routePrefix) ? "/" : globalConfig.routePrefix, // IMPORTANT: Turn on docs-only mode
           exclude: ["./contract-dsl/archived", "./economics/archived", "./theory"]
         },
         blog: {
