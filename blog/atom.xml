@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://casper-devrel.github.io/docs-redux/blog/</id>
+    <title>Casper Docs - Redux Blog</title>
+    <updated>2024-08-15T18:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://casper-devrel.github.io/docs-redux/blog/"/>
+    <subtitle>Casper Docs - Redux Blog</subtitle>
+    <icon>https://casper-devrel.github.io/docs-redux/icon/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Casper Docs Redux!]]></title>
+        <id>https://casper-devrel.github.io/docs-redux/blog/welcome-docs-redux/</id>
+        <link href="https://casper-devrel.github.io/docs-redux/blog/welcome-docs-redux/"/>
+        <updated>2024-08-15T18:00:00.000Z</updated>
+        <summary type="html"><![CDATA[The first blog post using the new Docs portal.]]></summary>
+        <content type="html"><![CDATA[<p>Welcome to the new-look Casper documentation portal. We have put a lot of thought into making the documentation more accessible, easier to move around, and easier on the eye. We have stripped away some visual clutter to allow you to focus on the content, and introduced versioning so that you can compare versions to see what has changed. This is obviously with a mind to the Condor changeover, as we thought it made a lot of sense to allow you to move between versions of the docs as you upgrade your systems and applications for Casper v2.0.</p>
+<p>Please enjoy and if you have any comments, suggestions or errata, please email <a href="mailto:devrel@casper.network" target="_blank" rel="noopener noreferrer">devrel@casper.network</a> with your contribution or query.</p>]]></content>
+        <author>
+            <name>Mel Padden</name>
+            <uri>https://github.com/melpadden</uri>
+        </author>
+        <category label="hello" term="hello"/>
+        <category label="new docs" term="new docs"/>
+        <category label="docs-redux" term="docs-redux"/>
+    </entry>
+</feed>

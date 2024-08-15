@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcspr_docs=self.webpackChunkcspr_docs||[]).push([[3670],{3419:e=>{e.exports=JSON.parse('{"tags":[{"label":"hello","permalink":"/docs-redux/blog/tags/hello","count":1},{"label":"new docs","permalink":"/docs-redux/blog/tags/new-docs","count":1},{"label":"docs-redux","permalink":"/docs-redux/blog/tags/docs-redux","count":1}]}')}}]);
