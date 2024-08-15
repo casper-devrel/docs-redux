@@ -126,7 +126,7 @@ This is the recommended means by which users can send their compiled Wasm (as pa
 |---------|----|-----------|
 |[transaction](./types_chain.md#transaction)|Object|A transaction consists of an item containing a Deploy and a [`Transaction`](./types_chain.md#transaction) along with the requester's signature(s).|
 
-> **Note**: You can find a list of [trusted peers](../../operators/setup/joining.md/#known-addresses) in the network's configuration file, `config.toml`. Here is an [example config.toml](https://github.com/casper-network/casper-node/blob/dev/resources/production/config-example.toml#L131). You may send transactions to one of the trusted nodes or use them to query other online nodes.
+> **Note**: You can find a list of [trusted peers](../../operators/setup/joining.md) in the network's configuration file, `config.toml`. Here is an [example config.toml](https://github.com/casper-network/casper-node/blob/dev/resources/production/config-example.toml#L131). You may send transactions to one of the trusted nodes or use them to query other online nodes.
 
 <details>
 

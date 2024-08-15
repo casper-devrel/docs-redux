@@ -156,7 +156,7 @@ For user convenience and compatibility, we expect the delivery of hashes, keys, 
 
 ### AddressableEntity
 
-`Key::AddressableEntity` is a `Key` under which an [`AddressableEntity`](/developers/json-rpc/types_chain.md/#addressableentity) is stored. It may be one of three variants: `Account`, `System` or `SmartContract`.
+`Key::AddressableEntity` is a `Key` under which an [`AddressableEntity`](../developers/json-rpc/types_chain.md#addressableentity) is stored. It may be one of three variants: `Account`, `System` or `SmartContract`.
 
 |Type|Prefix|Example|
 |---|---|---|
