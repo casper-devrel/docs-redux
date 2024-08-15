@@ -1,6 +1,7 @@
 ---
 title: Network Design
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Casper Network Design
 
@@ -74,7 +75,7 @@ Account creation automatically happens upon transferring tokens to a yet unused 
 
 
 <p align="center">
-<img src="/image/design/account-structure.png" alt="Image showing the account data structure" width="200"/> 
+<img src={useBaseUrl("/image/design/account-structure.png")} alt="Image showing the account data structure" width="200"/> 
 </p>
 
 An `Account` contains the following data:
@@ -241,7 +242,7 @@ A blockchain system generally needs a supply of tokens available to pay for comp
 The number of tokens used to calculate seigniorage is the initial supply of tokens at genesis.
 
 <p align="center">
-<img src="/image/design/token-lifecycle.png" alt="Image showing the token lifecycle" width="700"/> 
+<img src={useBaseUrl('/image/design/token-lifecycle.png')} alt="Image showing the token lifecycle" width="700"/> 
 </p>
 
 ### Divisibility of Tokens {#tokens-divisibility}
