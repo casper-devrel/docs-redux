@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcspr_docs=self.webpackChunkcspr_docs||[]).push([[9663],{87813:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/docs-redux/blog","page":1,"postsPerPage":2,"totalPages":1,"totalCount":2,"blogDescription":"A blog about all things to do with developing on the Casper Blockchain","blogTitle":"Casper Developer Relations Blog"}}')}}]);
