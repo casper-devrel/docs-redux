@@ -23,7 +23,7 @@ npm install casper-cep78-js-client
 
 ## Installing a CEP-78 Contract using the JavaScript Client
 
-The `install` method crafts a [Deploy](./../../../concepts/deploy-and-deploy-lifecycle.md) using `InstallArgs`.
+The `install` method crafts a [Deploy](./transactions-and-transaction-lifecycle/) using `InstallArgs`.
 As with every deploy created by the SDK, you can send it using the `.send(rpcUrl)` method providing the RPC URL that you want to use. It will return deployHash. 
 
 ```js
@@ -197,7 +197,7 @@ This repository includes an example script for installing a CEP-78 contract inst
 
 You will need to define the following variables in the `.env` file:
 
-* `NODE_URL` - The address of a node. If you are testing using [NCTL](./../../../developers/dapps/setup-nctl.md), this will be `http://localhost:11101/rpc`.
+* `NODE_URL` - The address of a node. If you are testing using [NCTL](./developers/dapps/setup-nctl), this will be `http://localhost:11101/rpc`.
 
 * `NETWORK_NAME` - The name of the Casper network you are operating on, `casper-net-1` when testing using a local network with NCTL.
 

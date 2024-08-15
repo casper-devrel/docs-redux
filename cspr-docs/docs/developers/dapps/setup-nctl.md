@@ -31,14 +31,14 @@ First, you will need to install a set of tools required for running NCTL.
 Instructions for MacOS:
 
 ```bash
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python3 get-pip.py
+$ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+$ python3 get-pip.py
 ```
 
 Instructions for Linux:
 
 ```bash
-sudo apt install python3-pip
+$ sudo apt install python3-pip
 ```
 
 **Step 2.** Install **pkg-config**, a program used to compile and link against one or more libraries.
@@ -46,13 +46,13 @@ sudo apt install python3-pip
 Instructions for MacOS:
 
 ```bash
-brew install pkg-config
+$ brew install pkg-config
 ```
 
 Instructions for Linux:
 
 ```bash
-sudo apt install pkg-config
+$ sudo apt install pkg-config
 ```
 
 **Step 3.** Install either **libssl-dev** (Linux) or **openssl** (MacOS), which are toolkits for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols. They also serve as general-purpose cryptography libraries.
@@ -60,13 +60,13 @@ sudo apt install pkg-config
 Instructions for MacOS:
 
 ```bash
-brew install openssl
+$ brew install openssl
 ```
 
 Instructions for Linux:
 
 ```bash
-sudo apt install libssl-dev
+$ sudo apt install libssl-dev
 ```
 
 **Step 4.** You will also need the **gcc** and **g++** compilers, which usually come as part of developer command-line tools (versions 7.5.0 at the time of this writing).
@@ -74,93 +74,72 @@ sudo apt install libssl-dev
 Instructions for MacOS:
 
 ```bash
-xcode-select --install
-gcc --version
-g++ --version
+$ xcode-select --install
+$ gcc --version
+$ g++ --version
 ```
 
 Instructions for Linux:
 
 ```bash
-sudo apt install build-essential
-gcc --version
-g++ --version
+$ sudo apt install build-essential
+$ gcc --version
+$ g++ --version
 ```
 
-**Important Note:**
-
-The following commands need to be executed within the Bash shell. While MacOS and some Linux distributions use Zsh by default, they also include Bash. To ensure proper execution of the subsequent commands, switching to Bash is recommended. If the command does not work, please refer to the Bash documentation on how to install it on your system.
-
-**Step 5.** Switching to Bash Shell:
-
-Type the following command in your terminal:
+**Step 5.** Create and activate a new virtual environment. **Commands applicable to the virtual environment will be prefixed with (env)**. Run the following commands to set it up.
 
 Instructions for MacOS and Linux:
 
 ```bash
-bash
+$ python3 -m venv env
+$ source env/bin/activate
+(env) $
 ```
 
-This will launch a new Bash shell session. You can then proceed with the tutorial.
-
-**Step 6.** Create and activate a new virtual environment. **Commands applicable to the virtual environment will be prefixed with (env)**. Run the following commands to set it up.
+**Step 6.** Inside the virtual environment, upgrade **pip** to the latest version.
 
 Instructions for MacOS and Linux:
 
 ```bash
-python3 -m venv env
-source env/bin/activate
+(env) $ pip install --upgrade pip
 ```
 
-Once you have activated the virtual environment, your terminal prompt will change to indicate you're working within it. It will usually look something like this:
-
-```bash
-(env) $  // This line is for visual representation only, not to be copied
-```
-
-**Step 7.** Inside the virtual environment, upgrade **pip** to the latest version.
+**Step 7.** Install **jq**, a command-line JSON processor.
 
 Instructions for MacOS and Linux:
 
 ```bash
-pip install --upgrade pip
+(env) $ pip install jq
 ```
 
-**Step 8.** Install **jq**, a command-line JSON processor.
+**Step 8.** Install **supervisor**, a cross-platform process manager.
 
 Instructions for MacOS and Linux:
 
 ```bash
-pip install jq
+(env) $ pip install supervisor
 ```
 
-**Step 9.** Install **supervisor**, a cross-platform process manager.
+**Step 9.** Install **toml**, a configuration file parser.
 
 Instructions for MacOS and Linux:
 
 ```bash
-pip install supervisor
-```
-
-**Step 10.** Install **toml**, a configuration file parser.
-
-Instructions for MacOS and Linux:
-
-```bash
-pip install toml
+(env) $ pip install toml
 ```
 
 ## Setting up the Network {#setting-up-the-network}
 
 You are now ready to set up and run your local network of Casper nodes.
 
-**Step 11.** Clone the _casper-node-launcher_ software in your working directory, which we will call _WORKING_DIRECTORY_. **Very Important!!! Choose a short path for your working directory**; otherwise, the NCTL tool will report that the path is too long.
+**Step 10.** Clone the _casper-node-launcher_ software in your working directory, which we will call _WORKING_DIRECTORY_. **Very Important!!! Choose a short path for your working directory**; otherwise, the NCTL tool will report that the path is too long.
 
 Instructions for MacOS and Linux:
 
 ```bash
-cd <WORKING_DIRECTORY>
-git clone https://github.com/casper-network/casper-node-launcher
+(env) $ cd <WORKING_DIRECTORY>
+(env) $ git clone https://github.com/casper-network/casper-node-launcher
 ```
 
 :::note
@@ -169,36 +148,37 @@ Assuming you have set up a small local network, you can speed up the process of 
 
 :::
 
-**Step 12.** Next, clone the _casper-node_ software, also in your working directory.
+**Step 11.** Next, clone the _casper-node_ software, also in your working directory.
 
 Instructions for MacOS and Linux:
 
 ```bash
-git clone https://github.com/casper-network/casper-node
+(env) $ git clone https://github.com/casper-network/casper-node
 ```
 
-**Step 13.** Finally, clone the _casper-client-rs_ software in your working directory.
+**Step 12.** Finally, clone the _casper-client-rs_ software in your working directory.
 
 Instructions for MacOS and Linux:
 
 ```bash
-git clone https://github.com/casper-ecosystem/casper-client-rs
+(env) $ git clone https://github.com/casper-ecosystem/casper-client-rs
 ```
 
-**Step 14.** Activate the NCTL environment with the following command.
+
+**Step 13.** Activate the NCTL environment with the following command.
 
 Instructions for MacOS and Linux:
 
 ```bash
-source casper-node/utils/nctl/activate
+(env) $ source casper-node/utils/nctl/activate
 ```
 
-**Step 15.** Compile the NCTL binary scripts. The following command compiles both the _casper-node_ and the _casper-client_ in release mode.
+**Step 14.** Compile the NCTL binary scripts. The following command compiles both the _casper-node_ and the _casper-client_ in release mode.
 
 Instructions for MacOS and Linux:
 
 ```bash
-nctl-compile
+(env) $ nctl-compile
 ```
 
 :::note
@@ -207,12 +187,12 @@ The compilation takes some time, so it might be a perfect moment to get some cof
 
 :::
 
-**Step 16.** Set up all the assets required to run a local network, including binaries, chainspec, config, faucet, and keys. Also, spin up the network right after. The default network will have 10 nodes, with 5 active nodes and 5 inactive nodes.
+**Step 15.** Set up all the assets required to run a local network, including binaries, chainspec, config, faucet, and keys. Also, spin up the network right after. The default network will have 10 nodes, with 5 active nodes and 5 inactive nodes.
 
 Instructions for MacOS and Linux:
 
 ```bash
-nctl-assets-setup && nctl-start
+(env) $ nctl-assets-setup && nctl-start
 ```
 
 Once a network is up and running, you can control each node within the network and add new nodes to the network.
@@ -229,13 +209,13 @@ Here is the command line output you would expect.
 
 ## Stopping the Network {#stopping-the-network}
 
-**Step 17.** Although not necessary, you can stop and clean the NCTL setup with the following commands.
+**Step 15.** Although not necessary, you can stop and clean the NCTL setup with the following commands.
 
 Instructions for MacOS and Linux:
 
 ```bash
-nctl-stop
-nctl-clean
+(env) $ nctl-stop
+(env) $ nctl-clean
 ```
 
 ## Next Steps {#next-steps}

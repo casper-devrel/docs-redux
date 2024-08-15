@@ -8,45 +8,46 @@ module.exports = {
         srcDark: "/icon/Casper_Wordmark_White_RGB.png",
     },
     items: [
-         {
-             to: `${routePrefix}/concepts`,
-             activeBasePath: `${routePrefix}/concepts`,
-             label: "Concepts",
-             position: "left",
-         },
-         {
-             to: `${routePrefix}/developers`,
-             activeBasePath: `${routePrefix}/developers`,
-             label: "Developers",
-             position: "left",
-         },
-         {
-             to: `${routePrefix}/operators`,
-             activeBasePath: `${routePrefix}/operators`,
-             label: "Operators",
-             position: "left",
-         },
-         {
-             to: `${routePrefix}/users`,
-             activeBasePath: `${routePrefix}/users`,
-             label: "Users",
-             position: "left",
-         },
-         {
-             to: `${routePrefix}/resources`,
-             activeBasePath: `${routePrefix}/resources`,
-             label: "Resources",
-             position: "left",
-         },
+        {
+            to: `${routePrefix}/concepts`,
+            activeBasePath: `${routePrefix}/concepts`,
+            label: "Concepts",
+            position: "left",
+        },
+        {
+            to: `${routePrefix}/developers`,
+            activeBasePath: `${routePrefix}/developers`,
+            label: "Developers",
+            position: "left",
+        },
+        {
+            to: `${routePrefix}/operators`,
+            activeBasePath: `${routePrefix}/operators`,
+            label: "Operators",
+            position: "left",
+        },
+        {
+            to: `${routePrefix}/users`,
+            activeBasePath: `${routePrefix}/users`,
+            label: "Users",
+            position: "left",
+        },
+        {
+            to: `${routePrefix}/resources`,
+            activeBasePath: `${routePrefix}/resources`,
+            label: "Resources",
+            position: "left",
+        },
+        // { to: 'blog', label: 'Blog', position: 'left' }, // or position: 'right'
         {
             type: "search",
             position: "right",
         },
-        // {
-        //     type: "docsVersionDropdown",
-        //     position: "right",
-        //     dropdownActiveClassDisabled: true,
-        // },
+        {
+            type: "docsVersionDropdown",
+            position: "right",
+            dropdownActiveClassDisabled: true,
+        },
         {
             href: "https://support.casperlabs.io/",
             label: "Support",

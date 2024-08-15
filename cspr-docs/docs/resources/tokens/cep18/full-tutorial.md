@@ -123,7 +123,7 @@ Contract methods are:
 
 ## Installing the Contract
 
-After customizing your instance of the CEP-18 token contract, it's time to install it in global state. Installing the Fungible Token contract is similar to installing other smart contracts, while only the Wasm files and parameters will differ. Refer to the [Sending Deploys to a Casper network using the Rust Client](/developers/cli/sending-deploys/) section to learn more about install contracts.
+After customizing your instance of the CEP-18 token contract, it's time to install it in global state. Installing the Fungible Token contract is similar to installing other smart contracts, while only the Wasm files and parameters will differ. Refer to the [Sending Deploys to a Casper network using the Rust Client](/developers/cli/sending-transactions/) section to learn more about install contracts.
 
 ### Deploy Prerequisites {#deploy-prerequisites}
 
@@ -136,11 +136,11 @@ After customizing your instance of the CEP-18 token contract, it's time to insta
 
 Here are the basic steps to install the Casper Fungible Token contract on a Casper Network.
 
-- [Clone the contract](#cloning-the-token-contract)
-- [Get the IP address of a node](#getting-an-ip-address-from-a-testnet-peer)
-- [View the network state](#viewing-the-network-status)
-- [Install the contract via a deploy](#installing-the-contract)
-- [View the network state](#querying-the-network-status)
+- [Clone the contract](#cloning-the-token-contract-cloning-the-token-contract)
+- [Get the IP address of a node](#getting-an-ip-address-from-a-testnet-peer-getting-an-ip-address)
+- [View the network state](#viewing-the-network-status-viewing-network-status)
+- [Install the contract via a deploy](#installing-the-contract-deploying-the-contract)
+- [View the network state](#querying-the-network-status-querying-the-network-status)
 
 ### Cloning the Token Contract {#cloning-the-token-contract}
 
@@ -213,7 +213,7 @@ casper-client query-global-state \
 
 Now you can install the contract to the network and check how it behaves.
 
-If you are sending the deploy on Mainnet, try several put deploys on the Testnet to understand the exact gas amount required for that deploy. Refer to the [note about gas price](/developers/cli/sending-deploys/#a-note-about-gas-price) to understand more about payment amounts and gas price adjustments.
+If you are sending the deploy on Mainnet, try several put deploys on the Testnet to understand the exact gas amount required for that deploy. Refer to the [note about gas price](/developers/cli/sending-transactions/#a-note-about-gas-price) to understand more about payment amounts and gas price adjustments.
 
 **The Casper platform currently does not refund any tokens as part of sending a deploy.** For example, if you spend 10 CSPR for the deployment and it only costs 1 CSPR, you will not receive the remaining 9 CSPR. Refer to the [Gas and the Casper Blockchain](/concepts/economics/gas-concepts/) documentation for further details.
 

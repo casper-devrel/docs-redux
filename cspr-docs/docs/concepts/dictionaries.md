@@ -3,31 +3,27 @@ title: Dictionaries
 ---
 # Understanding Dictionaries {#dictionaries}
 
-In a Casper network, you can now store sets of data under [`Keys`](./hash-types.md#hash-and-key-explanations). Previously, [URefs](./glossary/U.md#uref) were the exclusive means by which users could store data in global state. To maintain persistent access to these URefs, they would have to be stored within an `Account` or `Contract` context. In the case of Contracts, sustained and continuous use of URefs would result in the expansion of the associated [NamedKeys](./glossary/N.md#named-keys) structures.
+In a Casper network, you can now store sets of data under [`Keys`](./key-types.md#hash-and-key-explanations). Previously, [URefs](./glossary/U.md#uref) were the exclusive means by which users could store data in global state. To maintain persistent access to these URefs, they would have to be stored within an `addressable entity`'s context. In the case of Contracts, sustained and continuous use of URefs would result in the expansion of the associated [NamedKeys](./glossary/N.md#namedkeys) structures.
 
 Individual value changes to data stored within the NamedKeys would require deserializing the entire NamedKeys data structure, increasing gas costs over time and thus having a negative impact. Additionally, users storing large subsets of mapped data structures would face the same deep copy problem where minor or single updates required the complete deserialization of the map structure, also leading to increased gas costs.
 
 As a solution to this problem, the Casper platform provides the `Dictionary` feature, which allows users a more efficient and scalable means to aggregate data over time.
 
-In almost all cases, dictionaries are the better form of data storage. They allow greater flexibility in altering stored data at a lower cost.
+Casper's Condor release shifts `NamedKeys` to a top-level key, removing this restriction and making them viable for data storage.
 
 ## Seed URefs
 
-Items within a dictionary exist as individual records stored underneath their unique [dictionary address](./hash-types.md#hash-and-key-explanations) in global state. In other words, items associated with a specific dictionary share the same seed [`URef`](./design/casper-design.md#uref-head) but are otherwise independent of each other. Dictionary items are not stored beneath this URef, it is only used to create the dictionary key.
+Items within a dictionary exist as individual records stored underneath their unique [dictionary address](./key-types.md#hash-and-key-explanations) in global state. In other words, items associated with a specific dictionary share the same seed [`URef`](./design/casper-design.md#uref-head) but are otherwise independent of each other. Dictionary items are not stored beneath this URef, it is only used to create the dictionary key.
 
 As each dictionary item exists as a stand-alone entity in global state, regularly used dictionary keys may be used directly without referencing their seed URef.
 
 ## Using Dictionaries
 
-Dictionaries are ideal for storing larger volumes of data for which `NamedKeys` would be less suitable.
+Creating a new dictionary is fairly simple and done within the context of a `transaction` sent to a Casper network. The associated code is included within the [`casper_contract`](https://docs.rs/casper-contract/latest/casper_contract/) crate. Creating a dictionary also stores the associated seed URef within the named keys of the current context.
 
-Creating a new dictionary is fairly simple and done within the context of a `Deploy` sent to a Casper network. The associated code is included within the [`casper_contract`](https://docs.rs/casper-contract/latest/casper_contract/) crate. Creating a dictionary also stores the associated seed URef within the named keys of the current context.
+Developers should always consider context when creating dictionaries. We recommend creating a dictionary within the context of a Contract entity.
 
-Developers should always consider context when creating dictionaries. We recommend creating a dictionary within the context of a Contract.
-
-While you can create a dictionary in the context of an Account and then pass associated access rights to a Contract, this approach can create potential security issues. If a third party uses the Contract, the initiating Account with access rights to the dictionary may be undesirable. To rectify this, you may send an additional `Deploy` removing those access rights, but it is better to create the dictionary within the context of the Contract.
-
-Dictionaries allow a contract to store additional data without drastically expanding the size of the `NamedKeys` within their context. If a contract's `NamedKeys` expand too far, they may run into system limitations that would unintentionally disable the contract's functionality.
+While you can create a dictionary in the context of an Account and then pass associated access rights to a Contract, this approach can create potential security issues. If a third party uses the Contract, the initiating Account with access rights to the dictionary may be undesirable. To rectify this, you may send an additional `transaction` removing those access rights, but it is better to create the dictionary within the context of the Contract.
 
 A dictionary item key can be no longer than 64 bytes in length. 
 
@@ -37,7 +33,7 @@ The [Casper CEP-78 Enhanced NFT Standard](https://github.com/casper-ecosystem/ce
 
 Simple examples for dictionary use within CEP-78 include the [`approve`](https://github.com/casper-ecosystem/cep-78-enhanced-nft/blob/dev/contract/src/main.rs#L772) dictionary.
 
-More advanced dictionary functionality can be found in the [CEP-78 Page System](https://github.com/casper-ecosystem/cep-78-enhanced-nft/blob/dev/docs/reverse-lookup.md#the-cep-78-page-system), which uses a series of dictionaries to keep track of token ownership. These dictionaries form the basis of the reverse lookup mode, which allows users to easily view a list of owned tokens by account or contract.
+More advanced dictionary functionality can be found in the [CEP-78 Page System](https://github.com/casper-ecosystem/cep-78-enhanced-nft#the-cep-78-page-system), which uses a series of dictionaries to keep track of token ownership. These dictionaries form the basis of the reverse lookup mode, which allows users to easily view a list of owned tokens by account or contract.
 
 ## Creating Dictionaries in a Contract's Context
 

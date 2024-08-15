@@ -30,7 +30,7 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
   onDuplicateRoutes: "throw",
   markdown: {
-    format: "mdx"
+    format: "detect"
   },
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -44,17 +44,33 @@ const config = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
+        theme: {
+          customCss: './src/css/custom.css',
+        },
         docs: {
-          sidebarPath: './config/sidebar.config.js',
-          //sidebarPath: './sidebars.js',
           path: "docs",
+          sidebarPath: './config/sidebar.config.js',
+          //sidebarPath: './sidebars.auto.js',
           routeBasePath: "/", // IMPORTANT: Turn on docs-only mode
           exclude: ["./contract-dsl/archived", "./economics/archived", "./theory"]
         },
         blog: false,
-        theme: {
-          customCss: './src/css/custom.css',
-        },
+        // pages: {
+        //   path: 'src/pages',
+        //   routeBasePath: '',
+        //   include: ['**/*.{js,jsx,ts,tsx,md,mdx}'],
+        //   exclude: [
+        //     '**/_*.{js,jsx,ts,tsx,md,mdx}',
+        //     '**/_*/**',
+        //     '**/*.test.{js,jsx,ts,tsx}',
+        //     '**/__tests__/**',
+        //   ],
+        //   mdxPageComponent: '@theme/MDXPage',
+        //   remarkPlugins: [require('./my-remark-plugin')],
+        //   rehypePlugins: [],
+        //   beforeDefaultRemarkPlugins: [],
+        //   beforeDefaultRehypePlugins: [],
+        // },
       }),
     ],
   ],

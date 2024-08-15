@@ -42,13 +42,13 @@ Before getting started, you need to complete two prerequisite steps:
 
 ### Receive Tokens from an External Source
 
-This portion will vary slightly depending on where your funds are currently stored. However, the process will require that you send tokens to your public key as described in the [documentation](./ledger-setup.md#sending-and-receiving-tokens).
+This portion will vary slightly depending on where your funds are currently stored. However, the process will require that you send tokens to your public key as described in the [documentation](./ledger-setup.md#receive-tokens).
 
 ### Staking Tokens
 
 Once you have tokens in your account, staking (delegating) with a validator is easy.
 
-1. Go back to your account, but this time open the "delegate" tab located at: [https://cspr.live/delegate-stake](https://cspr.live/delegate-stake) (alternatively, click on `Wallet ⇒ Delegate Stake` to go there).
+1. Go back to your account, but this time open the "delegate" tab located at: https://cspr.live/delegate-stake (alternatively, click on `Wallet ⇒ Delegate Stake` to go there).
 2. From the validator list, choose any validator you like. You will notice that validators charge different fees and have different amounts staked to them. This may inform your decision to choose the right validator for you.
 3. Specify the amount you wish to stake or click "Delegate max" as shown below. Notes:
    1. Remember that the total delegation amount to one validator cannot be less than 500 CSPR.
