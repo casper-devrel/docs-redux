@@ -1,7 +1,5 @@
-const docsOnlyMode = process.env.DOCS_MODE || true;
-let routePrefix = !docsOnlyMode ? "docs" : "";
-routePrefix = "docs";
-
+const globalConfig = require("../global.config");
+const routePrefix = globalConfig.routePrefix;
 module.exports = {
     title: "",
     logo: {
@@ -10,63 +8,45 @@ module.exports = {
         srcDark: "/icon/Casper_Wordmark_White_RGB.png",
     },
     items: [
-        {
-            to: `${routePrefix}/intro`,
-            activeBasePath: `${routePrefix}/intro`,
-            label: "Home",
-            position: "left",
-        },
-        {
-            to: `${routePrefix}/category/tutorial---basics`,
-            activeBasePath: `${routePrefix}/category/tutorial---basics`,
-            label: "Tutorial - Basics",
-            position: "left",
-        },
-        {
-            to: `${routePrefix}/category/tutorial---extras`,
-            activeBasePath: `${routePrefix}/category/tutorial---extras`,
-            label: "Tutorial - Extras",
-            position: "left",
-        },
-        // {
-        //     to: `${routePrefix}/concepts`,
-        //     activeBasePath: `${routePrefix}/concepts`,
-        //     label: "Concepts",
-        //     position: "left",
-        // },
-        // {
-        //     to: `${routePrefix}/developers`,
-        //     activeBasePath: `${routePrefix}/developers`,
-        //     label: "Developers",
-        //     position: "left",
-        // },
-        // {
-        //     to: `${routePrefix}/operators`,
-        //     activeBasePath: `${routePrefix}/operators`,
-        //     label: "Operators",
-        //     position: "left",
-        // },
-        // {
-        //     to: `${routePrefix}/users`,
-        //     activeBasePath: `${routePrefix}/users`,
-        //     label: "Users",
-        //     position: "left",
-        // },
-        // {
-        //     to: `${routePrefix}/resources`,
-        //     activeBasePath: `${routePrefix}/resources`,
-        //     label: "Resources",
-        //     position: "left",
-        // },
+         {
+             to: `${routePrefix}/concepts`,
+             activeBasePath: `${routePrefix}/concepts`,
+             label: "Concepts",
+             position: "left",
+         },
+         {
+             to: `${routePrefix}/developers`,
+             activeBasePath: `${routePrefix}/developers`,
+             label: "Developers",
+             position: "left",
+         },
+         {
+             to: `${routePrefix}/operators`,
+             activeBasePath: `${routePrefix}/operators`,
+             label: "Operators",
+             position: "left",
+         },
+         {
+             to: `${routePrefix}/users`,
+             activeBasePath: `${routePrefix}/users`,
+             label: "Users",
+             position: "left",
+         },
+         {
+             to: `${routePrefix}/resources`,
+             activeBasePath: `${routePrefix}/resources`,
+             label: "Resources",
+             position: "left",
+         },
         {
             type: "search",
             position: "right",
         },
-        {
-            type: "docsVersionDropdown",
-            position: "right",
-            dropdownActiveClassDisabled: true,
-        },
+        // {
+        //     type: "docsVersionDropdown",
+        //     position: "right",
+        //     dropdownActiveClassDisabled: true,
+        // },
         {
             href: "https://support.casperlabs.io/",
             label: "Support",

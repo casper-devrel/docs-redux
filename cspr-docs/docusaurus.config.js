@@ -3,63 +3,55 @@
 // (when paired with `@ts-check`).
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
-require("dotenv").config({
-  path: process.env.NODE_ENV ? `.env.${process.env.NODE_ENV}` : `.env`,
-});
-
+const globalConfig = require("./global.config.js");
+const githubPagesConfig = require("./config/github-pages.config.js");
 const {
   themeNavbarConfig,
   themeFooterConfig,
   themeAlgoliaConfig,
 } = require("./config");
 
-const { getEditUrl } = require("./src/utils/docs");
-
-const docsOnlyMode = process.env.DOCS_MODE || true;
-const routePrefix = !docsOnlyMode ? "/docs" : "/";
-
 import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Casper Docs - Redux',
-  tagline: 'Casper documentation',
+  tagline: 'Casper Documentation',
   favicon: 'icon/favicon.ico',
-
-  // Set the production url of your site here
-  url: 'https://casper-devrel.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/docs-redux',
-
+  url: globalConfig.siteUrl,
+  baseUrl: globalConfig.baseUrl,
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  projectName: 'docs-redux',
   organizationName: 'casper-devrel',
-  trailingSlash: false,
-
-  onBrokenLinks: 'throw',
+  projectName: 'docs-redux',
+  deploymentBranch: 'gh-pages',
+  trailingSlash: true,
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-
+  onDuplicateRoutes: "throw",
+  markdown: {
+    format: "mdx"
+  },
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
-  },
-
+  // i18n: {
+  //   defaultLocale: 'en',
+  //   locales: ['en'],
+  // },
   presets: [
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: './sidebars.js',
+          sidebarPath: './config/sidebar.config.js',
+          //sidebarPath: './sidebars.js',
+          path: "docs",
+          routeBasePath: "/", // IMPORTANT: Turn on docs-only mode
+          exclude: ["./contract-dsl/archived", "./economics/archived", "./theory"]
         },
-        blog: {
-          showReadingTime: true,
-        },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
