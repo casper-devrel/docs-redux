@@ -5,5 +5,13 @@ melpadden:
   url: https://github.com/melpadden
   image_url: https://github.com/melpadden.png
   socials:
-    x: melpadden
+    x: mel_casper
   permalink: '/melpadden'
+
+sczembor:
+  name: Stanislaw Czembor
+  page: true 
+  title: Developer Advocate for Casper Association
+  url: https://github.com/sczembor
+  image_url: https://github.com/sczembor.png
+  permalink: '/sczembor'

@@ -1,7 +1,7 @@
 const globalConfig = require("../global.config");
 let routePrefix = globalConfig.routePrefix;
-const baseUrl = globalConfig.baseUrl;
-if (baseUrl && baseUrl !== "/") { routePrefix = `${baseUrl}/${routePrefix}`; }
+// const baseUrl = globalConfig.baseUrl;
+// if (baseUrl && baseUrl !== "/") { routePrefix = `${baseUrl}/${routePrefix}`; }
 console.log(`routePrefix: ${routePrefix}`);
 module.exports = {
     title: "",
@@ -41,6 +41,7 @@ module.exports = {
             label: "Resources",
             position: "left",
         },
+        { to: 'blog/tags/condor', label: 'Condor', position: 'right' },
         { to: 'blog', label: 'Blog', position: 'right' },
         {
             type: "search",
