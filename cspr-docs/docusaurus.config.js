@@ -54,7 +54,16 @@ const config = {
           routeBasePath: "/", // IMPORTANT: Turn on docs-only mode
           exclude: ["./contract-dsl/archived", "./economics/archived", "./theory"]
         },
-        blog: false,
+        blog: {
+          path:'./blog',
+          routeBasePath: 'blog',
+          blogTitle: 'Casper Developer Relations Blog',
+          blogDescription: 'A blog about all things to do with developing on the Casper Blockchain',
+          postsPerPage: 'ALL',
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 'ALL',
+        }
+          ,
         // pages: {
         //   path: 'src/pages',
         //   routeBasePath: '',

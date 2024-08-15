@@ -38,7 +38,7 @@ module.exports = {
             label: "Resources",
             position: "left",
         },
-        // { to: 'blog', label: 'Blog', position: 'left' }, // or position: 'right'
+        { to: 'blog', label: 'Blog', position: 'right' }, 
         {
             type: "search",
             position: "right",
