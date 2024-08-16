@@ -8,7 +8,7 @@ module.exports = {
     logo: {
         alt: "Casper Logo",
         src: "/icon/Casper_Wordmark_Red_RGB.png",
-        srcDark: "/icon/Casper_Wordmark_White_RGB.png",
+        srcDark: "/icon/Casper_Wordmark_Red_RGB.png",
     },
     items: [
         {

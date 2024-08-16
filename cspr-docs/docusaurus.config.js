@@ -55,7 +55,7 @@ const config = {
           exclude: ["./contract-dsl/archived", "./economics/archived", "./theory"]
         },
         blog: {
-          path:'./blog',
+          path: './blog',
           routeBasePath: 'blog',
           blogTitle: 'Casper Developer Relations Blog',
           blogDescription: 'A blog about all things to do with developing on the Casper Blockchain',
@@ -63,7 +63,7 @@ const config = {
           blogSidebarTitle: 'All posts',
           blogSidebarCount: 'ALL',
         }
-          ,
+        ,
         // pages: {
         //   path: 'src/pages',
         //   routeBasePath: '',
@@ -87,12 +87,25 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
+      },
       algolia: themeAlgoliaConfig,
       navbar: themeNavbarConfig,
       footer: themeFooterConfig,
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
+      },
+      announcementBar: {
+        id: 'support_us',
+        content:
+          'This is an Alpha version of the Decs Redux, any suggestions please email to devrel@casper.network',
+        backgroundColor: '#fafbfc',
+        textColor: '#091E42',
+        isCloseable: true,
       },
     }),
 };
