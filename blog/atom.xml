@@ -150,6 +150,10 @@ The Condor node architecture allows for any time-based function to be developed 
             <name>Dylan Ireland</name>
             <uri>https://github.com/dylanireland</uri>
         </author>
+        <author>
+            <name>Alexander Limonov</name>
+            <uri>https://github.com/AlexanderLimonov</uri>
+        </author>
         <category label="Condor" term="Condor"/>
         <category label="features" term="features"/>
         <category label="tokenomics" term="tokenomics"/>
