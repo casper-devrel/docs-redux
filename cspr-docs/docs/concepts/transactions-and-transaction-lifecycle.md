@@ -2,6 +2,7 @@
 title: Transaction Lifecycle
 slug: /transactions-and-transaction-lifecycle
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Transactions and the Transaction Lifecycle
 
@@ -10,7 +11,7 @@ slug: /transactions-and-transaction-lifecycle
 A [transaction](./glossary/T.md#transaction) is a data structure containing Wasm and the requester's signature(s). Additionally, the transaction header contains additional metadata about the transaction itself. A transactions’s structure is as follows:
 
 <p align="center">
-<img src={"/image/design/transaction-structure.png"} alt="Image showing the transaction data structure" width="500"/>
+<img src={useBaseUrl("/image/design/transaction-structure.png")} alt="Image showing the transaction data structure" width="500"/>
 </p>
 
 - Body: Containing payment code and session code (more details on these below)

@@ -4,7 +4,9 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 const globalConfig = require("./global.config.js");
+const announcementBarConfig = require("./config/announcementBar.config.js");
 const githubPagesConfig = require("./config/github-pages.config.js");
+
 const {
   themeNavbarConfig,
   themeFooterConfig,
@@ -22,9 +24,10 @@ const config = {
   baseUrl: globalConfig.baseUrl,
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'casper-devrel',
-  projectName: 'docs-redux',
-  deploymentBranch: 'gh-pages',
+  ...githubPagesConfig,
+  // organizationName: 'casper-devrel',
+  // projectName: 'docs-redux',
+  // deploymentBranch: 'gh-pages',
   trailingSlash: true,
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -99,14 +102,7 @@ const config = {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
-      announcementBar: {
-        id: 'support_us',
-        content:
-          'This is an Alpha version of the Decs Redux, any suggestions please email to devrel@casper.network',
-        backgroundColor: '#fafbfc',
-        textColor: '#091E42',
-        isCloseable: true,
-      },
+      announcementBar: announcementBarConfig,
     }),
 };
 

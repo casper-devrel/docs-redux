@@ -112,7 +112,7 @@ The Casper Signer has been replaced with the Casper Wallet and will be deprecate
 
 ## Funding your Account
 
-Once you create your account, you can [fund the account's main purse](../developers/prerequisites.md#funding-an-account) to finish the process of setting it up. 
+Once you create your account, you can [fund the account's main purse](../developers/prerequisites.md#funding-an-account-fund-your-account) to finish the process of setting it up. 
 
 :::note
 
