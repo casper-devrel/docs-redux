@@ -46,8 +46,16 @@ module.exports = {
             label: "Feedback",
             position: "right",
         },
-        { to: 'blog/tags/condor', label: 'Condor', position: 'right' },
-        { to: 'blog', label: 'Blog', position: 'right' },
+        {
+            to: 'blog/tags/condor', 
+            label: 'Condor', 
+            position: 'right' 
+        },
+        { 
+            to: 'blog', 
+            label: 'Blog', 
+            position: 'right' 
+        },
         {
             type: "search",
             position: "right",
@@ -68,7 +76,7 @@ module.exports = {
             position: "right",
         },
         {
-            href: "https://github.com/casper-network/docs/blob/dev/README.md",
+            href: "https://github.com/casper-devrel/docs-redux",
             label: "GitHub",
             position: "right",
         },
