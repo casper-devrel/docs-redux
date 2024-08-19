@@ -41,6 +41,11 @@ module.exports = {
             label: "Resources",
             position: "left",
         },
+        {
+            to: `https://github.com/casper-devrel/docs-redux/issues`,
+            label: "Feedback",
+            position: "right",
+        },
         { to: 'blog/tags/condor', label: 'Condor', position: 'right' },
         { to: 'blog', label: 'Blog', position: 'right' },
         {

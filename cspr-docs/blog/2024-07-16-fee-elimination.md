@@ -3,7 +3,7 @@ title: Fee Elimination in Condor
 description: A discussion of the Fee Elimination feature in Casper 2.0
 slug: condor-fee-elimination
 date: 2024-07-16T22:00
-authors: [ dylanireland ]
+authors: [ dylanireland, alexanderlimonov ]
 tags: [condor, features, tokenomics]
 hide_table_of_contents: false
 ---
