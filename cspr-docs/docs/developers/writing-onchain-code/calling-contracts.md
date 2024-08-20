@@ -1,8 +1,11 @@
 # Calling Contracts
 
-Calling a contract on a Casper network requires the use of a deploy. When using the Casper Rust client, JavaScript SDK, or any other client, the intermediary client crafts the deploy for you, using the arguments you provide. This document outlines the various deploy variants through which you can execute Wasm or invoke the execution of on-chain Wasm.
+Calling a contract on a Casper network requires the use of a transaction. When using the Casper Rust client, JavaScript SDK, or any other client, the intermediary client crafts the transaction for you, using the arguments you provide. This document outlines the various transaction variants through which you can execute Wasm or invoke the execution of on-chain Wasm.
 
-## Using Deploy Variants
+
+<!-- TODO Include Transaction variants. -->
+
+## Using Legacy Deploy Variants
 
 ### ModuleBytes
 
@@ -26,7 +29,7 @@ Further information on the structure of `StoredContractByHash` can be found [her
 
 This allows the caller to more easily reference a contract stored on-chain for later use but requires pre-planning to store the name within their account's `NamedKeys`.
 
-### StoredVersionedContractByHash {#stored-versioned-contract-by-hash}
+### StoredVersionedContractByHash
 
 `StoredVersionedContractByHash` is a deploy variant that invokes on-chain Wasm based on the contract package hash rather than the contract hash directly. This variant allows the caller to specify a version within the contract package, but if a specific version is not supplied, it will use the most recent version of the contract within the package.
 
@@ -36,7 +39,7 @@ DApp developers that use contracts developed by other parties can use `StoredVer
 
 Further information on the structure of `StoredVersionedContractByHash` can be found [here](../json-rpc/types_chain.md#storedversioncontractbyhash).
 
-### StoredVersionedContractByName {#stored-versioned-contract-by-name}
+### StoredVersionedContractByName
 
 `StoredVersionedContractByName` combines the functionality of `StoredContractByName` and `StoredVersionedContractByHash`. It allows a developer to store a reference string as a `NamedKey` within their account context that references a contract by its contract package hash.
 

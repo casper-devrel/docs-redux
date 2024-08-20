@@ -26,15 +26,15 @@ git clone https://github.com/casper-network/casper-node
 
 2. Install these prerequisites, which are also listed [here](https://github.com/casper-network/casper-node#pre-requisites-for-building).
 
-- [Rust](./../../developers/writing-onchain-code/getting-started.md)
+- [Rust](../../developers/writing-onchain-code/getting-started.md#installing-rust)
 - [CMake](https://cgold.readthedocs.io/en/latest/first-step/installation.html)
 - `pkg-config` - On Ubuntu, use `sudo apt-get install pkg-config`
 - `openssl` - On Ubuntu, use `sudo apt-get install openssl`
 - `libssl-dev` - On Ubuntu, use `sudo apt-get install libssl-dev`
 
-3. Install the [Rust casper-client](../../developers/prerequisites.md#install-casper-client) and fund the [keys](../setup/basic-node-configuration.md#create-fund-keys) you will use for bonding.
+3. Install the [Rust casper-client](../../developers/prerequisites.md#the-casper-command-line-client) and fund the [keys](../setup/basic-node-configuration.md#create-fund-keys) you will use for bonding.
 
-4. Use the following commands to build the contracts in release mode. Make sure you have [installed Rust](../../developers/writing-onchain-code/getting-started.md).
+4. Use the following commands to build the contracts in release mode. Make sure you have [installed Rust](../../developers/writing-onchain-code/getting-started.md#installing-rust).
 
 ```bash
 cd casper-node

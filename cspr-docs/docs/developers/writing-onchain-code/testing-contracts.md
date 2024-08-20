@@ -2,13 +2,14 @@
 
 ## Introduction
 
-As part of the Casper development environment, we provide a [testing framework](https://docs.rs/casper-engine-test-support/latest/casper_engine_test_support/) to test new contracts without running a full node. The framework creates an instance of the Casper execution engine, which can confirm successful deploys and monitor changes to global state using assertions. The Casper test crate must be included within the Rust workspace alongside the Wasm-producing crate to be validated.
+As part of the Casper development environment, we provide a [testing framework](https://docs.rs/casper-engine-test-support/latest/casper_engine_test_support/) to test new contracts without running a full node. The framework creates an instance of the Casper execution engine, which can confirm successful transactions and monitor changes to global state using assertions. The Casper test crate must be included within the Rust workspace alongside the Wasm-producing crate to be validated.
 
 :::note
 
 The Casper test support crate is one of many options for testing contracts before sending them to a Casper network. If you prefer, you can create your own testing framework.
 
 :::
+
 
 ### Defining Dependencies in `Cargo.toml`
 
@@ -18,14 +19,14 @@ To begin, outline the required test dependencies in the `/tests/Cargo.toml` file
 
 ```rust
 [dependencies]
-casper-execution-engine = "5.0.0"
-casper-engine-test-support = { version = "5.0.0", features = ["test-support"] }
-casper-types = "3.0.0"
+casper-execution-engine = "2.0.1"
+casper-engine-test-support = { version = "2.2.0", features = ["test-support"] }
+casper-types = "1.5.0"
 ```
 
--   `casper-execution-engine` - This crate imports the execution engine functionality, enabling Wasm execution within the test framework. Each node contains an instance of an execution engine, and the testing framework simulates this behavior.
--   `casper-engine-test-support` - A helper crate that provides the interface to write tests and interact with an instance of the execution engine.
--   `casper-types` - Types shared by many Casper crates for use on a Casper network.
+- `casper-execution-engine` - This crate imports the execution engine functionality, enabling Wasm execution within the test framework. Each node contains an instance of an execution engine, and the testing framework simulates this behavior.
+- `casper-engine-test-support` - A helper crate that provides the interface to write tests and interact with an instance of the execution engine.
+- `casper-types` - Types shared by many Casper crates for use on a Casper network. 
 
 ## Writing the Tests {#writing-the-tests}
 
@@ -54,7 +55,7 @@ Import external test support, which includes a variety of default values and hel
     // Outlining aspects of the Casper test support crate to include.
     use casper_engine_test_support::{
         ExecuteRequestBuilder, InMemoryWasmTestBuilder, DEFAULT_ACCOUNT_ADDR,
-        PRODUCTION_RUN_GENESIS_REQUEST,
+        DEFAULT_RUN_GENESIS_REQUEST,
     };
     // Custom Casper types that will be used within this test.
     use casper_types::{runtime_args, ContractHash, RuntimeArgs};
@@ -63,36 +64,30 @@ Import external test support, which includes a variety of default values and hel
 Next, you need to define any global variables or constants for the test.
 
 ```rust
-    // Contract Wasm File Paths (Constants)
-    const COUNTER_V1_WASM: &str = "counter-v1.wasm";
-    const COUNTER_V2_WASM: &str = "counter-v2.wasm";
-    const COUNTER_V3_WASM: &str = "counter-v3.wasm";
-    const COUNTER_CALL_WASM: &str = "counter-call.wasm";
+    const COUNTER_V1_WASM: &str = "counter-v1.wasm"; // The first version of the contract
+    const COUNTER_V2_WASM: &str = "counter-v2.wasm"; // The second version of the contract
+    const COUNTER_CALL_WASM: &str = "counter-call.wasm"; // Session code that calls the contract
 
-    // Contract Storage Keys (Constants)
-    const CONTRACT_KEY: &str = "counter";
-    const COUNT_KEY: &str = "count";
-    const LAST_UPDATED_KEY: &str = "last_updated";
-    const CONTRACT_VERSION_KEY: &str = "version";
+    const CONTRACT_KEY: &str = "counter"; // Named key referencing this contract
+    const COUNT_KEY: &str = "count"; // Named key referencing the value to increment/decrement
+    const CONTRACT_VERSION_KEY: &str = "version"; // Key maintaining the version of a contract package
 
-    // Contract Entry Points (Constants)
-    const ENTRY_POINT_COUNTER_DECREMENT: &str = "counter_decrement";
-    const ENTRY_POINT_COUNTER_INC: &str = "counter_inc";
-    const ENTRY_POINT_COUNTER_LAST_UPDATED_AT: &str = "counter_last_updated_at";
+    const ENTRY_POINT_COUNTER_DECREMENT: &str = "counter_decrement"; // Entry point to decrement the count value
+    const ENTRY_POINT_COUNTER_INC: &str = "counter_inc"; // Entry point to increment the count value
 ```
 
 ### Creating a Test Function
 
 Each test function installs the contract and calls entry points to assert that the contract's behavior matches expectations. The test uses the `InMemoryWasmTestBuilder` to invoke an instance of the execution engine, effectively simulating the process of installing the contract on the chain.
 
-As part of this process, we use the `PRODUCTION_RUN_GENESIS_REQUEST` to install the system contracts necessary for the tests, including the `Mint`, `Auction`, and `HandlePayment`contracts, as well as establishing a default account and funding the associated purse.
+As part of this process, we use the `DEFAULT_RUN_GENESIS_REQUEST` to install the system contracts necessary for the tests, including the `Mint`, `Auction`, and `HandlePayment`contracts, as well as establishing a default account and funding the associated purse.
 
 ```rust
     #[test]
     /// Install version 1 of the counter contract and check its available entry points. ...
     fn install_version1_and_check_entry_points() {
         let mut builder = InMemoryWasmTestBuilder::default();
-        builder.run_genesis(&PRODUCTION_RUN_GENESIS_REQUEST).commit();
+        builder.run_genesis(&*DEFAULT_RUN_GENESIS_REQUEST).commit();
 
         // See the repository for the full function.
     }
@@ -100,7 +95,7 @@ As part of this process, we use the `PRODUCTION_RUN_GENESIS_REQUEST` to install 
 
 #### Installing the Contract
 
-Test functions use the `ExecuteRequestBuilder` to install a contract to be tested. In the counter tests, we use standard dependencies and the counter contract. Within the execution request, we specify the `DEFAULT_ACCOUNT_ADDR` established by our genesis builder as the account sending the Deploy.
+Test functions use the `ExecuteRequestBuilder` to install a contract to be tested. In the counter tests, we use standard dependencies and the counter contract. Within the execution request, we specify the `DEFAULT_ACCOUNT_ADDR` established by our genesis builder as the account sending the transaction.
 
 After building the `ExecuteRequestBuilder` (in this example, `contract_installation_request`), we process the request through `builder.exec` and then add and process other requests as necessary.
 
@@ -121,7 +116,7 @@ After building the `ExecuteRequestBuilder` (in this example, `contract_installat
 
 #### Calling the Contract by Hash
 
-To verify the installed contract, we need its contract hash. The test will then call its entry points using the `contract_call_by_hash` function. The following code retrieves the contract hash from the named keys of the `DEFAULT_ACCOUNT_ADDR` that sent the installation Deploy.
+To verify the installed contract, we need its contract hash. The test will then call its entry points using the `contract_call_by_hash` function. The following code retrieves the contract hash from the named keys of the `DEFAULT_ACCOUNT_ADDR` that sent the installation transaction.
 
 ```rust
     // Check the contract hash.
@@ -158,7 +153,7 @@ Next, we test an entry point that should not exist in the first version of the c
 
 In the counter example, we use the session code included in the [counter-call.wasm](https://github.com/casper-ecosystem/counter/blob/master/counter-call/src/main.rs) file. For more details on what session code is and how it differs from contract code, see the [next section](./contract-vs-session.md#what-is-session-code).
 
-The following session code uses the contract hash to identify the contract, the account for sending the deploy (`DEFAULT_ACCOUNT_ADDR`), the deploy to be sent (`COUNTER_CALL_WASM`), and the runtime arguments required. Once again, the `ExecuteRequestBuilder` simulates the execution of session code and calls the `counter-inc` entry point.
+The following session code uses the contract hash to identify the contract, the account for sending the transaction (`DEFAULT_ACCOUNT_ADDR`), the transaction to be sent (`COUNTER_CALL_WASM`), and the runtime arguments required. Once again, the `ExecuteRequestBuilder` simulates the execution of session code and calls the `counter-inc` entry point.
 
 ```rust
     // Use session code to increment the counter.
@@ -175,33 +170,6 @@ The following session code uses the contract hash to identify the contract, the 
         .expect_success()
         .commit();
 ```
-
-:::tip
-
-**Testing Time-Sensitive Functions**
-
-Normally, smart contracts operate on a blockchain where time advances in blocks. Testing functions that rely on time can be tricky.
-
-**Simulating Time with `with_block_time`**
-
-When building a request to call a contract function (using `ExecuteRequestBuilder`), you can set a custom block time with `.with_block_time(desired_time)`. This pretends the function is called at that specific time.
-
-**Example:**
-
-```rust
-    let session_code_request = ExecuteRequestBuilder::standard(
-        *DEFAULT_ACCOUNT_ADDR,
-        COUNTER_CALL_WASM,
-        runtime_args! {
-            CONTRACT_KEY => contract_v1_hash
-        },
-    .with_block_time(5000)
-    .build();
-```
-
-This lets you test how your contract behaves at different points in time, all within your unit test.
-
-:::
 
 #### Evaluating and Comparing Results
 
@@ -227,14 +195,14 @@ For more test examples, visit the [casper-node](https://github.com/casper-networ
 
 If the code to be tested involves multiple contracts, they must be installed within the test. The exceptions are system contracts installed as part of the `DEFAULT_RUN_GENESIS_REQUEST`. The testing framework exists independently of any Casper network, so you will need access to the original contract installation code or the Wasm you wish to include.
 
-Each contract installation will require an additional Wasm file installed through a `Deploy` using `ExecuteRequestBuilder`. Depending on your requirements as a smart contract author, you may need to use [return values](../../resources/advanced/return-values-tutorial.md) to interact with stacks of contracts. Interaction between contracts will require session code to initiate the process, as contracts will not execute actions autonomously.
+Each contract installation will require an additional Wasm file installed through a `Transaction` using `ExecuteRequestBuilder`. Depending on your requirements as a smart contract author, you may need to use [return values](../../resources/advanced/return-values-tutorial.md) to interact with stacks of contracts. Interaction between contracts will require session code to initiate the process, as contracts will not execute actions autonomously.
 
 The major difference between calling a contract from session code versus contract code is the ability to use non-standard dependencies for the `ExecuteRequestBuilder`. Where session code must designate a Wasm file within the standard dependencies, contract code can use one of the four available options for calling other contracts, namely:
 
--   `contract_call_by_hash` - Calling a contract by its `ContractHash`.
--   `contract_call_by_name` - Calling a contract referenced by a named key in the signer's Account context.
--   `versioned_contract_call_by_hash` - Calling a specific contract version using its `ContractHash`.
--   `versioned_contract_call_by_name` - Calling a specific version of a contract referenced by a named key in the signer's Account context.
+- `contract_call_by_hash` - Calling a contract by its `ContractHash`.
+- `contract_call_by_name` - Calling a contract referenced by a named key in the signer's Account context.
+- `versioned_contract_call_by_hash` - Calling a specific contract version using its `ContractHash`.
+- `versioned_contract_call_by_name` - Calling a specific version of a contract referenced by a named key in the signer's Account context.
 
 The calling contract must also provide an entry point and any necessary runtime arguments in all cases.
 
@@ -273,5 +241,5 @@ You may also wish to test your contracts on the Casper [Testnet](https://testnet
 
 ## What's Next? {#whats-next}
 
--   Understand [session code](./contract-vs-session.md#what-is-session-code) and how it triggers a smart contract.
--   Learn to [install a contract and query global state](../cli/installing-contracts.md) with the Casper command-line client.
+- Understand [session code](./contract-vs-session.md#what-is-session-code) and how it triggers a smart contract.
+- Learn to [install a contract and query global state](../cli/installing-contracts.md) with the Casper command-line client.

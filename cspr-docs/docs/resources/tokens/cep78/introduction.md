@@ -16,8 +16,6 @@ The pre-built Wasm for the contract and all other utility session code can be fo
 
 The `call` method will install the contract with the necessary entrypoints and call the `init()` entrypoint, which allows the contract to self-initialize and set up the necessary state variables for operation.
 
-The [Full Installation Tutorial](./using-casper-client/full-installation-tutorial.md) provides a step-by-step workflow.
-
 ### Required Runtime Arguments
 
 The following are the required runtime arguments that must be passed to the installer session code to correctly install the NFT contract. For more information on the modalities that these arguments set, please refer to the [Modalities](./modalities.md) documentation.
@@ -41,14 +39,14 @@ The following are the optional parameters that can be passed in at the time of i
 - `"holder_mode"`: The [`NFTHolderMode`](./modalities.md#nftholdermode) modality dictates which entities can hold NFTs. This is an optional parameter and will default to a mixed mode allowing either `Accounts` or `Contracts` to hold NFTs. This parameter cannot be changed once the contract has been installed.
 - `"contract_whitelist"`: The contract whitelist is a list of contract hashes that specifies which contracts can call the `mint()` entrypoint to mint NFTs. This is an optional parameter which will default to an empty whitelist. This value can be changed via the `set_variables` post installation. If the whitelist mode is set to locked, a non-empty whitelist must be passed; else, installation of the contract will fail.
 - `"burn_mode"`: The [`BurnMode`](./modalities.md#burnmode) modality dictates whether minted NFTs can be burnt. This is an optional parameter and will allow tokens to be burnt by default. This parameter cannot be changed once the contract has been installed.
-- `"owner_reverse_lookup_mode"`: The [`OwnerReverseLookupMode`](./modalities.md#ownerreverselookupmode) modality dictates whether the lookup for owners to token identifiers is available. This is an optional parameter and will not provide the lookup by default. This parameter cannot be changed once the contract has been installed.
+- `"owner_reverse_lookup_mode"`: The [`OwnerReverseLookupMode`](./modalities.md#reportingmode) modality dictates whether the lookup for owners to token identifiers is available. This is an optional parameter and will not provide the lookup by default. This parameter cannot be changed once the contract has been installed.
 - `"events_mode"`: The [`EventsMode`](./modalities.md#eventsmode) modality selects the event schema used to record any changes that occur to tokens issued by the contract instance.
 - `"additional_required_metdata"`: An additional metadata schema that must be included. This argument is passed in as a `u8` value.
 - `"optional_metdata"`: An optional metadata schema that may be included. This argument is passed in as a `u8` value.
 
 #### Example deploy
 
-The following is an example of installing the NFT contract via a deploy using the Rust CLI Casper client. You can find more examples [here](./using-casper-client/full-installation-tutorial.md).
+The following is an example of installing the NFT contract via a deploy using the Rust CLI Casper client. You can find more examples [here](./using-casper-client.md).
 
 ```bash
 casper-client put-deploy -n http://65.108.0.148:7777/rpc --chain-name "casper-test" --payment-amount 500000000000 -k keys/secret_key.pem --session-path contract/target/wasm32-unknown-unknown/release/contract.wasm \
@@ -82,16 +80,16 @@ folder within the project folder.
 
 ### Checking Token Ownership
 
-[Learn to check token ownership](https://github.com/casper-ecosystem/cep-78-enhanced-nft/blob/dev/docs/tutorials/token-ownership-tutorial.md) starting with version [v1.1.1](https://github.com/casper-ecosystem/cep-78-enhanced-nft/releases/tag/v1.1.1). The `OwnerReverseLookupMode` modality must be set to `Complete` as described [here](./reverse-lookup.md).
+[Learn to check token ownership](https://github.com/casper-ecosystem/cep-78-enhanced-nft/blob/dev/tutorials/token-ownership-tutorial.md) starting with version [v1.1.1](https://github.com/casper-ecosystem/cep-78-enhanced-nft/releases/tag/v1.1.1). The `OwnerReverseLookupMode` modality must be set to `Complete` as described [here](./reverse-lookup.md).
 
 
 ### Upgrading to Version 1.1.1 
 
-Upgrade to v1.1.1 using a [Standard NamedKey Convention](https://github.com/casper-ecosystem/cep-78-enhanced-nft/blob/dev/tutorials/standard-migration-tutorial.md) or a [Custom NamedKey Convention](https://github.com/casper-ecosystem/cep-78-enhanced-nft/blob/dev/docs/tutorials/custom-migration-tutorial.md).
+Upgrade to v1.1.1 using a [Standard NamedKey Convention](https://github.com/casper-ecosystem/cep-78-enhanced-nft/blob/dev/docs/tutorials/standard-migration-tutorial.md) or a [Custom NamedKey Convention](https://github.com/casper-ecosystem/cep-78-enhanced-nft/blob/dev/docs/tutorials/custom-migration-tutorial.md).
 
 ## Installing and Interacting with the Contract using the Rust Casper Client
 
-You can find instructions on installing an instance of the CEP-78 contract using the Rust CLI Casper client [here](./using-casper-client/full-installation-tutorial.md).
+You can find instructions on installing an instance of the CEP-78 contract using the Rust CLI Casper client [here](./using-casper-client.md).
 
 ## Test Suite and Specification
 

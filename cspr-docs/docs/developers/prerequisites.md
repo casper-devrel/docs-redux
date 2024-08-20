@@ -4,7 +4,13 @@ import TabItem from '@theme/TabItem';
 
 # Development Prerequisites
 
-This page covers the necessary software for your Casper development environment. To develop comfortably, you should use `Linux Ubuntu 20.04`. Casper does not officially support `macOS`, but the commands are included for your convenience. If you encounter any problems, reach out to the community on [Telegram](https://t.me/casperblockchain) or [Discord](https://discord.com/invite/casperblockchain). Developing on Windows is not advised.
+This page covers the necessary software for your Casper development environment. To develop comfortably, you should use `Linux Ubuntu 20.04` or `macOS`. Developing on Windows is not advised.
+
+:::caution
+
+Casper does not officially support `macOS`. If you encounter any problems, reach out to the community on [Telegram](https://t.me/casperblockchain) or [Discord](https://discord.com/invite/casperblockchain).
+
+:::
 
 ## Preparing your Development Environment
 
@@ -120,7 +126,7 @@ Familiarize yourself with the essential Casper crates described [here](./essenti
 
 ## Installing the Casper Client {#install-casper-client}
 
-The default Casper client is on [crates.io](https://crates.io/crates/casper-client). This client can transmit your deploys to a Casper network.
+The default Casper client is on [crates.io](https://crates.io/crates/casper-client). This client can transmit your transactions to a Casper network.
 
 ```bash
 cargo install casper-client
@@ -166,7 +172,7 @@ You will find the `casper-client` executable in the `target/release` directory.
 
 If you plan to compile contracts from the source code, including those provided in the [casper-node](https://github.com/casper-network/casper-node) repository, install `CMake` with the commands below.
 
-[CMake](https://cmake.org/) is a popular build tool that we will use, and you may have it installed. If you do, make sure that you have the latest version. If you need to install or upgrade it, follow the steps below or on the [CMake website](https://cmake.org/resources/). Once installed, check your version as shown below.
+[CMake](https://cmake.org/) is a popular build tool that we will use, and you may have it installed. If you do, make sure that you have the latest version. If you need to install or upgrade it, follow the steps below or on the [CMake website](https://cmake.org/install/). Once installed, check your version as shown below.
 
 <Tabs>
 <TabItem value="Linux" label="Linux">
@@ -234,11 +240,13 @@ The following video complements the instructions below, showing you the expected
 
 The Casper blockchain uses an on-chain account-based model, uniquely identified by an `AccountHash` derived from a specific `PublicKey`.
 
-By default, a transactional interaction with the blockchain takes the form of a `Deploy` cryptographically signed by the key-pair corresponding to the `PublicKey` used to create the account.
+By default, a transactional interaction with the blockchain takes the form of a `Transaction` cryptographically signed by the key-pair corresponding to the `PublicKey` used to create the account.
 
-Developers must create accounts using the [Casper command-line client](../concepts/accounts-and-keys.md#option-1-key-generation-using-the-casper-client) to access the `secret_key.pem` file needed during development.
+Users can create accounts using the [Casper command-line client](../concepts/accounts-and-keys.md#option-1-generating-keys-using-the-casper-client-option-1-key-generation-using-the-casper-client). 
 
-Some Casper networks, such as the official Testnet and Mainnet, provide wallets that allow account creation as outlined here. However, these wallets do not give developers access to the secret key file.
+Alternatively, some Casper networks, such as the official Testnet and Mainnet, provide a browser-based block explorer that allows account creation as outlined [here](../concepts/accounts-and-keys.md#option-2-generating-keys-using-a-block-explorer-option-2-key-generation-using-a-block-explorer). 
+
+Use either method to generate an account and its corresponding cryptographic key-pair.
 
 ### Generating the account hash
 
@@ -258,17 +266,11 @@ On Mainnet, a pre-existing account must transfer CSPR tokens to the newly create
 
 ## Acquiring a Node Address from the Network {#acquire-node-address-from-network-peers}
 
-Clients can interact with a node on the blockchain via requests sent to that node's JSON-RPC endpoint, `http://<node-address>:7777` by default.
+Clients can interact with a node on the blockchain via requests sent to that node's JSON-RPC endpoint, `http://<node-ip-address>:7777` by default.
 
-The node address is the IP address or URL of a peer node.
+The node address is the IP of a peer node.
 
-Casper Labs provides public Casper node JSON-RPC endpoints for each network:
-
-* Mainnet: https://rpc.mainnet.casperlabs.io/rpc
-* Testnet: https://rpc.testnet.casperlabs.io/rpc
-* Integration network: https://rpc.integration.casperlabs.io/rpc
-
-Additionally, both the official Testnet and Mainnet provide block explorers that list the IP addresses of nodes on their respective networks.
+Both the official Testnet and Mainnet provide block explorers that list the IP addresses of nodes on their respective networks.
 
 You can get the `node-ip-address` of a node on the network by visiting the following block explorers:
 

@@ -9,7 +9,7 @@ This document details a workflow where an account holder on a Casper network can
 ## Prerequisites
 
 1. You meet all prerequisites listed [here](../prerequisites.md), including having a valid `node-address` and the Casper command-line client
-2. You have previously [installed a smart contract](../cli/sending-deploys.md) to a Casper network
+2. You have previously [installed a smart contract](../cli/sending-transactions.md) to a Casper network
 3. [Acquiring a Validator's Public Key](#acquiring-a-validators-public-key)
 
 ### Acquiring a Validator's Public Key {#acquiring-a-validators-public-key}
@@ -66,7 +66,7 @@ The `delegate` entry point expects three arguments:
 8. `amount`: The number of tokens to be delegated
 9. `delegator`: The hexadecimal public key of the account delegating tokens to a validator. **This key must match the secret key that signs the delegation**
 
-The command will return a deploy hash, which is needed to verify the deploy's processing results. Refer to the [Deploy Status](../../resources/beginner/querying-network.md#querying-deploys) section for more details.
+The command will return a deploy hash, which is needed to verify the deploy's processing results. Refer to the [Deploy Status](../../resources/beginner/querying-network.md#deploy-status) section for more details.
 
 :::note
 
@@ -147,7 +147,7 @@ The `delegate` entry point expects three arguments:
 7. `amount`: The number of tokens to be delegated
 8. `delegator`: The hexadecimal public key of the account delegating tokens to a validator. **This key must match the secret key that signs the delegation**
 
-The command will return a deploy hash, which is needed to verify the deploy's processing results. Refer to the [Deploy Status](../../resources/beginner/querying-network.md#querying-deploys) section for more details.
+The command will return a deploy hash, which is needed to verify the deploy's processing results. Refer to the [Deploy Status](../../resources/beginner/querying-network.md#deploy-status) section for more details.
 
 **Example:**
 
@@ -170,7 +170,7 @@ Next, [confirm the delegation](#confirming-the-delegation).
 
 ## Confirming the Delegation {#confirming-the-delegation}
 
-A Casper network maintains an _auction_ where validators _bid_ on slots to become part of the active validator set. Delegation rewards are only earned for a validator who has won the auction and is part of the active set. Thus to ensure the delegated tokens can earn rewards, you must first check the foloowing:
+A Casper network maintains an _auction_ where validators _bid_ on slots to become part of the active validator set. Delegation rewards are only earned for a validator who has won the auction and is part of the active set. Thus to ensure the delegated tokens can earn rewards, you must first check the following:
 
 1. Your delegation is part of the _bid_ to the _auction_
 2. The validator is part of the _active_ validator set

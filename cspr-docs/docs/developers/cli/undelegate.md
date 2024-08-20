@@ -51,7 +51,7 @@ The `undelegate` entry point expects three arguments:
 8. `amount`: The number of tokens to be undelegated
 9. `delegator`: The hexadecimal public key of the account undelegating tokens from a validator. **This key must match the secret key that signs the delegation**
 
-The command will return a deploy hash, which is needed to verify the deploy's processing results. Refer to the [Deploy Status](../../resources/beginner/querying-network.md#querying-deploys) section for more details.
+The command will return a deploy hash, which is needed to verify the deploy's processing results. Refer to the [Deploy Status](../../resources/beginner/querying-network.md#deploy-status) section for more details.
 
 :::note
 
@@ -109,7 +109,7 @@ The `undelegate` entry point expects three arguments:
 7. `amount`: The number of tokens to be undelegated
 8. `delegator`: The hexadecimal public key of the account undelegating tokens from a validator. **This key must match the secret key that signs the delegation**
 
-The command will return a deploy hash, which is needed to verify the deploy's processing results. Refer to the [Deploy Status](../../resources/beginner/querying-network.md#querying-deploys) section for more details.
+The command will return a deploy hash, which is needed to verify the deploy's processing results. Refer to the [Deploy Status](../../resources/beginner/querying-network.md#deploy-status) section for more details.
 
 **Example:**
 

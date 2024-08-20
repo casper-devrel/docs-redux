@@ -180,7 +180,7 @@ struct GossipedAddress(SocketAddr);
 
 ### Consensus
 
-A consensus message is sent exclusively between instances of the consensus component, from one peer to another. A precise description of the Highway consensus protocol is out of scope of this document, see the `consensus::Message` type or an appropriate description of the underlying protocol for details.
+A [consensus](./consensus.md) message is sent exclusively between instances of the consensus component, from one peer to another.
 
 ### Gossiping
 
@@ -263,7 +263,7 @@ If the item was not found, `serialized_item` MUST contain a `FetchedOrNotFound::
 
 A node MUST not send any items to a peer that it itself has not verified.
 
-The following table shows which tag corresponds to which ID and item type. Type definitions for `DeployHash` and `GossippedAddress` can be found earlier in this document, other types are described following this section.  Further details of many of these types can be found in the [Serialization Standard](../serialization-standard.md), but be aware that those docs describe serializing using bytesrepr rather than bincode.
+The following table shows which tag corresponds to which ID and item type. Type definitions for `DeployHash` and `GossippedAddress` can be found earlier in this document, other types are described following this section.  Further details of many of these types can be found in the [Serialization Standard](../serialization/index.md), but be aware that those docs describe serializing using bytesrepr rather than bincode.
 
 | Tag                                      | ID type               | Payload (item) type        |
 | ---------------------------------------- | --------------------- | -------------------------- |

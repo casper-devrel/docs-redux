@@ -62,8 +62,8 @@ name = "tests"
 In Github, you will find an [example](https://github.com/casper-ecosystem/cep18/tree/dev/cep18) containing a Casper Fungible Token [contract](https://github.com/casper-ecosystem/cep18/blob/dev/cep18/src/main.rs) implementation with the corresponding [tests](https://github.com/casper-ecosystem/cep18/tree/dev/tests/src). The tests follow this sequence:
 
 - [Step 1](#setting-up-the-testing-context) - Specify the starting state of the blockchain.
-- [Step 2](#installing-the-contract) - Deploy the compiled contract to the blockchain and query it.
-- Step 3 - Create additional deploys for calling each of the entrypoints in the contract.
+- [Step 2](#deploying-the-contract) - Deploy the compiled contract to the blockchain and query it.
+- [Step 3](#invoking-contract-entrypoints) - Create additional deploys for calling each of the entrypoints in the contract.
 
 The test fixture accomplishes these steps by simulating a real-world deploy that stores the contract on the blockchain and then invoking the contract's entrypoints.
 
@@ -215,7 +215,7 @@ The previous step has simulated sending a real deploy on the network. The next c
 
 These are followed by functions that check specific aspects of the CEP-18 contract. These include `test_cep18_transfer`, `make_cep18_approve_request` and `test_approve_for`.
 
-The following code snippet is an example function that tests the ability to transfer CEP-18 tokens from the default address to the two other addresses established in [contract installation](#installing-the-contract):
+The following code snippet is an example function that tests the ability to transfer CEP-18 tokens from the default address to the two other addresses established in [contract installation](#installing-the-contract-deploying-the-contract):
 
 <details>
 <summary>Example helper function</summary>

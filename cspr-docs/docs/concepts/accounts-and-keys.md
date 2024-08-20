@@ -1,18 +1,16 @@
 ---
 title: Accounts and Keys
 ---
-import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Accounts and Cryptographic Keys
 
 The Casper blockchain uses an on-chain [account-based model](./design/casper-design.md#accounts-head), uniquely identified by an `AccountHash` derived from a specific `PublicKey`. The `AccountHash` is a 32-byte hash derived from any of the supported `PublicKey` variants below to standardize keys that can vary in length.
 
-By default, a transactional interaction with the blockchain takes the form of a `Deploy` cryptographically signed by the key-pair corresponding to the `PublicKey` used to create the account.
+By default, a transactional interaction with the blockchain takes the form of a `Transaction` cryptographically signed by the key-pair corresponding to the `PublicKey` used to create the account.
 
-The Casper platform supports two types of keys for creating accounts and signing transactions:
-
+The Casper platform supports two types of keys for creating accounts and signing transactions: 
 - [Ed25519](#eddsa-keys) keys, which use the Edwards-curve Digital Signature Algorithm (EdDSA) and are 66 bytes long
-- [Secp256k1](#ecdsa-keys) keys, which use the Elliptic Curve Digital Signature Algorithm (ECDSA) with the P-256 curve; they are 68 bytes long and are also found on the Ethereum blockchain
+- [Secp256k1](#ecdsa-keys) keys, which use the  Elliptic Curve Digital Signature Algorithm (ECDSA) with the P-256 curve; they are 68 bytes long and are also found on the Ethereum blockchain
 
 You can generate keys using both formats, and it is also possible to [work with existing Ethereum keys](#working-with-existing-ethereum-keys).
 
@@ -20,7 +18,7 @@ You can also [generate an account hash](#generating-an-account-hash) from a publ
 
 ## Creating Accounts and Keys {#creating-accounts-and-keys}
 
-When you create an account on the Casper blockchain, a cryptographic key-pair will be created when using either the [Casper command-line client](#option-1-key-generation-using-the-casper-client) or a block explorer. Developers must use the Casper command-line client as described below. Otherwise, they won't have access to the secret key file needed during development.
+When you create an account on the Casper blockchain, a cryptographic key-pair will be created when using either the [Casper command-line client](#option-1-key-generation-using-the-casper-client) or a block explorer.
 
 :::note
 
@@ -41,8 +39,7 @@ mkdir ed25519-keys
 casper-client keygen ed25519-keys/
 tree ed25519-keys/
 ```
-
-Sample output of the `tree` command shows the contents of the _ed25519-keys_ folder:
+Sample output of the `tree` command shows the contents of the *ed25519-keys* folder:
 
 ```bash
 ed25519-keys/
@@ -54,10 +51,9 @@ ed25519-keys/
 ```
 
 Here are some details about the files generated:
-
-1. `public_key.pem` is a _PEM_-encoded public key
+1. `public_key.pem` is a *PEM*-encoded public key
 2. `public_key_hex` is a hexadecimal-encoded string of the public key
-3. `secret_key.pem` is the _PEM_-encoded secret key
+3. `secret_key.pem` is the *PEM*-encoded secret key
 
 The public-key-hex for `Ed25519` keys starts with 01 and is 66 bytes long:
 
@@ -75,8 +71,7 @@ mkdir secp256k1-keys
 casper-client keygen -a secp256k1 secp256k1-keys/
 tree secp256k1-keys/
 ```
-
-Sample output of the `tree` command shows the contents of the _secp256k1-keys_ folder:
+Sample output of the `tree` command shows the contents of the *secp256k1-keys* folder:
 
 ```bash
 secp256k1-keys/
@@ -110,15 +105,14 @@ Start by creating an account using the [Casper Wallet](https://www.casperwallet.
 
 :::caution
 
-Developers must generate keys using the [Casper command-line client](#option-1-key-generation-using-the-casper-client) to access the `secret_key.pem` file.
-
 The Casper Signer has been replaced with the Casper Wallet and will be deprecated. We recommend migrating all your Casper accounts to the Casper Wallet as outlined [here](https://www.casperwallet.io/user-guide/signer-user-start-here).
 
 :::
 
+
 ## Funding your Account
 
-Once you create your account, you can [fund the account's main purse](./../developers/prerequisites.md#fund-your-account) to finish the process of setting it up.
+Once you create your account, you can [fund the account's main purse](../developers/prerequisites.md#funding-an-account-fund-your-account) to finish the process of setting it up. 
 
 :::note
 
@@ -138,7 +132,7 @@ Private key:29773906aef3ee1f5868371fd7c50f9092205df26f60e660cafacbf2b95fe086
 
 To use existing Ethereum keys, the Casper virtual machine (VM) needs to know that the key is a `Secp256k1` type. To achieve this, we will prefix the public key hex with 02, as shown in the example below.
 
-The Casper command-line client provides an example of how this works.
+The Casper command-line client provides an example of how this works. 
 
 **Example**:
 
@@ -157,24 +151,24 @@ casper-client transfer \
 
 :::tip
 
-The payment amount varies based on each deploy and network [chainspec](../concepts/glossary/C.md#chainspec).
+The payment amount varies based on each transaction and network [chainspec](../concepts/glossary/C.md#chainspec).
 
 :::
 
-The Casper command-line client requires the secret key in _PEM_ format to send a Deploy from this account. If you want to use existing Ethereum keys with the command-line client, a conversion to _PEM_ format is needed.
+The Casper command-line client requires the secret key in *PEM* format to send a transaction from this account. If you want to use existing Ethereum keys with the command-line client, a conversion to *PEM* format is needed.
 
-The following example is a JS script that generates a _PEM_ file, using a [key encoder](https://github.com/stacks-network/key-encoder-js) and Node.js. To install these components, do the following:
+The following example is a JS script that generates a *PEM* file, using a [key encoder](https://github.com/stacks-network/key-encoder-js) and Node.js. To install these components, do the following:
 
 ```bash
 sudo apt install nodejs
 npm install key-encoder
 ```
 
-Then create the JS script _convert-to-pem.js_ using _vi_ or _nano_, and include this content:
+Then create the JS script *convert-to-pem.js* using _vi_ or _nano_, and include this content:
 
 ```javascript
-var KeyEncoder = require("key-encoder"),
-  keyEncoder = new KeyEncoder.default("secp256k1");
+var KeyEncoder = require('key-encoder'),
+keyEncoder = new KeyEncoder.default('secp256k1');
 let priv_hex = "THE SECRET KEY TO ENCODE";
 let priv_pem = keyEncoder.encodePrivate(priv_hex, "raw", "pem");
 console.log(priv_pem);
@@ -224,7 +218,7 @@ openssl pkey -in secret_key.pem -pubout -out public_key.pem
 
 ## Generating an Account Hash {#generating-an-account-hash}
 
-To generate the account hash for a public key, use the _account-address_ option of the Casper client. The argument for the _public-key_ must be a properly formatted public key. The public key may also be read from a file, which should be one of the two files generated via the _keygen_ command: _public_key_hex_ or _public_key.pem_.
+To generate the account hash for a public key, use the *account-address* option of the Casper client. The argument for the *public-key* must be a properly formatted public key. The public key may also be read from a file, which should be one of the two files generated via the *keygen* command: *public_key_hex* or *public_key.pem*.
 
 ```bash
 casper-client account-address --public-key <FORMATTED STRING or PATH>
@@ -291,5 +285,6 @@ casper-client get-account-info --help
 Using the block explorer for [Mainnet](https://cspr.live/) or [Testnet](https://testnet.cspr.live/), open the Account in question, and expand the `Raw Data` section. Look for the `main_purse` field and find the corresponding URef. If you do not see data in the `Raw Data` section, then the account has not been funded yet.
 
 <p align="center">
-<img src={useBaseUrl("/image/design/main_purse_uref.png")} alt="Image showing an account's main purse" width="500" />
+<img src={"/image/design/main_purse_uref.png"} alt="Image showing an account's main purse" width="500"/>
 </p>
+

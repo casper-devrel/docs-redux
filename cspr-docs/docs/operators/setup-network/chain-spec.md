@@ -13,7 +13,7 @@ These settings describe the active protocol version.
 |Attribute         |Description                                    | Mainnet Setting |
 |----------------- |-----------------------------------------------|-----------------|
 |version          | The Casper node protocol version. | '1.5.2'|
-|hard_reset       | When set to true, clear blocks and deploys back to the switch block (the end of the last era) just before the activation point. Used during the upgrade process to reset the network progress. In most cases, this setting should be true.| true|
+|hard_reset       | When set to true, clear blocks and transactions back to the switch block (the end of the last era) just before the activation point. Used during the upgrade process to reset the network progress. In most cases, this setting should be true.| true|
 |activation_point | The protocol version that should become active. <br /><br />If it is a timestamp string, it represents the timestamp for the genesis block. This is the beginning of Era 0. By this time, a sufficient majority (> 50% + F/2 — see the `finality_threshold_fraction` below) of validator nodes must be running to start the blockchain. This timestamp is also used in seeding the pseudo-random number generator used in the contract runtime for computing the genesis post-state hash. <br /><br />If it is an integer, it represents an era ID, meaning the protocol version becomes active at the start of this era. | 9100|
 
 
@@ -50,8 +50,11 @@ These settings manage the core protocol behavior.
 |prune_batch_size | Global state prune batch size for tip pruning in version 1.4.15. Possible values:<br />- 0 when the feature is OFF<br />- Integer if the feature is ON, representing the number of eras to process per block.| 0|
 |strict_argument_checking | Enables strict arguments checking when calling a contract; i.e., all non-optional args are provided and they are of the correct `CLType`. | false|
 |simultaneous_peer_requests | Number of simultaneous peer requests. | 5|
-|consensus_protocol | The consensus protocol to use. Options are 'Zug' or 'Highway'. | 'Highway'|
+|consensus_protocol | The consensus protocol to use. Options are 'Zug' or 'Highway'. | 'Zug'|
 |max_delegators_per_validator | The maximum amount of delegators per validator. If the value is 0, there is no maximum capacity. | 1200|
+|finders_fee | The split in finality signature rewards between block producer and participating signers. | [1, 5]|
+|finality_signature_proportion | The proportion of baseline rewards going to reward finality signatures specifically. | [1, 2]|
+|signature_rewards_max_delay | Lookback interval indicating how many past blocks we are looking at to reward. | 3|
 
 ## highway
 
@@ -62,21 +65,23 @@ These settings configure the Highway Consensus protocol.
 |maximum_round_length | Highway dynamically chooses its round length between `minimum_block_time` and `maximum_round_length`. | '132seconds'|
 |reduced_reward_multiplier | The factor by which rewards for a round are multiplied if the greatest summit has ≤50% quorum, i.e., no finality. Expressed as a fraction (1/5 by default on Mainnet). | [1, 5]|
 
-## deploys
+## transactions
 
-These settings manage deploys and their lifecycle.
+These settings manage transactions and their lifecycle.
 
 |Attribute         |Description                                    | Mainnet Setting |
 |----------------- |-----------------------------------------------|-----------------|
 |max_payment_cost | The maximum number of motes allowed to be spent during payment. 0 means unlimited. | '0'|
-|max_ttl | The duration after the deploy timestamp during which the deploy can be included in a block. | '18hours'|
-|max_dependencies | The maximum number of other deploys a deploy can depend on (requiring them to have been executed before it can execute). | 10|
-|max_block_size | Maximum block size in bytes, including deploys contained by the block. 0 means unlimited. | 10_485_760|
-|max_deploy_size | Maximum deploy size in bytes. Size is of the deploy when serialized via ToBytes. | 1_048_576|
-|block_max_deploy_count | The maximum number of non-transfer deploys permitted in a single block. | 50|
-|block_max_transfer_count | The maximum number of Wasm-less transfer deploys permitted in a single block. | 1250|
+|max_ttl | The duration after the transaction timestamp during which the transaction can be included in a block. | '18hours'|
+|max_dependencies | The maximum number of other transactions a transaction can depend on (requiring them to have been executed before it can execute). | 10|
+|max_block_size | Maximum block size in bytes, including transactions contained by the block. 0 means unlimited. | 10_485_760|
+|max_transaction_size | Maximum transaction size in bytes. Size is of the transaction when serialized via ToBytes. | 1_048_576|
+|block_max_mint_count | Maximum number of mint transactions (i.e. transfers) allowed in a block.| 500|
+|block_max_auction_count | Maximum number of auction transactions allowed in a block. | 100|
+|block_max_install_upgrade_count | Maximum number of installer/upgrader transactions allowed in a block.| 2|
+|block_max_standard_count | Maximum number of other transactions (non-transfer, non-staking, non-installer/upgrader) allowed in a block.| 50|
 |block_max_approval_count | The maximum number of approvals permitted in a single block. | 2600|
-|block_gas_limit | The upper limit of the total gas of all deploys in a block. | 4_000_000_000_000|
+|block_gas_limit | The upper limit of the total gas of all transactions in a block. | 4_000_000_000_000|
 |payment_args_max_length | The limit of length of serialized payment code arguments. | 1024|
 |session_args_max_length | The limit of length of serialized session code arguments. | 1024|
 |native_transfer_minimum_motes | The minimum amount in motes for a valid native transfer. | 2_500_000_000|
@@ -148,9 +153,23 @@ The following settings manage `br_table` Wasm opcodes.
 |cost | Fixed cost per `br_table` opcode. | 35_000|
 |size_multiplier |  Size of target labels in the `br_table` opcode will be multiplied by `size_multiplier`. | 100|
 
+
+## wasm.messages_limits
+
+The following chainspec settings manage the cost of contract-level messages.
+
+
+|Attribute               |Description                                    |     Mainnet Setting  |
+|----------------------- |-----------------------------------------------|----------------------|
+|max_topic_name_size     | Maximum size of the topic name.                               | 256  |
+|max_topics_per_contract | Maximum number of topics that can be added for each contract. | 128  |
+|max_message_size        | Maximum size in bytes of the serialized message payload.      | 1_024|
+
+
 ### wasm.host_function_costs
 
 The following settings specify costs for low-level bindings for host-side ("external") functions. More documentation and host function declarations are located in [smart_contracts/contract/src/ext_ffi.rs](https://github.com/casper-network/casper-node/blob/release-1.5.2/smart_contracts/contract/src/ext_ffi.rs).
+
 ```
 - add = { cost = 5_800, arguments = [0, 0, 0, 0] }
 - add_associated_key = { cost = 9_000, arguments = [0, 0, 0] }
@@ -158,10 +177,12 @@ The following settings specify costs for low-level bindings for host-side ("exte
 - blake2b = { cost = 200, arguments = [0, 0, 0, 0] }
 - call_contract = { cost = 4_500, arguments = [0, 0, 0, 0, 0, 420, 0] }
 - call_versioned_contract = { cost = 4_500, arguments = [0, 0, 0, 0, 0, 0, 0, 420, 0] }
+- cost_increase_per_message = 50
 - create_contract_package_at_hash = { cost = 200, arguments = [0, 0] }
 - create_contract_user_group = { cost = 200, arguments = [0, 0, 0, 0, 0, 0, 0, 0] }
 - create_purse = { cost = 2_500_000_000, arguments = [0, 0] }
 - disable_contract_version = { cost = 200, arguments = [0, 0, 0, 0] }
+- emit_message = { cost = 200, arguments = [0, 0, 0, 0] }
 - get_balance = { cost = 3_800, arguments = [0, 0, 0] }
 - get_blocktime = { cost = 330, arguments = [0] }
 - get_caller = { cost = 380, arguments = [0] }
@@ -174,6 +195,7 @@ The following settings specify costs for low-level bindings for host-side ("exte
 - has_key = { cost = 1_500, arguments = [0, 840] }
 - is_valid_uref = { cost = 760, arguments = [0, 0] }
 - load_named_keys = { cost = 42_000, arguments = [0, 0] }
+- manage_message_topic = { cost = 200, arguments = [0, 0, 0, 0] }
 - new_uref = { cost = 17_000, arguments = [0, 0, 590] }
 - random_bytes = { cost = 200, arguments = [0, 0] }
 - print = { cost = 20_000, arguments = [0, 4_600] }
