@@ -221,6 +221,7 @@ module.exports = {
                 "developers/cli/undelegate",
                 "developers/cli/sending-transactions",
                 "developers/cli/installing-contracts",
+                "developers/cli/verifying-contracts",
                 "developers/cli/querying-global-state",
                 "developers/cli/calling-contracts",
                 "developers/cli/opcode-costs",
