@@ -497,6 +497,39 @@ casper-client get-transaction \
 
 </details>
 
+Note the contract entity address in the above sample output. You will need this to [query the contract](./querying-global-state.md#query-the-contract) installed. In this example, the address is `entity-contract-a1d0bf9d96f3efc9ea67f627df3a7cba390bfc582956032db91060ca5d413e68`.
+
+```json
+{
+  "key": "entity-contract-a1d0bf9d96f3efc9ea67f627df3a7cba390bfc582956032db91060ca5d413e68",
+  "kind": {
+    "Write": {
+      "AddressableEntity": {
+        "protocol_version": "2.0.0",
+        "entity_kind": {
+          "SmartContract": "VmCasperV1"
+        },
+        "package_hash": "package-50d487af45f8cec533c6813801a7630ff97e5ee3964daf7915d5451b4812ac94",
+        "byte_code_hash": "byte-code-0577a7c92fd20e1af76aa9e257631cb240e8187191bba2025e88663d0288e936",
+        "main_purse": "uref-2cb7e46fcde2c4d395a6850bb3b7edbb0b4db6018643e535fa0dfdeeb006d6ef-007",
+        "associated_keys": [
+          {
+            "account_hash": "account-hash-6a56c4eee172043975aea72221eaf09f3c3a24f09a379935e44c9979f1ae9463",
+            "weight": 1
+          }
+        ],
+        "action_thresholds": {
+          "deployment": 1,
+          "upgrade_management": 1,
+          "key_management": 1
+        },
+        "message_topics": []
+      }
+    }
+  }
+}
+```
+
 Next, [query global state](./querying-global-state.md) to see more details about the successfully installed contract.
 
 <!-- Hide the video for now, as it needs to be updated.
