@@ -48,16 +48,18 @@ casper-client put-txn session\
     --session-entry-point <NAME> \
     --category <INSTALL-UPGRADE|LARGE|MEDIUM|SMALL> \
     --gas-price-tolerance <INTEGER> \
+    --pricing-mode fixed \
     --secret-key <PATH> | --initiator-address <HEX STRING>
 ```
 
 1. `node-address` - An IP address of a peer on the network. The default port of the sidecar's JSON-RPC server on Mainnet and Testnet is 7777. You can find a list of trusted peers in network's configuration file, `config.toml`. Here is an [example](https://github.com/casper-network/casper-node/blob/dev/resources/production/config-example.toml#L131). You may send transactions to one of the trusted nodes or use them to query other online nodes.
-2. `chain-name` - The chain-name to the network where you wish to send the Transaction. For Mainnet, use *casper*. For Testnet, use *casper-test*. As you can see, this example uses the Testnet
-3. `transaction-path` - The path to the contract Wasm, which should point to wherever you compiled the contract (.wasm file) on your computer
-4. `session-entry-point` - Name of the method that will be used when calling the session contract
+2. `chain-name` - The chain-name to the network where you wish to send the Transaction. For Mainnet, use *casper*. For Testnet, use *casper-test*. As you can see, this example uses the Testnet.
+3. `transaction-path` - The path to the contract Wasm, which should point to wherever you compiled the contract (.wasm file) on your computer.
+4. `session-entry-point` - Name of the method that will be used when calling the session contract.
 5. `category` - The transaction category, based on size of the Wasm included. `install-upgrade` being the largest, descending in size through `large`, `medium` and `small`
-6. `gas-price-tolerance` - The maximum gas price that the user is willing to pay for this transaction
-7. `secret-key` or `initiator-address` - The file name containing the secret key of the account paying for the Transaction, or the address of the account initiating the transaction. `initiator-address` can be a public key, account hash or an entity address.
+6. `gas-price-tolerance` - The maximum gas price that the user is willing to pay for this transaction.
+7. `pricing-mode` - The pricing mode used for this transaction, in this case `fixed`.
+8. `secret-key` or `initiator-address` - The file name containing the secret key of the account paying for the Transaction, or the address of the account initiating the transaction. `initiator-address` can be a public key, account hash or an entity address.
 
 The command will return a transaction hash, which is needed to verify the transaction's execution results. Sending the transaction and receiving the transaction hash does not mean the transaction was processed successfully. Therefore, you must check the transaction execution using the transaction hash. See the transaction lifecycle for more details.
 
@@ -1421,7 +1423,7 @@ If your test configuration matches your production [chainspec](../../concepts/gl
 
 Please be aware that sending a transaction always requires payment. This is true regardless of the validity of included Wasm. Depending on how the network was configured, the transaction payment may or may not be refunded, or a hold may placed on the paying purse. See [fee elimination](../../concepts/economics/fee-elimination.md) for more details.
 
-If the transaction failure occurs after session execution begins, the penalty payment of 2.5 CSPR is included in the gas costs of the [failed execution](../../concepts/serialization/types.md#executionresultv2).
+If the transaction failure occurs after session execution begins, the penalty payment of 2.5 CSPR is included in the gas costs of the [failed execution](../../concepts/serialization-standard.md#executionresult-executionresult).
 
 However, if the failure occurs prior to session execution, the penalty payment will not appear in the transaction's gas cost. Depending on the network configuration, the system will deduct the processing fee from the sending account's main purse or place a processing hold on the purse.
 

@@ -14,11 +14,15 @@ NCTL stands for network/node control. [NCTL](https://github.com/casper-network/c
 2.  Make sure you have [Python 3 installed](https://www.python.org/downloads/) if your operating system does not include Python.
 3.  To run NCTL, you will also need [the bash shell](https://www.gnu.org/savannah-checkouts/gnu/bash/bash.html).
 
+<!---TODO Video will need to be updated before making public again.
+
 ## Video Tutorial {#video-tutorial}
 
 If you prefer a video walkthrough of this guide, you can check out this video.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed?v=rE_saHopXXU&list=PL8oWxbJ-csEogSV-M0IPiofWP5I_dLji6&index=2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+-->
 
 ## Installing a Virtual Environment {#installing-a-virtual-environment}
 
@@ -133,13 +137,43 @@ Instructions for MacOS and Linux:
 
 You are now ready to set up and run your local network of Casper nodes.
 
-**Step 10.** Clone the _casper-node-launcher_ software in your working directory, which we will call _WORKING_DIRECTORY_. **Very Important!!! Choose a short path for your working directory**; otherwise, the NCTL tool will report that the path is too long.
+:::note
+
+NCTL will not work properly if the following repositories are downloaded via Github's web GUI. To ensure functionality, use the CLI `git clone` command.
+
+:::
+
+**Step 10.** Clone the _casper-nctl_ software in your working directory, referenced here as _WORKING_DIRECTORY_. **Very Important!!! Choose a short path for your working directory**; otherwise, the NCTL tool will report that the path is too long.
 
 Instructions for MacOS and Linux:
 
 ```bash
-(env) $ cd <WORKING_DIRECTORY>
-(env) $ git clone https://github.com/casper-network/casper-node-launcher
+$ cd <WORKING_DIRECTORY>
+$ git clone https://github.com/casper-network/casper-nctl
+```
+
+**Step 11.** Clone the _casper-node_ software in your working directory.
+
+Instructions for MacOS and Linux:
+
+```bash
+$ git clone https://github.com/casper-network/casper-node
+```
+
+**Step 12.** Clone the _casper-client-rs_ software in your working directory.
+
+Instructions for MacOS and Linux:
+
+```bash
+$ git clone https://github.com/casper-ecosystem/casper-client-rs
+```
+
+**Step 13.** Clone the _casper-node-launcher_ software in your working directory.
+
+Instructions for MacOS and Linux:
+
+```bash
+$ git clone https://github.com/casper-network/casper-node-launcher
 ```
 
 :::note
@@ -148,37 +182,51 @@ Assuming you have set up a small local network, you can speed up the process of 
 
 :::
 
-**Step 11.** Next, clone the _casper-node_ software, also in your working directory.
+**Step 14.** Clone the _casper-sidecar_ software in your working directory. As part of Casper's Condor release, the sidecar is now necessary to interact with a Casper network and will handle any API requests.
 
 Instructions for MacOS and Linux:
 
 ```bash
-(env) $ git clone https://github.com/casper-network/casper-node
+$ git clone https://github.com/casper-network/casper-sidecar
 ```
 
-**Step 12.** Finally, clone the _casper-client-rs_ software in your working directory.
-
-Instructions for MacOS and Linux:
+**Step 15.** You may need to extend your `.bashrc` file to make NCTL commands available from the terminal session. You can do so using the following commands:
 
 ```bash
-(env) $ git clone https://github.com/casper-ecosystem/casper-client-rs
+cd YOUR_WORKING_DIRECTORY/casper-nctl
+
+cat >> $HOME/.bashrc <<- EOM
+
+# ----------------------------------------------------------------------
+# CASPER - NCTL
+# ----------------------------------------------------------------------
+
+# Activate NCTL shell.
+. $(pwd)/activate
+
+EOM
 ```
 
-
-**Step 13.** Activate the NCTL environment with the following command.
-
-Instructions for MacOS and Linux:
+Followed by refreshing the bash session:
 
 ```bash
-(env) $ source casper-node/utils/nctl/activate
+. $HOME/.bashrc
 ```
 
-**Step 14.** Compile the NCTL binary scripts. The following command compiles both the _casper-node_ and the _casper-client_ in release mode.
+**Step 16.** Activate the NCTL environment with the following command.
 
 Instructions for MacOS and Linux:
 
 ```bash
-(env) $ nctl-compile
+$ source casper-node/utils/nctl/activate
+```
+
+**Step 17.** Compile the NCTL binary scripts. The following command compiles both the _casper-node_ and the _casper-client_ in release mode.
+
+Instructions for MacOS and Linux:
+
+```bash
+$ nctl-compile
 ```
 
 :::note
@@ -187,12 +235,12 @@ The compilation takes some time, so it might be a perfect moment to get some cof
 
 :::
 
-**Step 15.** Set up all the assets required to run a local network, including binaries, chainspec, config, faucet, and keys. Also, spin up the network right after. The default network will have 10 nodes, with 5 active nodes and 5 inactive nodes.
+**Step 18.** Set up all the assets required to run a local network, including binaries, chainspec, config, faucet, and keys. Also, spin up the network right after. The default network will have 10 nodes and 10 instances of the sidecar, with 5 active nodes and sidecars and 5 inactive nodes and sidecars.
 
 Instructions for MacOS and Linux:
 
 ```bash
-(env) $ nctl-assets-setup && nctl-start
+$ nctl-assets-setup && nctl-start
 ```
 
 Once a network is up and running, you can control each node within the network and add new nodes to the network.
@@ -209,13 +257,13 @@ Here is the command line output you would expect.
 
 ## Stopping the Network {#stopping-the-network}
 
-**Step 15.** Although not necessary, you can stop and clean the NCTL setup with the following commands.
+**Step 19.** Although not necessary, you can stop and clean the NCTL setup with the following commands.
 
 Instructions for MacOS and Linux:
 
 ```bash
-(env) $ nctl-stop
-(env) $ nctl-clean
+$ nctl-stop
+$ nctl-clean
 ```
 
 ## Next Steps {#next-steps}
