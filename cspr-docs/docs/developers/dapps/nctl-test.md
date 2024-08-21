@@ -132,7 +132,7 @@ This command will return information pertaining to the account, including the `N
 
 * The **chain name**, entered in this instance using `--chain-name "casper-net-1"`
 
-* The **package hash**, entered in this instance using `--package-address package-47b8b489d54c378144bf85429f4b29c8b47142d542272086f378b9d4e29cada4`
+* The **package hash**, entered in this instance using `--package-address package-47b8b489d54c378144bf85429f4b29c8b47142d542272086f378b9d4e29cada4`.
 
 * The **gas price tolerance** in CSPR, which is the maximum amount of gas you are willing to pay for execution. 
 
