@@ -14,7 +14,7 @@ This page explains how to query global state to find account, contract, and pack
 
 ## Getting the State Root Hash {#get-state-root-hash}
 
-The first step in querying the global state is obtaining the state root hash. The state root hash acts as an identifier for the current state of the network (global state). It is like a Git commit ID for commit history, and it provides a snapshot of the blockchain state at a specific point in time.
+The first step in querying the global state is obtaining the state root hash. The state root hash acts as an identifier for the current state of the network (global state). It is like a Git commit ID for commit history, providing a snapshot of the blockchain state at a specific time.
 
 :::note
 
@@ -49,7 +49,7 @@ casper-client get-state-root-hash --node-address http://localhost:11101
 
 ## Querying an Account
 
-To find your account details, start by querying global state using the account hash. The response will contain the entity account identifier, which is needed to query more details about the account. You will need the following information:
+To find your account details, start by querying global state using the account hash. The response will contain the entity account identifier, needed to query more details about the account. You will need the following information:
 
 * The **node address**, representing an IP address of a peer on the network.
 
@@ -198,7 +198,7 @@ casper-client account-address --public-key [PATH_TO_PUBLIC_KEY]
 
 ## Querying a Contract
 
-Query global state given the contract identifier and the `query-global-state` command. The contract is stored under the account's named keys, with the key named "counter" and identifier `entity-contract-a1d0bf9d96f3efc9ea67f627df3a7cba390bfc582956032db91060ca5d413e68`. The output will contain the contract's `package_hash`, `main_purse`, `associated_keys`, and `action_thresholds`, but will not contain further details such as the contract's named keys and entry points. For those details, you will need to run the `get-entity` command instead. For the `query-global-state` command, you will need the following information:
+Query global state given the contract identifier and the `query-global-state` command. The contract is stored under the account's named keys, with the key named "counter" and identifier `entity-contract-a1d0bf9d96f3efc9ea67f627df3a7cba390bfc582956032db91060ca5d413e68`. The output will contain the contract's `package_hash`, `main_purse`, `associated_keys`, and `action_thresholds`, but will not contain further details such as the contract's named keys and entry points. You will need to run the `get-entity` command instead for those details. For the `query-global-state` command, you will need the following information:
 
 * The **node address**, representing an IP address of a peer on the network.
 
