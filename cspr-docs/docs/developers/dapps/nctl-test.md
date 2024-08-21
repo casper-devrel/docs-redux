@@ -38,7 +38,7 @@ This document assumes that you setup your NCTL network using the standard settin
 
 You will need the following information to use the `put-transaction session` command:
 
-* The **chain name**, in this case `casper-net-1`. This will appear in our example put-transaction as `--chain-name "casper-net-1"`
+* The **chain name**, in this case `casper-net-1`. This will appear in our example put-transaction as `--chain-name "casper-net-1"`.
 
 * The **secret key** of the account sending the `Transaction`. For this example, we are using node-1 as the sender. The secret key file can be found at *casper-node/utils/nctl/assets/net-1/nodes/node-1/keys/secret_key.pem*. In our example put-transaction, this will appear as `--secret-key /casper/casper-node/utils/nctl/assets/net-1/nodes/node-1/keys/secret_key.pem`. If your Transaction is more complex and requires multiple accounts, NCTL also establishes multiple users for testing.
 
