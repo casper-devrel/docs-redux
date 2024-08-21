@@ -13,7 +13,7 @@ Currently, [gas](./gas-concepts.md) is allocated according to a first-in, first-
 
 Any finite resource on a publicly accessible computer network must be rate-limited, as, otherwise, overuse of this resource is an attack vector \-- a minimal requirement for platform security. However, rate-limiting, implemented on our platform as a simple block gas limit with several lanes, leaves the platform with the problem of fairly and efficiently allocating the gas. We are researching the optimal structure for spot and futures gas markets, and interested readers should consult the relevant [CEPs](https://github.com/casper-network/ceps). In the meantime, this section outlines some basic features of the platform that would underpin any allocation scheme.
 
-### Consensus before execution & basics of payment {#consensus-before-execution--basics-of-payment}
+### Consensus before execution & basics of payment {#consensus-before-execution-basics-of-payment}
 
 The Zug and Highway protocols reach consensus on a block _before_ the block is executed, introducing a subtle difference from platforms like Ethereum. In addition, transactions sent to a Casper network can only be selected based on claimed, rather than used, gas.
 

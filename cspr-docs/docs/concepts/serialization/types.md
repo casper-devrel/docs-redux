@@ -134,7 +134,7 @@ Auction bid variants. It serializes as a single [`u8` value](./primitives.md#clv
 | [Validator](#validatorbid) | 1  | A bid record containing only validator data. |
 | [Delegator](#delegatorbid) | 2  | A bid record containing only delegator data. |
 
-## BlockGlobalAddr {blockglobaladdr}
+## BlockGlobalAddr {#blockglobaladdr}
 
 An address for singleton values associated to a specific block. These are values which are calculated or set during the execution of a block such as the block timestamp, or the total count of messages emitted during the execution of the block.
 
@@ -154,7 +154,7 @@ Identifier for possible ways to retrieve a Block. It can consist of any of the f
 
 -   `state_root_hash`: Identify and retrieve the Block with its state root hash. It serializes to the byte representation of the `state root hash`. The serialized buffer of the `state_root_hash` is 32 bytes long.
 
-## BlockSignatures {block-signatures}
+## BlockSignatures {#block-signatures}
 
 A collection of signatures for a single block, along with the associated block's hash and era ID.
 
@@ -190,9 +190,9 @@ There are two possible versions for `BlockSignatures`, with a prefixed `u8` tag 
 
 ## BlockSyncStatus {#blocksyncstatus}
 
-The status of syncing an individual block. It serializes as the byte representation of the [block hash](./structures.md#block-hash) of the block in question, followed by an [`option`](./primitives.md#option-clvalue-option) representing a [`u64`](./primitives.md#numeric-clvalue-numeric) of the block height and the remainder is the byte representation of the `acquisition_state` as a [string](./primitives.md#string-clvalue-string).
+The status of syncing an individual block. It serializes as the byte representation of the [block hash](./structures.md#block-hash) of the block in question, followed by an [`option`](./primitives.md#clvalue-option) representing a [`u64`](./primitives.md#clvalue-numeric) of the block height and the remainder is the byte representation of the `acquisition_state` as a [string](./primitives.md#clvalue-string).
 
-## BlockTime (#blocktime)
+## BlockTime {#blocktime}
 
 The block time serialized as a single `u64` value.
 
@@ -206,7 +206,7 @@ A `BTreeSet` is a method of storing a set of values within a Casper network. The
 
 ## ByteCode {#bytecode}
 
-A container for a contract's Wasm bytes. It serializes as the single `u8` [BidKind](#bidkind), followed by a [`u32`](./primitives.md#numeric-clvalue-numeric) value describing the size of the remaining [Bytes](#bytes) and then the bytes as described.
+A container for a contract's Wasm bytes. It serializes as the single `u8` [BidKind](#bid-kind), followed by a [`u32`](./primitives.md#clvalue-numeric) value describing the size of the remaining [Bytes](#bytes) and then the bytes as described.
 
 ## Bytes {#bytes}
 
@@ -220,17 +220,17 @@ The type of byte code, serialized as a single `u8` value. A `0` indicates empty 
 
 `Caller` is the identity of a calling entity. It serializes as one of two variants, described below:
 
--   `Initiator` is the overall calling account and serializes as a `u8` tag of 0 followed by the [`account_hash`](#accounthash) of the calling account.
+-   `Initiator` is the overall calling account and serializes as a `u8` tag of 0 followed by the [`account_hash`](#account-hash) of the calling account.
 
--   `Entity` is a calling entity, such as a smart contract or a system contract. It serializes as a `u8` tag of 1 followed by the [`package_hash`](#packagehash) and [`entity_hash`](./structures.md#addressable-entity-hash).
+-   `Entity` is a calling entity, such as a smart contract or a system contract. It serializes as a `u8` tag of 1 followed by the [`package_hash`](#package-hash) and [`entity_hash`](#addressable-entity-hash).
 
 ## CallStackElement {#call-stack-element}
 
 `CallStackElement` is a legacy `enum` created pre-Condor release that represents the origin of a sub-call in a call stack. It begins with a `u8` tag that describes the type of caller as follows:
 
--   `Session`: Session code, which serializes as a `u8` tag of 0 followed by the [`account_hash`](#accounthash) of the calling account.
+-   `Session`: Session code, which serializes as a `u8` tag of 0 followed by the [`account_hash`](#account-hash) of the calling account.
 
--   `StoredSession`: Stored access to a session, serializing as a `u8` of 1 followed by the [`account_hash`](#accounthash), [`contract_package_hash`](./structures.md#contractpackagehash) and the [`contract_hash`](./structures.md#contracthash).
+-   `StoredSession`: Stored access to a session, serializing as a `u8` of 1 followed by the [`account_hash`](#account-hash), [`contract_package_hash`](./structures.md#contractpackagehash) and the [`contract_hash`](./structures.md#contracthash).
 
 -   `StoredContract`: A contract, which serializes as a `u8` tag of 2 followed by the [`contract_package_hash`](./structures.md#contractpackagehash) and the [`contract_hash`](./structures.md#contracthash).
 
@@ -280,7 +280,7 @@ Disabled contract versions, containing the following:
 
 ## Effects {#effects}
 
-A log of all transforms produced during execution, serialized as a vector of [transforms](#transformv2).
+A log of all transforms produced during execution, serialized as a vector of [transforms](#transformV2).
 
 ## Entity Action Thresholds {#entity-action-thresholds}
 
@@ -308,7 +308,7 @@ The type of `Package`, serialized as a `u8` [`EntityKindTag`](#entity-kind-tag) 
 
 -   `System`: A package associated with a native contract implementation. It serializes as a `u8` of 0 followed by a [`SystemEntityType`](#system-entity-type).
 
--   `Account`: A package associated with an Account hash, serialized as a `u8` of 1 followed by an [`account_hash`](#accounthash).
+-   `Account`: A package associated with an Account hash, serialized as a `u8` of 1 followed by an [`account_hash`](#account-hash).
 
 -   `SmartContract`: A package associated with Wasm stored on chain, serialized as a `u8` of 2 followed by a [`transaction_runtime`](./structures.md#transactionruntime).
 
@@ -318,11 +318,11 @@ A tag for the variants of `EntityKind`, serialized as a single `u8` tag of 0 for
 
 ## EntityVersionKey {#entityversionkey}
 
-The major element of `ProtocolVersion` combined with `EntityVersion` serialized as two [`u32`](./primitives.md#numeric-clvalue-numeric) values.
+The major element of `ProtocolVersion` combined with `EntityVersion` serialized as two [`u32`](./primitives.md#clvalue-numeric) values.
 
 ## EntityVersions {#entity-versions}
 
-A collection of entity versions, serialized as a `BTreeMap` where the first 4 bytes represent a `u32` value describing the number of [`EntityVersionKeys`](./structures.md#entityversionkey) mapped to [`AddressableEntityHashes`](./structures.md#addressable-entity-hash) within. The remainder consists of a repeating pattern of serialized `EntityVersionKeys` and `AddressableEntityHashes` of the length dictated by the first four bytes.
+A collection of entity versions, serialized as a `BTreeMap` where the first 4 bytes represent a `u32` value describing the number of [`EntityVersionKeys`](#entityversionkey) mapped to [`AddressableEntityHashes`](#addressable-entity-hash) within. The remainder consists of a repeating pattern of serialized `EntityVersionKeys` and `AddressableEntityHashes` of the length dictated by the first four bytes.
 
 ## EntryPoint (Contract) {#entrypoint}
 
@@ -350,9 +350,9 @@ The type signature of a method. This structure consists of the following fields:
 
 -   `access`: An `enum` describing the possible access control options for a contract entry point. It serializes as a `u8` value of 1 for public or a 2 followed by a [`List`](./primitives.md#clvalue-list) of authorized users.
 
--   [`entry_point_type`](#entry-point-type) 
+-   [`entry_point_type`](../../developers/json-rpc/types_chain.md#entrypoint) 
 
--   [`entry_point_payment`](#entry-point-payment)
+-   [`entry_point_payment`](../../developers/json-rpc/types_chain.md#entrypointpayment)
 
 ### EntryPointAddr
 
@@ -404,13 +404,13 @@ The executable component of a `Deploy`, serialized as a `u8` identifying tag fol
 
 -   `ModuleBytes`: Serializes as a `u8` tag of 0 followed by [`bytes`](#bytes) and [`runtimeargs`](#runtimeargs).
 
--   `StoredContractByHash`: Serializes as a `u8` tag of 1 followed by the contract hash as an [`AddressableEntityHash`](./structures.md#addressable-entity-hash), the name of an entry point as a [String](./primitives.md#string-clvalue-string) and [`runtimeargs`](#runtimeargs).
+-   `StoredContractByHash`: Serializes as a `u8` tag of 1 followed by the contract hash as an [`AddressableEntityHash`](#addressable-entity-hash), the name of an entry point as a [String](./primitives.md#clvalue-string) and [`runtimeargs`](#runtimeargs).
 
--   `StoredContractByName`: Serializes as a `u8` tag of 2 followed by the named key as a [String](./primitives.md#string-clvalue-string), the name of an entry point as a `String` and [`runtimeargs`](#runtimeargs).
+-   `StoredContractByName`: Serializes as a `u8` tag of 2 followed by the named key as a [String](./primitives.md#clvalue-string), the name of an entry point as a `String` and [`runtimeargs`](#runtimeargs).
 
--   `StoredVersionedContractByHash`: Serializes as a `u8` tag of 3 followed by the [`PackageHash`](#package-hash), the `version` as an [`Option`](./primitives.md#clvalue-option), an entry point as a [String](./primitives.md#string-clvalue-string) and [`runtimeargs`](#runtimeargs).
+-   `StoredVersionedContractByHash`: Serializes as a `u8` tag of 3 followed by the [`PackageHash`](#package-hash), the `version` as an [`Option`](./primitives.md#clvalue-option), an entry point as a [String](./primitives.md#clvalue-string) and [`runtimeargs`](#runtimeargs).
 
--   `StoredVersionedContractByName`: Serializes as a `u8` tag of 4 followed by the named key as a [String](./primitives.md#string-clvalue-string), the `version` as an [`Option`](./primitives.md#clvalue-option), the name of an entry point as a `String` and [`runtimeargs`](#runtimeargs).
+-   `StoredVersionedContractByName`: Serializes as a `u8` tag of 4 followed by the named key as a [String](./primitives.md#clvalue-string), the `version` as an [`Option`](./primitives.md#clvalue-option), the name of an entry point as a `String` and [`runtimeargs`](#runtimeargs).
 
 -   `Transfer`: Serializes as a `u8` tag of 5 followed by [`runtimeargs`](#runtimeargs).
 
@@ -420,7 +420,7 @@ The journal of execution transforms from a single deploy.
 
 -   `operations`: The resulting operations, serialized as a [`List`](./primitives.md#clvalue-list) of [operations](#operation).
 
--   `transforms`: The actual [transformation](#transform) performed while executing a deploy.
+-   `transforms`: The actual [transformation](#transformV2) performed while executing a deploy.
 
 ## ExecutionResultV1 {#executionresultv1}
 
@@ -486,13 +486,13 @@ A (labeled) "user group". Each method of a versioned contract may be associated 
 
 They are serialized as a `BTreeMap` where the first 4 bytes represent a `u32` value describing the number of user groups and `BTreeSets` of [`URef`](./primitives.md#clvalue-uref)s held within. The remainder consists of a repeating pattern of serialized user groups and `BTreeSets` of the length dictated by the first four bytes.
 
-## InitiatorAddr (#initiatoraddr)
+## InitiatorAddr {#initiatoraddr}
 
-The address of the initiator of a [`TransactionV1`](./structures.md#transactionv1), which serializes as a `u8` of `0` followed by a [`PublicKey`](#publickey-publickey) or a `1` followed by an [`AccountHash`](#account-hash).
+The address of the initiator of a [`TransactionV1`](./structures.md#transactionV1), which serializes as a `u8` of `0` followed by a [`PublicKey`](#publickey) or a `1` followed by an [`AccountHash`](#account-hash).
 
 ## Keys {#serialization-standard-state-keys}
 
-A _key_ in [Global State](../design/casper-design.md#global-state-head) is one of the following data types:
+A _key_ in [Global State](../design/casper-design.md) is one of the following data types:
 
 -   32-byte account identifier (called an "account identity key")
 -   32-byte immutable contract identifier (called a "hash key")
@@ -567,7 +567,7 @@ Given the different variants for the over-arching `Key` data-type, each of the d
 
 -   `Account` serializes as a 32 byte long buffer containing the byte representation of the underlying `AccountHash`.
 -   `Hash` serializes as a 32 byte long buffer containing the byte representation of the underlying `Hash` itself.
--   `URef` is a tuple that contains the address of the URef and the access rights to that `URef`. The serialized representation of the `URef` is 33 bytes long. The first 32 bytes are the byte representation of the `URef` address, and the last byte contains the bits corresponding to the access rights of the `URef`. Refer to the [CLValue](./primitives.md#clvalue-clvalue) section of this chapter for details on how `AccessRights` are serialized.
+-   `URef` is a tuple that contains the address of the URef and the access rights to that `URef`. The serialized representation of the `URef` is 33 bytes long. The first 32 bytes are the byte representation of the `URef` address, and the last byte contains the bits corresponding to the access rights of the `URef`. Refer to the [CLValue](./primitives.md#clvalue) section of this chapter for details on how `AccessRights` are serialized.
 -   `Transfer` serializes as a 32 byte long buffer containing the byte representation of the hash of the transfer.
 -   `DeployInfo` serializes as 32 byte long buffer containing the byte representation of the Deploy hash. See the Deploy section above for how Deploy hashes are serialized.
 -   `EraInfo` serializes a `u64` primitive type containing the little-endian byte representation of `u64`.
@@ -610,19 +610,19 @@ Refer to [URef permissions](../design/casper-design.md#uref-permissions) on how 
 
 ## MessageTopics {#message-topics}
 
-A topic for contract-level messages. It is serialized as a `BTreeMap` where the first 4 bytes represent a `u32` value describing the number of `topic_name` strings and [`topic_name_hash`](#topicnamehash) held within. The remainder consists of a repeating pattern of serialized `topic_name` and `topic_name_hash` of the length dictated by the first four bytes.
+A topic for contract-level messages. It is serialized as a `BTreeMap` where the first 4 bytes represent a `u32` value describing the number of `topic_name` strings and [`topic_name_hash`](#topic-name-hash) held within. The remainder consists of a repeating pattern of serialized `topic_name` and `topic_name_hash` of the length dictated by the first four bytes.
 
 ## MessageTopicSummary {#message-topic-summary}
 
-A summary of a message topic that will be stored in global state. It serializes as a [`u32`](./primitives.md#numeric-clvalue-numeric) value for the `message_count` followed by the [`BlockTime`](#blocktime-blocktime)
+A summary of a message topic that will be stored in global state. It serializes as a [`u32`](./primitives.md#clvalue-numeric) value for the `message_count` followed by the [`BlockTime`](#blocktime)
 
-## Motes (#motes)
+## Motes {#motes}
 
 A `struct` representing a number of `Motes` serialized as a [`U512`](./primitives.md#clvalue-numeric) value.
 
 ## NamedArg {#namedarg}
 
-Named arguments to a contract. It is serialized by the combination of a [`String`](./primitives.md#clvalue-string) followed by the associated [`CLValue`](./primitives.md#clvalue-clvalue).
+Named arguments to a contract. It is serialized by the combination of a [`String`](./primitives.md#clvalue-string) followed by the associated [`CLValue`](./primitives.md#clvalue).
 
 ## NamedKey {#namedkey}
 
@@ -640,7 +640,7 @@ A NamedKey address, serialized as an [`EntityAddr`](#entity-addr) followed by a 
 
 ## NamedKeyValue {#named-key-value}
 
-A NamedKey value, serialized as the `named_key` serialized as a [`CLValue`](./primitives.md#clvalue-clvalue) followed by the `name` of the key also serialized as a [`CLValue`](./primitives.md#clvalue-clvalue).
+A NamedKey value, serialized as the `named_key` serialized as a [`CLValue`](./primitives.md#clvalue) followed by the `name` of the key also serialized as a [`CLValue`](./primitives.md#clvalue).
 
 ## NamedKeys {#named-keys}
 
@@ -665,29 +665,29 @@ An operation performed while executing a deploy. It contains:
 
 A structure defining an entity, metadata and security container. The structure consists of the following fields:
 
-- [`access_key`](./primitives.md#uref-clvalue-uref)
+- [`access_key`](./primitives.md#clvalue-uref)
 
 - `versions`: An array of entity versions associated with given hashes.
 
-- [`disabled_versions`](#entityversionkey-entityversionkey)
+- [`disabled_versions`](#entityversionkey)
 
-- [`groups`](#group-group)
+- [`groups`](#group)
 
 - [`lock_status`](./structures.md#contractpackagestatus)
 
 ## PackageHash {#package-hash}
 
-The hex-encoded address of a package associated with an [`AddressableEntity`](./structures.md#addressableentity-addressable-entity), serialized as the byte representation of itself.
+The hex-encoded address of a package associated with an [`AddressableEntity`](./structures.md#addressable-entity), serialized as the byte representation of itself.
 
 ## PackageStatus {#package-status}
 
-The lock status of the package, serialized as a [`boolean`](./primitives.md#boolean-clvalue-boolean) where `true` indicates a locked package and `false` indicates an unlocked package.
+The lock status of the package, serialized as a [`boolean`](./primitives.md#clvalue-boolean) where `true` indicates a locked package and `false` indicates an unlocked package.
 
 ## Parameter {#parameter}
 
 Parameter to a method, structured as a name followed by a `CLType`. It is serialized as a [`String`](./primitives.md#clvalue-string) followed by a [`CLType`](./primitives.md#clvalue-cltype).
 
-## PricingMode (#pricingmode)
+## PricingMode {#pricingmode}
 
 The pricing mode of a transaction, with two possible variants. It serializes as a `u8` tag followed by additional data based on the following table:
 
@@ -698,11 +698,11 @@ The pricing mode of a transaction, with two possible variants. It serializes as 
 
 ### Classic {#pricingmode-classic}
 
-After the `0` tag, a `Classic` `PricingMode` serializes as the [`u64`](./primitives.md#numeric-clvalue-numeric) `payment_amount` followed by the `u64` value of the `gas_price`.
+After the `0` tag, a `Classic` `PricingMode` serializes as the [`u64`](./primitives.md#clvalue-numeric) `payment_amount` followed by the `u64` value of the `gas_price`.
 
 ### Fixed {#pricingmode-fixed}
 
-After the `1` tag, a `Fixed` `PricingMode` serializes as the [`u64`](./primitives.md#numeric-clvalue-numeric) `gas_price_tolerance`.
+After the `1` tag, a `Fixed` `PricingMode` serializes as the [`u64`](./primitives.md#clvalue-numeric) `gas_price_tolerance`.
 
 ## ProtocolVersion {#protocolversion}
 
@@ -790,14 +790,14 @@ A `blake2b` hash of a topic name. The topic name hash serializes as a 32-byte bu
 
 Hex-encoded transfer address, which serializes as a byte representation of itself.
 
-## TransformKindV1 {#transform}
+## TransformKindV1 {#transformkindV1}
 
 The actual transformation performed while executing a deploy. It serializes as a single `u8` value indicating the type of transform performed as per the following table. The remaining bytes represent the information and serialization as listed.
 
 | Transform Type       | Serialization | Description                                                                  |
 |----------------------|---------------|------------------------------------------------------------------------------|
 |Identity              | 0             | A transform having no effect.                                                |
-|Write_CLValue         | 1             | Writes the given [`CLValue`](./primitives.md#clvalue-calvalue) to global state.             |
+|Write_CLValue         | 1             | Writes the given [`CLValue`](./primitives.md#clvalue) to global state.             |
 |Write_Account         | 2             | Writes the given [`Account`](#account-hash) to global state.                  |
 |Write_Contract_WASM   | 3             | Writes a smart [contract as Wasm](./structures.md#contractwasmhash) to global state.        |
 |Write_Contract        | 4             | Writes a smart [contract](./structures.md#contracthash) to global state.                    | 
@@ -815,7 +815,7 @@ The actual transformation performed while executing a deploy. It serializes as a
 |Add_Keys              | 16            | Adds the given collection of [named keys](#namedkey).                        |
 |Failure               | 17            | A failed transformation, containing an error message.                        |
 
-## TransformKindV2 {#transformV2}
+## TransformKindV2 {#transformkindV2}
 
 The actual transformation performed while executing a deploy. It serializes as a single `u8` value indicating the type of transform performed as per the following table. The remaining bytes represent the information and serialization as listed.
 
@@ -836,13 +836,13 @@ The actual transformation performed while executing a deploy. It serializes as a
 
 A transformation performed while executing a deploy.
 
-## TransformV1 {#transformv1}
+## TransformV1 {#transformV1}
 
-A legacy transform struct serialized as a [`String`](./primitives.md#string-clvalue-string) of the [key](./primitives.md#key-clvalue-key) followed by the [`transformkindv1`](#transformkindv1).
+A legacy transform struct serialized as a [`String`](./primitives.md#clvalue-string) of the [key](./primitives.md#clvalue-key) followed by the [`transformkindv1`](#transformkindV1).
 
-## Transformv2 {#transformv2}
+## Transformv2 {#transformV2}
 
-A struct representing an executed transformation serialized as a [`String`](./primitives.md#string-clvalue-string) of the [key](./primitives.md#key-clvalue-key) followed by the [`transformkindv2`](#transformkindv2).
+A struct representing an executed transformation serialized as a [`String`](./primitives.md#clvalue-string) of the [key](./primitives.md#clvalue-key) followed by the [`transformkindv2`](#transformkindV2).
 
 ## UnbondingPurse {#unbondingpurse}
 
@@ -856,7 +856,7 @@ A purse used for unbonding. The structure consists of the following:
 
 -   `era_of_creation`: Era in which this unbonding request was created, as an [`EraId`](#eraid) newtype, which serializes as a [`u64`](./primitives.md#clvalue-numeric) value.
 
--   `amount`: The unbonding amount, serialized as a [`U512`](#clvalue-numeric) value.
+-   `amount`: The unbonding amount, serialized as a [`U512`](./primitives.md#clvalue-numeric#clvalue-numeric) value.
 
 -   `new_validator`: The validator public key to redelegate to, serialized as an [`Option`](./primitives.md#clvalue-option) containing the public key.
 
@@ -870,11 +870,11 @@ An entry in the validator map. The structure consists of the following fields:
 
 -   `staked_amount`: The amount staked by the delegator, serialized as a [`U512` value](./primitives.md#clvalue-numeric).
 
--   `delegation_rate`: The delegation rate serialized as a [`u8` value](./primitives.md#numeric-clvalue-numeric).
+-   `delegation_rate`: The delegation rate serialized as a [`u8` value](./primitives.md#clvalue-numeric).
 
 -   `vesting_schedule`: The vesting schedule for the provided delegator bid. `None` if it is a non-genesis validator. It serializes as an [`Option`](./primitives.md#clvalue-option).
 
--   `inactive`: The validator's inactivity status, serialized as a [`boolean`](./primitives.md#boolean-clvalue-boolean).
+-   `inactive`: The validator's inactivity status, serialized as a [`boolean`](./primitives.md#clvalue-boolean).
 
 ## ValidatorChange {#validator-change}
 

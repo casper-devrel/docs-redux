@@ -17,4 +17,4 @@ Here is how the tutorial is structured:
 
 1.  You have completed the [Getting Started tutorial](../../../developers/writing-onchain-code/getting-started.md) to set up your development environment, including tools like _cmake_ (version 3.1.4+), _cargo_, and _Rust_.
 2.  You have completed the [NCTL tutorial](../../../developers/dapps/setup-nctl.md), which introduces you to the CLI tool to set up and control local Casper networks for development.
-3. You have installed the [Casper client](../../../developers/prerequisites.md#the-casper-command-line-client) to send transactions to the chain.
+3. You have installed the [Casper client](../../../developers/prerequisites.md#install-casper-client) to send transactions to the chain.

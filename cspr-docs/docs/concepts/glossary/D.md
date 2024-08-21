@@ -26,10 +26,10 @@ Casper's Condor release introduces the [Transaction](./T.md#transaction). Legacy
 
 All deploys on a Casper network can be broadly categorized as some unit of work that, when executed and committed, affects change to the [global state](./G.md#global-state).
 
-Review the [deploy data structure](../serialization/structures.md#deploy) and the [deploy implementation](https://github.com/casper-network/casper-node/blob/master/node/src/types/deploy.rs#L475) for more details.
+Review the [deploy data structure](../serialization/structures.md#serialization-standard-deploy) and the [deploy implementation](https://github.com/casper-network/casper-node/blob/master/node/src/types/deploy.rs#L475) for more details.
 
 ## Dictionary {#dictionary}
 
-A `Dictionary` is a storage data structure on a Casper network. Dictionaries represent a more efficient and scalable form of data storage when compared to [`NamedKeys`](./N.md#namedkeys).
+A `Dictionary` is a storage data structure on a Casper network. Dictionaries represent a more efficient and scalable form of data storage when compared to [`NamedKeys`](./N.md#named-keys).
 
 More information can be found in the [Reading and Writing to Dictionaries](../dictionaries.md) document.

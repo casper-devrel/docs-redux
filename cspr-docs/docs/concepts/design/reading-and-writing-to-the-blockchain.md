@@ -14,7 +14,7 @@ Casper's Condor release shifts `NamedKeys` to a top-level key type, making them 
 
 ## Using the Casper JSON-RPC
 
-The [`query_global_state`](../../developers/json-rpc/json-rpc-informational.md#query-global-state) method available through the JSON-RPC allows users to read data from global state without performing on-chain actions. For more details, see the [Querying a Casper Network](../../resources/beginner/querying-network.md) tutorial.
+The [`query_global_state`](../../developers/json-rpc/json-rpc-informational.md#query_global_state) method available through the JSON-RPC allows users to read data from global state without performing on-chain actions. For more details, see the [Querying a Casper Network](../../resources/beginner/querying-network.md) tutorial.
 
 ## Using the Casper Rust API
 

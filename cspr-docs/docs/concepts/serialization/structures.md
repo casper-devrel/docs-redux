@@ -114,7 +114,7 @@ Note that `EraEndV1` is an optional field. Thus the above scheme only applies if
 
 Note that `EraEndV2` is an optional field. Thus the above scheme only applies if there is an `EraEndV2`; if there is no era end, the field simply serializes to _0_.
 
-### BlockBodyV1 {#blockbodyv1}
+### BlockBodyV1 {#blockbodyV1}
 
 The body portion of a block, prior to the Condor upgrade, is structurally defined as:
 
@@ -164,7 +164,7 @@ A `blake2b` hash of a contract. The contract hash serializes as a 32-byte buffer
 
 ### ContractPackageStatus {#contractpackagestatus}
 
-The lock status of the contract package, serialized as a [`boolean`](./primitives.md#boolean-clvalue-boolean) where `true` indicates a locked contract and `false` indicates an unlocked contract package.
+The lock status of the contract package, serialized as a [`boolean`](./primitives.md#clvalue-boolean) where `true` indicates a locked contract and `false` indicates an unlocked contract package.
 
 ### ContractVersion {#contractversion}
 
@@ -178,7 +178,7 @@ The version of the contract.
 
 ### ContractVersionKey {#contractversionkey}
 
-The major element of `ProtocolVersion` combined with `Contract` Version serialized as two [`u32`](./primitives.md#numeric-clvalue-numeric) values.
+The major element of `ProtocolVersion` combined with `Contract` Version serialized as two [`u32`](./primitives.md#clvalue-numeric) values.
 
 ### ContractWasm {#contractwasm}
 
@@ -236,9 +236,9 @@ Operations that can be performed on message topics. Currently, serializes as a [
 
 The hash of the name of a message topic, serialized as a [`u8`](./primitives.md#clvalue-numeric) describing the length of the string and the 32-byte serialized representation of the `string` itself.
 
-## Transaction (#transaction)
+## Transaction {#transaction}
 
-A versioned wrapper for a transaction or deploy. It serializes as a `u8` tag of `0` followed by a [`Deploy`](#serialization-standard-deploy) or a `u8` tag of `1` followed by a [`TransactionV1`](#transactionv1).
+A versioned wrapper for a transaction or deploy. It serializes as a `u8` tag of `0` followed by a [`Deploy`](#serialization-standard-deploy) or a `u8` tag of `1` followed by a [`TransactionV1`](#transactionV1).
 
 ### Deploy {#serialization-standard-deploy}
 
@@ -297,53 +297,53 @@ A `struct` containing configuration values associated with `deploys`. The struct
 
 -   `max_dependencies`: The maximum time to live any deploy can specify, serialized as a [`u8`](./primitives.md#clvalue-numeric).
 
--   `payment_args_max_length`: The maximum length in bytes of payment args per deploy, serialized as a [`u32`](./primitives.md#clvalue-numeric.)
+-   `payment_args_max_length`: The maximum length in bytes of payment args per deploy, serialized as a [`u32`](./primitives.md#clvalue-numeric)
 
--   `session_args_max_length`: The maximum length in bytes of session args per deploy, serialized as a [`u32`](./primitives.md#clvalue-numeric.)
+-   `session_args_max_length`: The maximum length in bytes of session args per deploy, serialized as a [`u32`](./primitives.md#clvalue-numeric)
 
-### TransactionV1 {#transactionv1}
+### TransactionV1 {#transactionV1}
 
 A unit of work sent by a client to the network, which when executed can cause global state to be altered. It is structurally defined as follows:
 
-- [`TransactionV1Hash`](#transactionv1hash)
+- [`TransactionV1Hash`](#transactionV1hash)
 
-- [`TransactionV1Header`](#transactionv1header)
+- [`TransactionV1Header`](#transactionV1header)
 
-- [`TransactionV1Body`](#transactionv1body)
+- [`TransactionV1Body`](#transactionV1body)
 
 - `approvals`: A list of signatures.
 
-### TransactionV1Hash {#transactionv1hash}
+### TransactionV1Hash {#transactionV1hash}
 
 The transaction hash is a digest over the contents of the transaction header. The transaction hash serializes as the byte representation of the hash itself.
 
-### TransactionV1Header {#transactionv1header}
+### TransactionV1Header {#transactionV1header}
 
 The header portion of a transaction, structurally, is defined as follows:
 
--   `chain_name`: Chain name is a human-readable string describing the name of the chain as detailed in the chainspec. It is serialized as a [String](./primitives.md#string-clvalue-string).
+-   `chain_name`: Chain name is a human-readable string describing the name of the chain as detailed in the chainspec. It is serialized as a [String](./primitives.md#clvalue-string).
 -   `timestamp`: A timestamp is a struct that is a unary tuple containing a `u64` value. This value is a count of the milliseconds since the UNIX epoch. Thus the value `1603994401469` serializes as `0xbd3a847575010000`.
 -   `ttl`: The **Time to live** is defined as the amount of time for which the transaction is considered valid. The `ttl` serializes in the same manner as the timestamp.
--   `body_hash`: Body hash is a hash over the contents of the [transaction body](#transactionv1body). It serializes as the byte representation of the hash itself.
--   [`pricing_mode`](./types.md#pricingmode-pricingmode)
--   [`initator_addr`](./types.md#initiatoraddr-initiatoraddr)
+-   `body_hash`: Body hash is a hash over the contents of the [transaction body](#transactionV1body). It serializes as the byte representation of the hash itself.
+-   [`pricing_mode`](./types.md#pricingmode)
+-   [`initator_addr`](./types.md#initiatoraddr)
 
-### TransactionV1Body {#transactionv1body}
+### TransactionV1Body {#transactionV1body}
 
 The body of a `TransactionV1`, consisting of the following:
 
-- [`args`](./types.md#runtimeargs-runtimeargs)
+- [`args`](./types.md#runtimeargs)
 - [`target`](#transactiontarget)
 - [`entry_point`](#transactionentrypoint)
 - [`scheduling`](#transactionscheduling)
 
 ### TransactionRuntime {#transactionruntime}
 
-The runtime used to execute a transaction, serialized as a [`u8`](./primitives.md#numeric-clvalue-numeric). Currently, only the `VmCasperV1` is available, which serializes as a `0`.
+The runtime used to execute a transaction, serialized as a [`u8`](./primitives.md#clvalue-numeric). Currently, only the `VmCasperV1` is available, which serializes as a `0`.
 
 ### TransactionEntryPoint {#transactionentrypoint}
 
-An entry point of a transaction, serialized as a [`u8`](./primitives.md#numeric-clvalue-numeric) value based on the type of entry point. The following table outlines the available types:
+An entry point of a transaction, serialized as a [`u8`](./primitives.md#clvalue-numeric) value based on the type of entry point. The following table outlines the available types:
 
 | Tag | Entry Point |
 | --- | ----------- |
@@ -376,9 +376,9 @@ A `struct` containing configuration values associated with `Transactions`. The s
 
 -   [`deploy_config`](#deployconfig): Configuration values specific to Deploy transactions.
 
--   [`transaction_v1_config`](#transactionv1config): Configuration values specific to V1 transactions.
+-   [`transaction_v1_config`](#transactionV1config): Configuration values specific to V1 transactions.
 
-### TransactionV1Config {#transactionv1config}
+### TransactionV1Config {#transactionV1config}
 
 A `struct` containing configuration values associated with `TransactionV1s`. The structure contains the following fields:
 
@@ -394,7 +394,7 @@ A versioned wrapper for transaction hash or deploy hash. It serializes as either
 
 ### TransactionHeader {#transactionheader}
 
-A versioned wrapper for transaction header or deploy header. It serializes as either a `u8` tag of 0 followed by a [`DeployHeader`](#deploy-header) or a `u8` tag of 1 followed by a [`TransactionV1Header`](#transactionv1header).
+A versioned wrapper for transaction header or deploy header. It serializes as either a `u8` tag of 0 followed by a [`DeployHeader`](#deploy-header) or a `u8` tag of 1 followed by a [`TransactionV1Header`](#transactionV1header).
 
 ### TransactionId {#transactionid}
 
@@ -402,13 +402,13 @@ The unique identifier of a `Transaction`, serialized as its [`TransactionHash`](
 
 ### TransactionScheduling {#transactionscheduling}
 
-The scheduling mode of a transaction, serialized as a [`u8`](./primitives.md#numeric-clvalue-numeric) tag identifying the type:
+The scheduling mode of a transaction, serialized as a [`u8`](./primitives.md#clvalue-numeric) tag identifying the type:
 
 - `Standard` serializes as a `0`.
 
-- `FutureEra` serializes as a `1` followed by a future [`era_id`](./types.md#eraid-eraid).
+- `FutureEra` serializes as a `1` followed by a future [`era_id`](./types.md#eraid).
 
-- `FutureTimestamp` serializes as a `2` followed by a future [`timestamp`](./types.md#timestamp-timestamp).
+- `FutureTimestamp` serializes as a `2` followed by a future [`timestamp`](./types.md#timestamp).
 
 ### TransactionInvocationTarget {#transactioninvocationtarget}
 
@@ -416,15 +416,15 @@ The identifier of a `stored` transaction target, serialized as one of the follow
 
 - `InvocableEntity` serializes as a `u8` tag of `0` followed by the hex-encoded entity address serialized as the byte representation of itself.
 
-- `InvocableEntityAlias` serializes as a `u8` tag of `1` followed by the alias serialized as a [`string`](./primitives.md#string-clvalue-string).
+- `InvocableEntityAlias` serializes as a `u8` tag of `1` followed by the alias serialized as a [`string`](./primitives.md#clvalue-string).
 
-- `Package` serializes as a `u8` tag of `2` followed by the [`package hash`](./types.md#packagehash-package-hash) and optionally the [`entity_version`](./types.md#entityversionkey-entityversionkey).
+- `Package` serializes as a `u8` tag of `2` followed by the [`package hash`](./types.md#package-hash) and optionally the [`entity_version`](./types.md#entityversionkey).
 
-- `PackageAlias` serializes as a `u8` tag of `3` followed by the alias serialized as a [`string`](./primitives.md#string-clvalue-string) and optionally the [`entity_version`](./types.md#entityversionkey-entityversionkey).
+- `PackageAlias` serializes as a `u8` tag of `3` followed by the alias serialized as a [`string`](./primitives.md#clvalue-string) and optionally the [`entity_version`](./types.md#entityversionkey).
 
 ### TransactionTarget {#transactiontarget}
 
-The execution target of a transaction, serializing as a [`u8`](./primitives.md#numeric-clvalue-numeric) that identifies the type, followed by any additional data.
+The execution target of a transaction, serializing as a [`u8`](./primitives.md#clvalue-numeric) that identifies the type, followed by any additional data.
 
 - `native` serializes as a `0`.
 

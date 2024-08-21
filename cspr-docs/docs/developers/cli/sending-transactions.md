@@ -6,7 +6,7 @@ title: Sending Transactions
 
 To install smart contracts on the blockchain, you can send your Wasm to the network via a [Transaction](../../concepts/glossary/T.md#transaction-transaction). To do this, you will need to meet a few prerequisites:
 
-- You will need a client to interact with the network, such as the [default Casper client](../prerequisites.md#the-casper-command-line-client)
+- You will need a client to interact with the network, such as the [default Casper client](../prerequisites.md#install-casper-client)
 - Ensure you have an [Account](../prerequisites.md#setting-up-an-account) and its associated [keys](../../concepts/accounts-and-keys.md) This account will pay for the Transaction, and its secret key will sign the Transaction
 - Ensure this account has enough CSPR tokens to pay for the Transaction
 

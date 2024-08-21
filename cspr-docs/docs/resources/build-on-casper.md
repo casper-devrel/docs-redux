@@ -77,7 +77,7 @@ The Casper [Mainnet](https://cspr.live) is a public, open-source, community-driv
 We also offer several tools to run AWS instances of Casper nodes.
 
 ## SDK Client Libraries {#sdk-client-libraries}
-In addition to the default [command-line Rust client](../developers/prerequisites.md#the-casper-command-line-client), the Casper community is building [other clients](/sdk) in JavaScript, Java, Golang, Python, C#, and other languages. 
+In addition to the default [command-line Rust client](../developers/prerequisites.md#install-casper-client), the Casper community is building [other clients](/sdk) in JavaScript, Java, Golang, Python, C#, and other languages. 
 
 ## Low Gas Fees {#low-gas-fees}
 Casper seeks to eliminate volatility and improve developer and enterprise experiences by establishing transparent, consistent, and low gas prices. This feature seeks to promote active and diverse network behaviour and we are researching innovative pricing models that will favor dApp developers as the ecosystem grows.
