@@ -114,7 +114,7 @@ $(get_path_to_client) query-global-state \
 
 :::note
 
-You can retrieve the current state root hash using the command `casper client get-state-root-hash`
+You can retrieve the current state root hash using the command `casper client get-state-root-hash`.
 
 :::
 
