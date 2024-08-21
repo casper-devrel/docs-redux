@@ -10,10 +10,10 @@ This document details the process of installing [Casper smart contracts](../writ
 
 ## Prerequisites
 
-- You have a compiled contract Wasm to send to a Casper network
-- You have installed the [Casper CLI client](../prerequisites.md#install-casper-client) to interact with the network
-- You have a [Casper Account](../prerequisites.md#setting-up-an-account) with a public and secret key pair to initiate the transaction
-- You have enough CSPR tokens in your account's main purse to pay for transactions. If you plan to use the Casper Testnet, learn about the [faucet](../../users/csprlive/testnet-faucet.md) to fund your testing account's main purse
+- You have a compiled contract Wasm to send to a Casper network.
+- You have installed the [Casper CLI client](../prerequisites.md#install-casper-client) to interact with the network.
+- You have a [Casper Account](../prerequisites.md#setting-up-an-account) with a public and secret key pair to initiate the transaction.
+- You have enough CSPR tokens in your account's main purse to pay for transactions. If you plan to use the Casper Testnet, learn about the [faucet](../../users/csprlive/testnet-faucet.md) to fund your testing account's main purse.
 
 ## Installing a Contract in Global State {#installing-contract-code}
 
@@ -546,4 +546,4 @@ This video demonstrates the commands described above for installing a contract o
 
 ## What's Next? {#whats-next}
 
-- Learn to [query global state](./querying-global-state.md) using the Casper command-line client
+- Learn to [query global state](./querying-global-state.md) using the Casper command-line client.
