@@ -48,7 +48,7 @@ You will need the following information to use the `put-transaction session` com
 
 * The **path** to your `Transaction` that you wish to send to the NCTL network. This will appear in our example put-transaction as `--transaction-path <PATH>` and will require you to define the path to your specific `Transaction` Wasm.
 
-* The **category** of transaction, based on size of the Wasm included. `install-upgrade` being the largest, descending in size through `large`, `medium` and `small`. This will appear in our example put-transaction as `--category 'install-upgrade'`
+* The **category** of the transaction, based on the size of the Wasm included. `install-upgrade` being the largest, descending in size through `large`, `medium`, and `small`. This will appear in our example put-transaction as `--category 'install-upgrade'`.
 
 * The **node address** for a node on your NCTL network. In this example, we are using the node at `http://localhost:11101`. On the Casper Mainnet or Testnet, nodes will use port `7777`. This will appear in our example put-transaction as `--node-address http://<HOST>:7777`.
 
