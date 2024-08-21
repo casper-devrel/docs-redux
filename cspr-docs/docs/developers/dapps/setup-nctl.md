@@ -143,7 +143,7 @@ NCTL will not work properly if the following repositories are downloaded via Git
 
 :::
 
-**Step 10.** Clone the _casper-nctl_ software in your working directory, referenced her as _WORKING_DIRECTORY_. **Very Important!!! Choose a short path for your working directory**; otherwise, the NCTL tool will report that the path is too long.
+**Step 10.** Clone the _casper-nctl_ software in your working directory, referenced here as _WORKING_DIRECTORY_. **Very Important!!! Choose a short path for your working directory**; otherwise, the NCTL tool will report that the path is too long.
 
 Instructions for MacOS and Linux:
 

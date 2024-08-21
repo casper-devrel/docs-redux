@@ -128,9 +128,9 @@ $(get_path_to_client) get-entity \
 
 This command will return information pertaining to the account, including the `NamedKeys`. The `PackageHash` of the contract to be tested will appear here. The process of calling the contract is similar to that of installing it, as they are both accomplished through sending a `Transaction`. In this instance, you will need the following information:
 
-* The **node address**, entered in this instance using `--node-address http://localhost:11101`
+* The **node address**, entered in this instance using `--node-address http://localhost:11101`.
 
-* The **chain name**, entered in this instance using `--chain-name "casper-net-1"`
+* The **chain name**, entered in this instance using `--chain-name "casper-net-1"`.
 
 * The **package hash**, entered in this instance using `--package-address package-47b8b489d54c378144bf85429f4b29c8b47142d542272086f378b9d4e29cada4`.
 
@@ -138,7 +138,7 @@ This command will return information pertaining to the account, including the `N
 
 * The **entry point** on the contract that you wish to invoke.
 
-* Any **session arguments** specific to the contract that you are testing. Multiple instances of `--session-arg` may be used as necessary to provide values to the contract.In the example below, you will see a demonstration of a session arg of `amount` as `--session-arg "amount:u256='100'"`
+* Any **session arguments** specific to the contract that you are testing. Multiple instances of `--session-arg` may be used as necessary to provide values to the contract. In the example below, you will see a demonstration of a session arg of `amount` as `--session-arg "amount:u256='100'"`.
 
 ```bash
 $(get_path_to_client) put-transaction package \
