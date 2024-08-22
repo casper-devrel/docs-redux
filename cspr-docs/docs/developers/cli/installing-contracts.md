@@ -21,31 +21,31 @@ To install a contract in [global state](../../concepts/glossary/G.md#global-stat
 
 ```bash
 casper-client put-transaction session \
-  --node-address [NODE_SERVER_ADDRESS] \
-  --chain-name [CHAIN_NAME] \
-  --secret-key [KEY_PATH]/secret_key.pem \
-  --gas-price-tolerance [MAX_GAS_AMOUNT] \
-  --pricing-mode fixed \
-  --transaction-path <PATH> \
-  --session-entry-point call \
-  --category 'install-upgrade'
+--node-address [NODE_SERVER_ADDRESS] \
+--chain-name [CHAIN_NAME] \
+--secret-key [KEY_PATH]/secret_key.pem \
+--gas-price-tolerance [MAX_GAS_AMOUNT] \
+--pricing-mode fixed \
+--transaction-path <PATH> \
+--session-entry-point call \
+--category 'install-upgrade'
 ```
 
 The arguments used above are:
--   `node-address` - An IP address of a peer on the network. The default port for JSON-RPC servers on Mainnet and Testnet is 7777
--   `chain-name` - The network where you wish to send the transaction. For Mainnet, use *casper*. For Testnet, use *casper-test*
--   `secret-key` - The file name containing the secret key of the account paying for the transaction
--   `gas-price-tolerance` - The maximum amount of gas a user is willing to pay for execution
--   `pricing-mode` - Set to fixed for Mainnet and Testnet, meaning that costs are fixed per the cost table, and senders do not specify how much they pay
--   `transaction-path` - The path to the contract Wasm, which should point to wherever you compiled the contract (`.wasm` file) on your computer
--    `session-entry-point` - Name of the entrypoint that will be used when installing the contract, which is usually `call`
--   `category` - The transaction type, based on Wasm size, with `install-upgrade` being the largest
+- `node-address` - An IP address of a peer on the network. The default port for JSON-RPC servers on Mainnet and Testnet is 7777
+- `chain-name` - The network where you wish to send the transaction. For Mainnet, use *casper*. For Testnet, use *casper-test*
+- `secret-key` - The file name containing the secret key of the account paying for the transaction
+- `gas-price-tolerance` - The maximum amount of gas a user is willing to pay for execution
+- `pricing-mode` - Set to "fixed" for Mainnet and Testnet
+- `transaction-path` - The path to the contract Wasm, which should point to wherever you compiled the contract (`.wasm` file) on your computer
+- `session-entry-point` - Name of the entrypoint that will be used when installing the contract, which is usually `call`
+- `category` - The transaction type, based on Wasm size, with `install-upgrade` being the largest
 
 Once you call this command, it will return a transaction hash. You can use this hash to [verify](./sending-transactions.md#sending-the-transaction) successful execution of the transaction.
 
 :::tip
 
-The pricing mode varies based on each network [chainspec](../../concepts/glossary/C.md#chainspec).
+The pricing mode varies based on each network [chainspec](../../concepts/glossary/C.md#chainspec). For Mainnet and Testnet, the pricing mode is "fixed", meaning that costs are fixed per the cost table, and senders do not specify how much they pay.
 
 :::
 
@@ -55,14 +55,14 @@ Here we send a `counter-installer.wasm` to a local NCTL network:
 
 ```bash
 casper-client put-transaction session \
-  --node-address http://localhost:11101 \
-  --chain-name casper-net-1 \
-  --secret-key ~/casper/casper-nctl/assets/net-1/users/user-1/secret_key.pem \
-  --gas-price-tolerance 10 \
-  --pricing-mode fixed \
-  --transaction-path ~/test_contracts/counter_installer.wasm \
-  --session-entry-point call \
-  --category 'install-upgrade'
+--node-address http://localhost:11101 \
+--chain-name casper-net-1 \
+--secret-key ~/casper/casper-nctl/assets/net-1/users/user-1/secret_key.pem \
+--gas-price-tolerance 10 \
+--pricing-mode fixed \
+--transaction-path ~/test_contracts/counter_installer.wasm \
+--session-entry-point call \
+--category 'install-upgrade'
 ```
 
 The result of the query includes a `transaction_hash`:
@@ -83,12 +83,11 @@ The result of the query includes a `transaction_hash`:
 To verify the transaction, call `get-transaction` and provide the transaction hash you received from `put-transaction`.
 
 ```bash
-casper-client get-transaction \
-  --node-address http://localhost:11101 [TRANSACTION_HASH]
+casper-client get-transaction --node-address http://localhost:11101 [TRANSACTION_HASH]
 ```
 
 <details>
-<summary>Expand to view the sample transaction details</summary>
+<summary>Expand to view the sample response details</summary>
 
 ```json
 {
@@ -494,41 +493,9 @@ casper-client get-transaction \
   }
 }
 ```
-
 </details>
 
 Note the contract entity address in the above sample output. You will need this to [query the contract](./querying-global-state.md#query-the-contract) installed. In this example, the address is `entity-contract-a1d0bf9d96f3efc9ea67f627df3a7cba390bfc582956032db91060ca5d413e68`.
-
-```json
-{
-  "key": "entity-contract-a1d0bf9d96f3efc9ea67f627df3a7cba390bfc582956032db91060ca5d413e68",
-  "kind": {
-    "Write": {
-      "AddressableEntity": {
-        "protocol_version": "2.0.0",
-        "entity_kind": {
-          "SmartContract": "VmCasperV1"
-        },
-        "package_hash": "package-50d487af45f8cec533c6813801a7630ff97e5ee3964daf7915d5451b4812ac94",
-        "byte_code_hash": "byte-code-0577a7c92fd20e1af76aa9e257631cb240e8187191bba2025e88663d0288e936",
-        "main_purse": "uref-2cb7e46fcde2c4d395a6850bb3b7edbb0b4db6018643e535fa0dfdeeb006d6ef-007",
-        "associated_keys": [
-          {
-            "account_hash": "account-hash-6a56c4eee172043975aea72221eaf09f3c3a24f09a379935e44c9979f1ae9463",
-            "weight": 1
-          }
-        ],
-        "action_thresholds": {
-          "deployment": 1,
-          "upgrade_management": 1,
-          "key_management": 1
-        },
-        "message_topics": []
-      }
-    }
-  }
-}
-```
 
 Next, [query global state](./querying-global-state.md) to see more details about the successfully installed contract.
 

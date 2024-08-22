@@ -14,11 +14,11 @@ This page explains how to query global state to find account, contract, and pack
 
 ## Getting the State Root Hash {#get-state-root-hash}
 
-The first step in querying the global state is obtaining the state root hash. The state root hash acts as an identifier for the current state of the network (global state). It is like a Git commit ID for commit history, providing a snapshot of the blockchain state at a specific time.
+The first step in querying global state is obtaining the state root hash, which acts as an identifier for the current state of the network. It is like a Git commit ID for commit history, providing a snapshot of the blockchain state at a specific time.
 
 :::note
 
-After sending transactions to the network, it's necessary to fetch the new state root hash in order to see the changes reflected in the global state. Without doing this, you would be querying past versions of the state.
+After sending transactions to the network, it's necessary to fetch the new state root hash to see the changes reflected in the global state. Without doing this, you would be querying past versions of the state.
 
 :::
 
@@ -94,7 +94,7 @@ casper-client query-global-state \
 }
 ```
 
-Next, see the account details using the `get-entity` command and the entity identifier or the account hash. Both commands will produce the same output. You will need the following information:
+Next, see more account details using the `get-entity` command and the entity identifier or the account hash. Both commands will produce the same output. You will need the following information:
 
 * The **node address**, representing an IP address of a peer on the network.
 
@@ -122,7 +122,9 @@ casper-client get-entity \
 --entity-identifier account-hash-6a56c4eee172043975aea72221eaf09f3c3a24f09a379935e44c9979f1ae9463
 ```
 
-Here is how your account state would look. Notice that the sample response contains several named keys, including "counter", "counter_package_name", and "version". You can use these values to query the contract state further, as shown in the next example.
+**Sample response:**
+
+Notice that the sample response contains several named keys, including "counter", "counter_package_name", and "version". You can use these values to query the contract state further, as shown in the next example.
 
 <details>
 <summary>Expand to see the sample response</summary>
@@ -198,7 +200,9 @@ casper-client account-address --public-key [PATH_TO_PUBLIC_KEY]
 
 ## Querying a Contract
 
-Query global state given the contract identifier and the `query-global-state` command. The contract is stored under the account's named keys, with the key named "counter" and identifier `entity-contract-a1d0bf9d96f3efc9ea67f627df3a7cba390bfc582956032db91060ca5d413e68`. The output will contain the contract's `package_hash`, `main_purse`, `associated_keys`, and `action_thresholds`, but will not contain further details such as the contract's named keys and entry points. You will need to run the `get-entity` command instead for those details. For the `query-global-state` command, you will need the following information:
+Query global state given the contract identifier and the `query-global-state` command. The contract is stored under the account's named keys, with the key named "counter" and identifier `entity-contract-a1d0bf9d96f3efc9ea67f627df3a7cba390bfc582956032db91060ca5d413e68`. The output will contain the contract's `package_hash`, `main_purse`, `associated_keys`, and `action_thresholds`, but will not contain further details such as the contract's named keys and entry points. You will need to run the `get-entity` command instead for those details. 
+
+For the `query-global-state` command, you will need the following information:
 
 * The **node address**, representing an IP address of a peer on the network.
 
@@ -221,6 +225,8 @@ casper-client query-global-state \
 --state-root-hash 6b5849caa605acdc29564f303764396a27ef7a6b1a61f7b13109b129e7e70d81 \
 --key "entity-contract-a1d0bf9d96f3efc9ea67f627df3a7cba390bfc582956032db91060ca5d413e68"
 ```
+
+**Sample response:**
 
 <details>
 <summary>Expand to see the sample response</summary>
@@ -259,15 +265,13 @@ casper-client query-global-state \
   }
 }
 ```
-
 </details>
-
 
 Next, query global state given the contract identifier and the `get-entity` command, which will provide more details such as the contract's `entry_points` and `named_keys`. You will need the following information:
 
 * The **node address**, representing an IP address of a peer on the network.
 
-* The **identifier** for an addressable entity or an account. This can be an entity hash, a public key, or an account hash.
+* The **entity identifier** for an addressable entity or an account. This can be an entity hash, a public key, or an account hash.
 
 ```bash
 casper-client get-entity \
@@ -282,6 +286,8 @@ casper-client get-entity \
 --node-address http://localhost:11101 \
 --entity-identifier entity-contract-a1d0bf9d96f3efc9ea67f627df3a7cba390bfc582956032db91060ca5d413e68
 ```
+
+**Sample response:**
 
 <details>
 <summary>Expand to see the sample response</summary>
@@ -376,6 +382,8 @@ casper-client query-global-state \
 --state-root-hash 6b5849caa605acdc29564f303764396a27ef7a6b1a61f7b13109b129e7e70d81 \
 --key package-1bf60faed9931e95e99912aa82f545a85f374dcbcd0c145ee2a5820b39b31d51
 ```
+
+**Sample response:**
 
 The response would contain the `addressable_entity_hash`, the `lock_status` for the `Package`, and the current `entity_version`.
 
