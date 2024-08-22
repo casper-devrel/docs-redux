@@ -856,7 +856,7 @@ A purse used for unbonding. The structure consists of the following:
 
 -   `era_of_creation`: Era in which this unbonding request was created, as an [`EraId`](#eraid) newtype, which serializes as a [`u64`](./primitives.md#clvalue-numeric) value.
 
--   `amount`: The unbonding amount, serialized as a [`U512`](./primitives.md#clvalue-numeric#clvalue-numeric) value.
+-   `amount`: The unbonding amount, serialized as a [`U512`](./primitives.md#clvalue-numeric) value.
 
 -   `new_validator`: The validator public key to redelegate to, serialized as an [`Option`](./primitives.md#clvalue-option) containing the public key.
 

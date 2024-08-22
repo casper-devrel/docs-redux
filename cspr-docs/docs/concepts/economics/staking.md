@@ -18,7 +18,7 @@ The Casper Mainnet is a Proof-of-Stake blockchain that allows validators to stak
 
 **Reward calculations:** Reward calculations depend only on the linear structure of the blockchain and published finality signatures rather than block time or consensus mechanism. Reward calculations assume a known constant token supply inflation with nominal platform operation.
 
-**Reward cycle:** Rewards are [calculated and distributed](./consensus.md#rewards-distribution-distribution) to validators and delegators at the end of an era for all blocks in that era and several eligible blocks from the previous era. The algorithm looks back into blocks from the previous era to compensate for the delay in creating and distributing finality signatures.
+**Reward cycle:** Rewards are [calculated and distributed](./consensus.md#distribution) to validators and delegators at the end of an era for all blocks in that era and several eligible blocks from the previous era. The algorithm looks back into blocks from the previous era to compensate for the delay in creating and distributing finality signatures.
 
 **Token supply and inflation:** Mainnet launched with ten billion CSPR at genesis. The target annual supply growth rate is 8%.
 

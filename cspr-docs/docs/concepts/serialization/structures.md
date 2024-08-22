@@ -18,7 +18,7 @@ An Account is a structure that represented a user on a legacy Casper network. Al
 
 An Addressable Entity is a structure that represents an entity on a Casper network. The addressable entity consists of the following fields:
 
-- [`package_hash`](./types.md#packagehash)
+- [`package_hash`](./types.md#package-hash)
 
 - [`byte_code_hash`](./types.md#byte-code-hash)
 
@@ -305,30 +305,30 @@ A `struct` containing configuration values associated with `deploys`. The struct
 
 A unit of work sent by a client to the network, which when executed can cause global state to be altered. It is structurally defined as follows:
 
-- [`TransactionV1Hash`](#transactionV1hash)
+- [`TransactionV1Hash`](#transactionv1hash)
 
-- [`TransactionV1Header`](#transactionV1header)
+- [`TransactionV1Header`](#transactionv1header)
 
-- [`TransactionV1Body`](#transactionV1body)
+- [`TransactionV1Body`](#transactionv1body)
 
 - `approvals`: A list of signatures.
 
-### TransactionV1Hash {#transactionV1hash}
+### TransactionV1Hash
 
 The transaction hash is a digest over the contents of the transaction header. The transaction hash serializes as the byte representation of the hash itself.
 
-### TransactionV1Header {#transactionV1header}
+### TransactionV1Header
 
 The header portion of a transaction, structurally, is defined as follows:
 
 -   `chain_name`: Chain name is a human-readable string describing the name of the chain as detailed in the chainspec. It is serialized as a [String](./primitives.md#clvalue-string).
 -   `timestamp`: A timestamp is a struct that is a unary tuple containing a `u64` value. This value is a count of the milliseconds since the UNIX epoch. Thus the value `1603994401469` serializes as `0xbd3a847575010000`.
 -   `ttl`: The **Time to live** is defined as the amount of time for which the transaction is considered valid. The `ttl` serializes in the same manner as the timestamp.
--   `body_hash`: Body hash is a hash over the contents of the [transaction body](#transactionV1body). It serializes as the byte representation of the hash itself.
+-   `body_hash`: Body hash is a hash over the contents of the [transaction body](#transactionv1body). It serializes as the byte representation of the hash itself.
 -   [`pricing_mode`](./types.md#pricingmode)
 -   [`initator_addr`](./types.md#initiatoraddr)
 
-### TransactionV1Body {#transactionV1body}
+### TransactionV1Body
 
 The body of a `TransactionV1`, consisting of the following:
 
@@ -390,11 +390,11 @@ A `struct` containing configuration values associated with `TransactionV1s`. The
 
 ### TransactionHash {#transactionhash}
 
-A versioned wrapper for transaction hash or deploy hash. It serializes as either a `u8` tag of 0 followed by a [`DeployHash`](#deploy-hash) or a `u8` tag of 1 followed by a [`TransactionV1Hash`](#transactionV1hash).
+A versioned wrapper for transaction hash or deploy hash. It serializes as either a `u8` tag of 0 followed by a [`DeployHash`](#deploy-hash) or a `u8` tag of 1 followed by a [`TransactionV1Hash`](#transactionv1hash).
 
 ### TransactionHeader {#transactionheader}
 
-A versioned wrapper for transaction header or deploy header. It serializes as either a `u8` tag of 0 followed by a [`DeployHeader`](#deploy-header) or a `u8` tag of 1 followed by a [`TransactionV1Header`](#transactionV1header).
+A versioned wrapper for transaction header or deploy header. It serializes as either a `u8` tag of 0 followed by a [`DeployHeader`](#deploy-header) or a `u8` tag of 1 followed by a [`TransactionV1Header`](#transactionv1header).
 
 ### TransactionId {#transactionid}
 

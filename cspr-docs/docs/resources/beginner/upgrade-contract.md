@@ -113,7 +113,7 @@ make build-contract
 
 ### Step 4. Install the contract
 
-[Install the contract](../../developers/cli/installing-contracts.md) on the network via a deploy and verify the deploy status. You can also [monitor the event stream](../../developers/cli/sending-transactions.md#monitoring-the-event-stream-for-deploys) to see when your deploy is accepted.
+[Install the contract](../../developers/cli/installing-contracts.md) on the network via a deploy and verify the deploy status. You can also [monitor the event stream](../../developers/cli/sending-transactions.md#monitoring-the-event-stream-for-transactions) to see when your deploy is accepted.
 
 To observe the upgrade workflow, you can install the second contract version on the chain. This version contains the `counter_decrement` entry point.
 
@@ -330,8 +330,8 @@ casper-client put-deploy \
 :::note
 
 There are two ways to call versioned contracts:
-1. [Calling Contracts by Package Hash](/developers/writing-onchain-code/calling-contracts/#StoredVersionedContractByHash)
-2. [Calling Contracts by Package Name](/developers/writing-onchain-code/calling-contracts/#StoredVersionedContractByName)
+1. [Calling Contracts by Package Hash](../../developers/writing-onchain-code/calling-contracts.md#storedcontractbyhash)
+2. [Calling Contracts by Package Name](../../developers/writing-onchain-code/calling-contracts.md#storedcontractbyname)
 
 :::
 

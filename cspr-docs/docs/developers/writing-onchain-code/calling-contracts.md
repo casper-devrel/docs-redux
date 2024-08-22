@@ -21,11 +21,11 @@ Further information on the structure of `ModuleBytes` can be found in [here](../
 
 While there is no Wasm associated with this variant, it is still a deploy sent to a node that invokes an installed contract.
 
-Further information on the structure of `StoredContractByHash` can be found [here](../json-rpc/types_chain.md#storedcontractbyhash).
+Further information on the structure of `StoredContractByHash` can be found [here](../../developers/writing-onchain-code/calling-contracts.md#storedcontractbyhash).
 
 ### StoredContractByName
 
-`StoredContractByName` is similar to `StoredContractByHash`, with the main difference being the reference used to invoke on-chain Wasm. Where `StoredContractByHash` requires the contract hash, `StoredContractByName` uses a string stored as a [`NamedKey`](../json-rpc/types_chain.md#namedkey) in the caller's account.
+`StoredContractByName` is similar to `StoredContractByHash`, with the main difference being the reference used to invoke on-chain Wasm. Where `StoredContractByHash` requires the contract hash, `StoredContractByName` uses a string stored as a [`NamedKey`](../../developers/writing-onchain-code/calling-contracts.md#storedcontractbyname) in the caller's account.
 
 This allows the caller to more easily reference a contract stored on-chain for later use but requires pre-planning to store the name within their account's `NamedKeys`.
 

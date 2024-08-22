@@ -4,7 +4,7 @@ title: Sending Transactions
 
 # Sending Transactions using the Casper Client
 
-To install smart contracts on the blockchain, you can send your Wasm to the network via a [Transaction](../../concepts/glossary/T.md#transaction-transaction). To do this, you will need to meet a few prerequisites:
+To install smart contracts on the blockchain, you can send your Wasm to the network via a [Transaction](../../concepts/glossary/T.md#transaction). To do this, you will need to meet a few prerequisites:
 
 - You will need a client to interact with the network, such as the [default Casper client](../prerequisites.md#install-casper-client)
 - Ensure you have an [Account](../prerequisites.md#setting-up-an-account) and its associated [keys](../../concepts/accounts-and-keys.md) This account will pay for the Transaction, and its secret key will sign the Transaction
@@ -22,7 +22,7 @@ CSPR tokens are used to pay for transactions on the Casper Mainnet and Testnet. 
 
 ## Monitoring the Event Stream for Transactions
 
-If you want to follow the [lifecycle](../../concepts/design/casper-design.md#execution-semantics-phases) of the Transaction, you can start monitoring a node's event stream. This section will focus only on TransactionAccepted events, but there are other event types described [here](../dapps/monitor-and-consume-events.md). You need the following information to proceed:
+If you want to follow the [lifecycle](../../concepts/transactions-and-transaction-lifecycle.md#execution-semantics-phases) of the Transaction, you can start monitoring a node's event stream. This section will focus only on TransactionAccepted events, but there are other event types described [here](../dapps/monitor-and-consume-events.md). You need the following information to proceed:
 
 - The IP address of a [peer](../prerequisites.md#acquire-node-address-from-network-peers) on the network
 - The port specified as the `event_stream_server.address` in the node's *config.toml*, which is by default 9999 on Mainnet and Testnet
