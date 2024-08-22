@@ -50,6 +50,8 @@ You will need the following information to use the `put-transaction session` com
 
 * The **category** of the transaction, based on the size of the Wasm included. `install-upgrade` being the largest, descending in size through `large`, `medium`, and `small`. This will appear in our example put-transaction as `--category 'install-upgrade'`.
 
+* The **session entry point**, which at installation time is usually `call`.
+
 * The **node address** for a node on your NCTL network. In this example, we are using the node at `http://localhost:11101`. On the Casper Mainnet or Testnet, nodes will use port `7777`. This will appear in our example put-transaction as `--node-address http://<HOST>:7777`.
 
 The command to send your `Transaction` should look similar to the following code snippet:
@@ -67,7 +69,8 @@ $(get_path_to_client) put-transaction session \
 --gas-price-tolerance 10 \
 --pricing-mode fixed \
 --transaction-path <PATH> \
---category 'install-upgrade'
+--category 'install-upgrade' \
+--session-entry-point call \
 --node-address http://localhost:11101
 ```
 
