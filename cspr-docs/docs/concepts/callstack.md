@@ -22,7 +22,7 @@ If session code calls a contract, which in turn calls another contract, then the
 
 In this example, the first contract would be the `immediate caller` of the second contract, meaning it interacted directly with it. The session code would remain the `caller`.
 
-<img class="align-center" src={useBaseUrl("/image/callstack.png")} width="450" alt="Call Stack" />
+![Call Stack](./callstack/callstack.png)
 
 ## Limitations
 

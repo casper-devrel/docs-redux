@@ -13,7 +13,7 @@ Our smart contract packaging tools enable you to:
 
 When you upgrade a contract, you add a new contract version in a contract package. The versioning process is additive rather than an in-place replacement of an existing contract. The original version of the contract is still there, and you can enable certain versions for specific clients. You can also disable a contract version if needed. If you find that you need to use a disabled contract version, you may also re-enable it.
 
-<p align="center"><img src={useBaseUrl("/image/package-representation.png")} alt="package-representation" width="400"/></p>
+![Package Representation](./upgrading-contracts/package-representation.png)
 
 The contract package is like a container for different contract versions, with functionality that can differ slightly or significantly among versions. The contract package is created when you install the contract on the blockchain. 
 

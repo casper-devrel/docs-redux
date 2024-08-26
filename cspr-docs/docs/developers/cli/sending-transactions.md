@@ -1437,15 +1437,15 @@ Here is an [example](https://cspr.live/deploy/afeb43036c41e667af8bc34782c48a66cf
 
 **Figure 1**: In the Deploys tab of an account on [cspr.live](https://cspr.live/), a red exclamation mark is shown. By moving the cursor over it, the tooltip displays an "Out of gas error".
 
-<img src={useBaseUrl("/image/gas-concepts/error-deploys.png")} width="550" alt="Out of gas error" />
+![Out of gas error](./sending-transactions/error-deploys.png)
 
 **Figure 2**: Click the specific deploy to see more details such as the deploy hash, cost, and the status as an 'Out of gas error'. This indicates that the transaction did not have sufficient payment to cover the gas required for it to complete successfully.
 
-<img src={useBaseUrl("/image/gas-concepts/error-account.png")} width="550" alt="Gas error in account" />
+![Gas error in account](./sending-transactions/error-account.png)
 
 **Figure 3**: Click the **Show raw data** button, to see more details about the deploy. Towards the end of the raw data, you can see the error message.
 
-<img src={useBaseUrl("/image/gas-concepts/error-raw.png")} width="550" alt="Gas error in raw data" />
+![Gas error in raw data](./sending-transactions/error-raw.png)
 
 ### Gas limit error
 

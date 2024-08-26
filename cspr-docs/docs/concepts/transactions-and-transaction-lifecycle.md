@@ -10,9 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A [transaction](./glossary/T.md#transaction) is a data structure containing Wasm and the requester's signature(s). Additionally, the transaction header contains additional metadata about the transaction itself. A transactions’s structure is as follows:
 
-<p align="center">
-<img src={useBaseUrl("/image/design/transaction-structure.png")} alt="Image showing the transaction data structure" width="500"/>
-</p>
+![Transaction Data Structure](./transaction-lifecycle/transaction-structure.png)
 
 - Body: Containing payment code and session code (more details on these below)
 - Header: containing
