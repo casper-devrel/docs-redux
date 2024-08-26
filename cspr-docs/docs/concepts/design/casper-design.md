@@ -47,7 +47,7 @@ This decision is taken to incentivize the [Casper Runtime Economics](./../econom
 
 A Wasm module is not natively able to create any effects outside of reading or writing from its own linear memory. Wasm modules must import functions from the host environment they are running in to enable other desired effects, such as reading or writing to global state.
 
-![Casper Network Runtime](/image/design/casper-runtime.png)
+![Casper Network Runtime](./casper-design/casper-runtime.png)
 
 All these features are accessible via functions in the [Casper External FFI](https://docs.rs/casper-contract/latest/casper_contract/ext_ffi/index.html).
 
@@ -55,7 +55,7 @@ All these features are accessible via functions in the [Casper External FFI](htt
 
 `URef`s are generated using a [cryptographically secure random number generator](https://rust-random.github.io/rand/rand_chacha/struct.ChaCha20Rng.html) using the [ChaCha algorithm](https://cr.yp.to/chacha.html). The random number generator is seeded by taking the `blake2b256` hash of the deploy hash concatenated with an index representing the current phase of execution (to prevent collisions between `URef`s generated in different phases of the same deploy).
 
-![Generating URefs](/image/design/generating-urefs.png)
+![Generating URefs](./casper-design/generating-urefs.png)
 
 ## Accounts {#accounts-head}
 
@@ -74,9 +74,7 @@ This chapter describes the permission model for accounts and their local storage
 Account creation automatically happens upon transferring tokens to a yet unused `PublicKey`. On account creation, the balance of its main purse is equal to the number of tokens transferred during the creation process. Its action thresholds are equal to 1, and there is one associated key. The associated key is the `PublicKey` used to create the account. In this way, an account is essentially a context object encapsulating the main purse, used to pay for transactions. However, an account may have an additional purse beyond the main purse.
 
 
-<p align="center">
-<img src={useBaseUrl("/image/design/account-structure.png")} alt="Image showing the account data structure" width="200"/> 
-</p>
+![Account Data Structure](./casper-design/account-structure.png)
 
 An `Account` contains the following data:
 
@@ -241,9 +239,8 @@ A blockchain system generally needs a supply of tokens available to pay for comp
 
 The number of tokens used to calculate seigniorage is the initial supply of tokens at genesis.
 
-<p align="center">
-<img src={useBaseUrl('/image/design/token-lifecycle.png')} alt="Image showing the token lifecycle" width="700"/> 
-</p>
+
+![Token Lifecycle](./casper-design/token-lifecycle.png)
 
 ### Divisibility of Tokens {#tokens-divisibility}
 

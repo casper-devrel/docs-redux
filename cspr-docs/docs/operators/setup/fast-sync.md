@@ -4,7 +4,6 @@ title: Fast Sync
 
 # Introducing Fast Sync
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A Casper Network requires new nodes to download and execute every block to join the network. From genesis (start of the Mainnet), the node executes each deploy in every block. This process continues until the node has arrived at the current state of the blockchain. Syncing a node this way can take a very long time.
 
@@ -12,7 +11,7 @@ We have introduced a fast syncing process (fast sync) to provide a faster altern
 
 ## How Fast Sync Works
 
-<img src={useBaseUrl("/image/fast-sync-process.png")} class="Fast-sync process" width="500"/>
+![](./fast-sync/fast-sync-process.png)
 
 For fast sync, operators must provide the trusted hash of a block in the `config.toml` file. An example can be found [here](https://github.com/casper-network/casper-node/blob/f7d8228de3cb56a3fe705f5a787d3dbf03ff7998/resources/production/config-example.toml#L7).
 

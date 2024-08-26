@@ -2,8 +2,6 @@
 title: Call Stacks
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 # Understanding Call Stacks
 
 Users wishing to interact with a Casper network must do so through [sending a Deploy](../developers/cli/sending-deploys.md). All Deploys consist of [session code](../developers/writing-onchain-code/writing-session-code.md) run in the context of the user account that sent the Deploy. The session code may [install contract code to global state](../developers/cli/installing-contracts.md), or interact with previously [installed contract code](../developers/writing-onchain-code/calling-contracts.md).
@@ -22,7 +20,7 @@ If session code calls a contract, which in turn calls another contract, then the
 
 In this example, the first contract would be the `immediate caller` of the second contract, meaning it interacted directly with it. The session code would remain the `caller`.
 
-<img class="align-center" src={useBaseUrl("/image/callstack.png")} width="450" alt="Call Stack" />
+![](./callstack/callstack.png)
 
 ## Limitations
 

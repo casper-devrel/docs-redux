@@ -4,8 +4,6 @@ slug: /concepts/economics/delegation
 
 # Delegation Details
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 This section provides a detailed explanation of the delegation cost mechanism, how the gas cost relates with delegations, where to find the details etc. Please note that the cost amounts are likely to change with time and you may have to check the latest release details to get the most up-to-date and accurate details.
 
 ## Delegation Cost
@@ -16,9 +14,11 @@ When you delegate, the system automatically charges some gas to set up related d
 
 For example, the chainspec file in release 1.3.2 will contain the following information. This is how the delegation cost is defined in the chainspec.toml file of a Casper network.
 
-<p align="center"><img src={useBaseUrl("/image/economic-delegationCost.png")}  alt="cost" width="400" class="center"/></p>
+**Figure 1**: Delegation cost is defined in the chainspec.toml file of a Casper network
 
-<p align="center">**Figure 1**: Delegation cost is defined in the chainspec.toml file of a Casper network</p>
+![**Figure 1**: Delegation cost is defined in the chainspec.toml file of a Casper network
+](./delegation/economic-delegationCost.png)
+
 
 Delegation fees may change over time, so, it is essential to stay up to date. To do so, select the latest release in [Github](https://github.com/casper-network/casper-node), and navigate to the chainspec.toml file.
 
@@ -34,9 +34,8 @@ It is essential to have enough funds in your account's main purse when you set u
 
 As a result, when performing a [delegation using the command line](../../../developers/cli/delegate.md), we recommend you specify a little more than the base transaction payment to ensure that the transaction will go through without failure.
 
-![Delegation Details](/image/economic-delegationDetails.png)
-
-<p align="center">**Figure 2** : On Testnet or Mainnet, the transaction fee for a delegation is a little bit higher than 2.5 CSPR </p>
+**Figure 2** : On Testnet or Mainnet, the transaction fee for a delegation is a little bit higher than 2.5 CSPR 
+![Delegation Details](./delegation/economic-delegationDetails.png)
 
 ---
 

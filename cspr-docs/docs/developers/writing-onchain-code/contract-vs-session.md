@@ -1,7 +1,5 @@
 # Contracts and Session Code
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 ## What is Session Code? {#what-is-session-code}
 
 Session code is the simplest logic one can execute on a Casper network. It is essential because it is often used to trigger contract logic stored on the chain. Session code requires only one entry point, the `call` function, and it runs within the context of the account executing the session code. As a result, the session code runs with the account's permissions, such as having access to the account's main purse. For example, the session code could transfer tokens from the account's main purse. 
@@ -22,7 +20,7 @@ The following table summarizes the key differences between session code and cont
 
 The following image depicts the comparison presented in the table.
 
-<p align="center"><img src={useBaseUrl("/image/design/session-contract-context.png")} alt="Comparing Session and Contract Code" /></p>
+![Comparing Session and Contract Code](./contract-vs-session/session-contract-context.png) 
 
 ## What's Next? {#whats-next}
 

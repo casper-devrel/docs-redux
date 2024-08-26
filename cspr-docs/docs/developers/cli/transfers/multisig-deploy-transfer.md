@@ -1,5 +1,3 @@
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 # Transferring Tokens using a Multi-Sig Deploy
 
 This page presents a method of transferring tokens via a deploy file using multiple signatures. This method is recommended when implementing multi-signature transfers between purses on a Casper network.
@@ -26,7 +24,8 @@ The high-level flow to transfer tokens using the Casper CLI client and a deploy 
 2. The `sign-deploy` command adds additional signatures for a multi-signature transfer
 3. The `send-deploy` command sends the deploy containing the transfer to the network
 
-<img src={useBaseUrl("/image/deploy-flow.png")} alt="Deployment flow" style={{backgroundColor:"#e6e6e6", padding:"0.25em"}} />
+![](./multisig-deploy-transfer/deploy-flow.png)
+
 
 ### Creating the transfer {#creating-the-transfer}
 
