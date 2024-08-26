@@ -53,9 +53,7 @@ Notice that proposals, votes, and echoes are broadcast, so if one correct node r
 
 Let's review a simple scenario demonstrating the Zug consensus. The example shows five rounds with a different leader and nodes voting on a card suit. The bottom row indicates whether or not the round was finalized. Notice that round 5 was the first finalized round.
 
-<p align="center">
-<img src={"/image/design/zug-example.png"} alt="Zug Example" />
-</p>
+![ZUG](./zug/zug-example.png)
 
 In round 1, we had a leader who proposed `♥`, but was slow, so the other nodes timed out and voted `no.` The first round had a proposal and was skippable, but nothing was finalized. 
 

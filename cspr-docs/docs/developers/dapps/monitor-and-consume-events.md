@@ -22,7 +22,7 @@ The Casper Sidecar is an application running alongside the node process. It allo
 * A [JSON-RPC API](https://github.com/casper-network/casper-sidecar/blob/feat-2.0/README.md#the-rpc-api-server) to interact with a Casper node.
 * [Legacy emulation](https://github.com/casper-network/casper-sidecar/blob/feat-2.0/LEGACY_SSE_EMULATION.md) for clients using older versions of the SSE API.
 
-<img class="align-center" src={useBaseUrl("/image/operators/sidecar-diagram.png")} alt="Sidecar components and architecture diagram" width="800"/>
+![Sidecar components and architecture](./monitor-and-consume-events/sidecar-diagram.png)
 
 Visit [GitHub](https://github.com/casper-network/casper-sidecar/) for the latest source code and information on:
 
@@ -209,9 +209,10 @@ The Sidecar also offers a JSON-RPC API server for clients to interact with a Cas
 
 The Sidecar offers a REST API to query stored events. You can discover the specific endpoints of the REST API using [OpenAPI](https://github.com/casper-network/casper-sidecar/tree/feat-2.0?tab=readme-ov-file#openapi-specification) and [Swagger](https://github.com/casper-network/casper-sidecar/tree/feat-2.0?tab=readme-ov-file#swagger-documentation). The [usage instructions](https://github.com/casper-network/casper-sidecar/blob/feat-2.0/USAGE.md) in the repository provide more details.
 
-<img class="align-center" src={useBaseUrl("/image/operators/sidecar-swagger-1.png")} alt="Sidecar components and architecture diagram" width="800"/>
 
-<img class="align-center" src={useBaseUrl("/image/operators/sidecar-swagger-2.png")} alt="Sidecar components and architecture diagram" width="800"/>
+![Sidecar components and architecture diagram 1](./monitor-and-consume-events/sidecar-swagger-1.png)
+
+![Sidecar components and architecture diagram 2](./monitor-and-consume-events/sidecar-swagger-2.png)
 
 ## Troubleshooting Tips
 

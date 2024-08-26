@@ -1096,7 +1096,7 @@ You will find two types of stored values in global state:
 - The checksum of the message payload, as a 32-byte BLAKE2b hash of the serialized `MessagePayload`
 - The topic control record containing the number of messages sent on the topic and the timestamp of the block in which the messages were emitted
 
-<img class="align-center" src={useBaseUrl("/image/developers/message_keys.png")} width="800" alt="Message key structure" />
+![Message key structure](./emitting-contract-events/message_keys.png)
 
 <details>
 <summary>Expand to view the sample keys</summary>

@@ -1423,7 +1423,7 @@ If your test configuration matches your production [chainspec](../../concepts/gl
 
 Please be aware that sending a transaction always requires payment. This is true regardless of the validity of included Wasm. Depending on how the network was configured, the transaction payment may or may not be refunded, or a hold may placed on the paying purse. See [fee elimination](../../concepts/economics/fee-elimination.md) for more details.
 
-If the transaction failure occurs after session execution begins, the penalty payment of 2.5 CSPR is included in the gas costs of the [failed execution](../../concepts/serialization-standard.md#executionresult-executionresult).
+If the transaction failure occurs after session execution begins, the penalty payment of 2.5 CSPR is included in the gas costs of the [failed execution](../../concepts/serialization/index.md).
 
 However, if the failure occurs prior to session execution, the penalty payment will not appear in the transaction's gas cost. Depending on the network configuration, the system will deduct the processing fee from the sending account's main purse or place a processing hold on the purse.
 
@@ -1437,15 +1437,15 @@ Here is an [example](https://cspr.live/deploy/afeb43036c41e667af8bc34782c48a66cf
 
 **Figure 1**: In the Deploys tab of an account on [cspr.live](https://cspr.live/), a red exclamation mark is shown. By moving the cursor over it, the tooltip displays an "Out of gas error".
 
-<img src={useBaseUrl("/image/gas-concepts/error-deploys.png")} width="550" alt="Out of gas error" />
+![Out of gas error](./sending-transactions/error-deploys.png)
 
 **Figure 2**: Click the specific deploy to see more details such as the deploy hash, cost, and the status as an 'Out of gas error'. This indicates that the transaction did not have sufficient payment to cover the gas required for it to complete successfully.
 
-<img src={useBaseUrl("/image/gas-concepts/error-account.png")} width="550" alt="Gas error in account" />
+![Gas error in account](./sending-transactions/error-account.png)
 
 **Figure 3**: Click the **Show raw data** button, to see more details about the deploy. Towards the end of the raw data, you can see the error message.
 
-<img src={useBaseUrl("/image/gas-concepts/error-raw.png")} width="550" alt="Gas error in raw data" />
+![Gas error in raw data](./sending-transactions/error-raw.png)
 
 ### Gas limit error
 

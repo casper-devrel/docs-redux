@@ -27,27 +27,19 @@ Install the Casper app on the Ledger device by following the steps below. You ca
 
 1. In Ledger Live, open My Ledger at the bottom of the left-hand menu.
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/ledger-live/open-my-ledger.png")} alt="Open My Ledger" width="800" />
-</p>
+![Open My Ledger](./ledger-cspr-live/ledger-live/open-my-ledger.png)
 
 2. Connect the Ledger device to your computer and unlock it by entering your device PIN.
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/ledger-live/casper-unlock.png")} alt="Unlock your Ledger device" width="350" />
-</p>
+![Unlock your Ledger device](./ledger-cspr-live/ledger-live/casper-unlock.png)
 
 3. If asked, allow Ledger manager on your device.
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/ledger-live/allow-ledger.png")} alt="Allow Ledger" width="800" />
-</p>
+![Allow Ledger](./ledger-cspr-live/ledger-live/allow-ledger.png)
 
 4.  Find **Casper** in the app catalog.
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/ledger-live/find-casper.png")} alt="Find the Casper app" width="800" />
-</p>
+![Find the Casper app](./ledger-cspr-live/ledger-live/find-casper.png)
 
 :::important
 
@@ -62,20 +54,13 @@ Please search "Casper," not "CSPR" when searching for the app in the "My Ledger"
    - Your device will display **"Processing..."**
    - The app installation is confirmed.
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/ledger-live/casper-installed.png")} alt="Casper installation confirmed" width="800" />
-</p>
+![Casper installation confirmed](./ledger-cspr-live/ledger-live/casper-installed.png)
 
 6. Open the Casper App on your Ledger device by clicking both buttons on the device, and keep it open while doing the next steps.
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/ledger-live/select-casper.png")} alt="Select Casper on Ledger" width="350" />
-</p>
+![Select Casper on Ledger](./ledger-cspr-live/ledger-live/select-casper.png)
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/ledger-live/casper-ready.png")} alt="Casper app is ready" width="350" />
-</p>
-
+![Casper app is ready](./ledger-cspr-live/ledger-live/casper-ready.png)
 
 ## Sending and Receiving Tokens
 
