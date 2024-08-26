@@ -1,8 +1,1 @@
 
-./cspr-docs/docs/resources/beginner/counter-testnet/overview.md:![image](/image/counter-overview-testnet.png)
-./cspr-docs/docs/concepts/callstack.md:<img class="align-center" src={useBaseUrl("/image/callstack.png")} width="450" alt="Call Stack" />
-./cspr-docs/docs/users/csprlive/testnet-faucet.md:    <img src={useBaseUrl("/image/faucet-function.png")} width="500" />
-./cspr-docs/docs/operators/setup/fast-sync.md:<img src={useBaseUrl("/image/fast-sync-process.png")} class="Fast-sync process" width="500"/>
-./cspr-docs/docs/developers/cli/transfers/multisig-deploy-transfer.md:<img src={useBaseUrl("/image/deploy-flow.png")} alt="Deployment flow" style={{backgroundColor:"#e6e6e6", padding:"0.25em"}} />
-./cspr-docs/docs/concepts/list-auth-keys.md:![Image showing associated keys and authorization keys](/image/authorization-keys.png)
-./cspr-docs/docs/resources/beginner/counter/overview.md:![image](/image/counter-overview.png)

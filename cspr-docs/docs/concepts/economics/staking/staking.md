@@ -3,8 +3,6 @@ title: Staking vs. Delegating
 slug: /staking
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 # Staking vs. Delegating {#staking-vs-delegating}
 
 A feature of Proof-of-Stake protocols is that token holders can actively participate in the protocol through a mechanism known as **staking** or **delegation**. They can stake their tokens with any validator on a Casper network. Alternatively, it is possible to stake tokens via an exchange or custody provider.
@@ -39,7 +37,7 @@ There is no precise reward per block. Rewards are split proportionally among sta
 
 As a prospective delegator, it is essential to select a validating node that you can trust. Block explorers such as [cspr.live](https://cspr.live) provide [validator performance statistics](https://cspr.live/validators), including a performance score, total stake, number of delegators, and fees. Please do your due diligence before staking tokens with a validator.
 
-<img class="align-center" src={useBaseUrl("/image/tutorials/staking/1.validators.png")} alt="4.3" width="500" />
+![](./staking/1.validators.png)
 
 ## Monitoring Rewards {#monitoring-rewards}
 

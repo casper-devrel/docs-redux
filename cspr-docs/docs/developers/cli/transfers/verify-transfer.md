@@ -4,8 +4,6 @@ title: Verifying a Transfer
 
 # Verifying a Transfer
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 ## Prerequisites
 
 Before verifying a transfer, make sure you have:
@@ -53,16 +51,14 @@ After sending deploys to the network, you must get the new state root hash to se
 
 A transfer is executed as part of a deploy. In a Casper network, deploys can contain multiple transfers. Execution of the deploy includes writing information about each individual transfer to global state. A unique hash known as the `transfer-address` identifies each transfer. The `transfer-address` consists of a formatted string with a `transfer-` prefix.
 
-<p align="center">
-<img src={useBaseUrl("/image/transfers/transfer-hash-example.png")} alt="Image showing a transfer hash"/>
-</p>
+![](./verify-transfer/transfer-hash-example.png)
 
 First, use the `get-deploy` command and the *deploy_hash* to identify the corresponding transfer:
 
 ```bash
 casper-client get-deploy \
---node-address [NODE_SERVER_ADDRESS]  \
-[DEPLOY_HASH]
+  --node-address [NODE_SERVER_ADDRESS]  \
+  [DEPLOY_HASH]
 ```
 
 **Important response fields:**

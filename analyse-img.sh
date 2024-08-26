@@ -19,7 +19,7 @@ do
 done
 
 for image_name in ${image_names[@]}; do
-    grep_result=$(grep -r -i "\.*\/image\/\.*$image_name" $docs_folder)
+    grep_result=$(grep -r -i ".*\/image\/.*\/$image_name" $docs_folder)
     #grep_result=$(grep -i "image" $grep_result);
 
     if [ -z "$grep_result" ];

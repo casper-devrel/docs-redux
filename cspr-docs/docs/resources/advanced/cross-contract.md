@@ -92,7 +92,7 @@ make: *** [test] Error 101
 
 This indicates potential issues with outdated dependencies. Use the `cargo update` command to check for and install any available updates for your project's dependencies or do it manually through `Cargo.toml` file.
 
-<img class="align-center" src={useBaseUrl("/image/tutorials/cross-contract/CargoToml.png")} width="600" alt="CargoToml" />
+![](./cross-contract/CargoToml.png)
 
 If you are using cargo extensions in your editor you will see a warning next to the outdated dependencies.
 

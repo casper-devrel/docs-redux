@@ -4,8 +4,6 @@ title: Local Network Setup
 
 # Setting up a Local Network with NCTL
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 NCTL stands for network/node control. [NCTL](https://github.com/casper-network/casper-node/tree/master/utils/nctl) is a CLI application you can use to set up and control multiple local Casper nodes during development. Many developers wish to spin up relatively small test networks to localize their testing before deploying to the blockchain. Adopting a standardized approach in the community is also helpful for troubleshooting and reporting issues.
 
 ## Prerequisites {#prerequisites}
@@ -221,11 +219,11 @@ Several other NCTL commands are available via aliases for execution from within 
 
 You should see the new directory _utils/nctl/assets_, with the following structure.
 
-<img src={useBaseUrl("/image/nctl/assets_setup.png")} alt="assets_setup" width="200"/>
+![](./setup-nctl/assets_setup.png)
 
 Here is the command line output you would expect.
 
-<img src={useBaseUrl("/image/nctl/nctl_output.png")} alt="nctl_output"/>
+![](./setup-nctl/nctl_output.png)
 
 ## Stopping the Network {#stopping-the-network}
 

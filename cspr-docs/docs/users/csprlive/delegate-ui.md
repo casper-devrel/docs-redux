@@ -3,8 +3,6 @@ title: Delegate Tokens
 slug: /users/delegate-ui
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 # Delegating Tokens with a Block Explorer
 
 ## Introduction {#introduction}
@@ -29,11 +27,11 @@ Once connected to the Casper blockchain, we recommend reviewing the active accou
 - The **Delegated Account Balance**, representing the delegated tokens already staked with validators on the network
 - The **Delegations** tab, listing the validators to whom you have delegated tokens
 
-<img class="align-center" src={useBaseUrl("/image/tutorials/staking/2.delegations.png")} alt="Account and delegations details" width="800" />
+![](./delegate-ui/2.delegations.png)
 
 - The **Staking Rewards** tab, showing the rewards received in each era
 
-<img class="align-center" src={useBaseUrl("/image/tutorials/staking/3.rewards.png")} alt="Account and rewards" width="800" />
+![](./delegate-ui/3.rewards.png)
 
 ## Accessing the Delegation Feature {#delegation-access}
 
@@ -41,11 +39,11 @@ You can access the delegation functionality in two ways.
 
 **Option 1:** Click **Wallet** from the top navigation menu and then click **Delegate**. In the next screen, you will need to specify the validator's public key or search for a validator.
 
-<img class="align-center" src={useBaseUrl("/image/tutorials/staking/4.wallet-delegate.png")} alt="Delegate from the Wallet" width="150"/>
+![](./delegate-ui/4.wallet-delegate.png)
 
 **Option 2:** Click **Validators** from the top navigation menu. From the validators table, click on any validator to access their details. Once you find the validator to whom you want to delegate tokens, click the **Delegate** button. The next screen will have the validator's public key pre-populated.
 
-<img class="align-center" src={useBaseUrl("/image/tutorials/staking/5.validator-delegate.png")} alt="Delegate from a Validator"/>
+![](./delegate-ui/5.validator-delegate.png)
 
 ## Stepping through the Delegation Process
 
@@ -57,28 +55,28 @@ The following instructions will take you through the delegation process, startin
 2. Enter the amount of CSPR you wish to delegate. Remember to account for the delegation fee.
 3. Click **Next**.
 
-<img class="align-center" src={useBaseUrl("/image/tutorials/staking/6.delegation-details.png")} alt="Delegation details" width="400"/>
+![](./delegate-ui/6.delegation-details.png)
 
 **Step 2 - Confirm the delegation**
 
 1. Review the delegation details.
 2. If everything is correct, click **Confirm and delegate stake**. If you wish to make changes, return to the previous screen.
 
-<img class="align-center" src={useBaseUrl("/image/tutorials/staking/7.confirm-delegation.png")} alt="Confirm delegation details" width="400"/>
+![](./delegate-ui/7.confirm-delegation.png)
 
 **Step 3 - Sign the delegation**
 
 1.  Sign the delegation by clicking **Sign with Casper Wallet**.
 
-<img class="align-center" src={useBaseUrl("/image/tutorials/staking/8.sign-delegation.png")} alt="Sign delegation" width="400"/>
+![](./delegate-ui/8.sign-delegation.png)
 
 2.  Once the Casper Wallet opens, **check the deploy hash**. Ensure the deploy hash in the "Signature Request" window matches the deploy hash in the "Sign delegation" window before continuing.
 
-<img class="align-center" src={useBaseUrl("/image/tutorials/staking/9.wallet-window.png")} alt="Signature Request window"/>
+![](./delegate-ui/9.wallet-window.png)
 
 3.  Click **Sign** in the Signature Request window to finalize the delegation.
 
-<img class="align-center" src={useBaseUrl("/image/tutorials/staking/10.completed-delegation.png")} alt="Completed delegation" width="400"/>
+![](./delegate-ui/10.completed-delegation.png)
 
 The delegation initiates as soon as the corresponding deploy is signed. You can review the details and status of the deploy by clicking the **Deploy Details** highlighted above. 
 

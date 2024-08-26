@@ -16,7 +16,7 @@ This document covers different commands to query and interact with an NFT (CEP-7
 
 First, identify the contract hash by looking at the account that installed the contract. Under the account's named keys, you will see a named key for the contract hash, representing the stored contract. Copy this value and save it for future queries.
 
-<img class="align-center" src={useBaseUrl("/image/tutorials/cep-78/the-nft-contract-hash.png")} alt="The NFT contract hash"/>
+![](./querying-NFTs/the-nft-contract-hash.png)
 
 Next, query the contract details.
 
