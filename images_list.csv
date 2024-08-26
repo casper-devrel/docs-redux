@@ -100,6 +100,19 @@
 ./cspr-docs/static/image/tutorials/ledger/staking/ledger1.png
 ./cspr-docs/static/image/tutorials/ledger/staking/ledger3.png
 ./cspr-docs/static/image/tutorials/ledger/staking/ledger2.png
+./cspr-docs/static/image/tutorials/ledger/device/7-chain.jpg
+./cspr-docs/static/image/tutorials/ledger/device/15-approve.jpg
+./cspr-docs/static/image/tutorials/ledger/device/2-app.jpg
+./cspr-docs/static/image/tutorials/ledger/device/11-target-1.jpg
+./cspr-docs/static/image/tutorials/ledger/device/10-fee.jpg
+./cspr-docs/static/image/tutorials/ledger/device/9-account-2.jpg
+./cspr-docs/static/image/tutorials/ledger/device/5-type.jpg
+./cspr-docs/static/image/tutorials/ledger/device/13-amount.jpg
+./cspr-docs/static/image/tutorials/ledger/device/3-txn-1.jpg
+./cspr-docs/static/image/tutorials/ledger/device/8-account-1.jpg
+./cspr-docs/static/image/tutorials/ledger/device/14-approvals.jpg
+./cspr-docs/static/image/tutorials/ledger/device/4-txn-2.jpg
+./cspr-docs/static/image/tutorials/ledger/device/12-target-2.jpg
 ./cspr-docs/static/image/tutorials/ledger/ledger-live/8-add-account.png
 ./cspr-docs/static/image/tutorials/ledger/ledger-live/7-add-account.png
 ./cspr-docs/static/image/tutorials/ledger/ledger-live/3-app-cspr.png
@@ -180,7 +193,6 @@
 ./cspr-docs/static/image/tutorials/staking/6.delegation-details.png
 ./cspr-docs/static/image/tutorials/staking/4.wallet-delegate.png
 ./cspr-docs/static/image/tutorials/staking/9.wallet-window.png
-./cspr-docs/static/image/tutorials/staking/1.validators.png
 ./cspr-docs/static/image/tutorials/staking/7.confirm-delegation.png
 ./cspr-docs/static/image/tutorials/staking/8.sign-delegation.png
 ./cspr-docs/static/image/tutorials/cep-47/crate_imports.png

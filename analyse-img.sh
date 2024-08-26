@@ -9,7 +9,7 @@ images_grep=./images_grep_out.csv
 echo "" > $images_list
 echo "" > $images_notused
 echo "" > $images_grep
-for entry in $(find $image_folder -iname "*.png")
+for entry in $(find $image_folder -iname "*.jpeg" -o -iname "*.jpg" -o -iname "*.gif" -o -iname "*.png" -o -iname "*.bmp")
 do
     # extract just the filename
     filename="${entry##*/}"
