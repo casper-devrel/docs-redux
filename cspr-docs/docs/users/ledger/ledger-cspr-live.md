@@ -2,8 +2,6 @@
 title: Ledger and CSPR.live
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 # Using Ledger and CSPR.live
 
 This guide will help you connect your Ledger device to a Casper account using the [cspr.live](https://cspr.live/) block explorer to send and receive CSPR tokens.

@@ -5,8 +5,6 @@ slug: /users/testnet-faucet
 
 # Funding Testnet Accounts
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 The Casper Testnet is an alternate Casper blockchain that enables testing applications without spending CSPR on the Mainnet. The Testnet is deployed independently from the Mainnet for users to experiment with network features such as transferring, delegating, and undelegating tokens. One way to access the Casper Testnet is to use the [cspr.live](https://testnet.cspr.live/) block explorer. 
 
 Testnet tokens are independent of the Casper token (CSPR). While test tokens do not have any monetary value, they possess the same functionality as the CSPR token within the confines of the Testnet. Users can fund Testnet accounts as outlined below. 

@@ -2,8 +2,6 @@
 title: Ledger and Ledger Live
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 # Using Ledger and Ledger Live
 
 This guide will help you connect accounts from the Ledger device to the [Ledger Live](https://www.ledger.com/ledger-live) application to send and receive CSPR tokens.

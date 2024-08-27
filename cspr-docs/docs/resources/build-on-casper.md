@@ -3,8 +3,6 @@ title: Build on Casper
 slug: build-on-casper/introduction
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 # Building on Casper
 
 This guide intends to briefly show you the current features and advantages of building on the Casper Mainnet.
