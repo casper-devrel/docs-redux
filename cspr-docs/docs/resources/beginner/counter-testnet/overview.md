@@ -4,4 +4,4 @@ This flowchart outlines the process you will go through in this tutorial. Since 
 
 To summarize the flowchart, this tutorial will walk you through installing a contract on the blockchain and then calling two separate contract entry points to increment a counter variable. Along the way, you will learn how to query the network state to see when the network has successfully incremented the counter.
 
-![image](/image/counter-overview-testnet.png)
+![image](./overview/counter-overview-testnet.png)
