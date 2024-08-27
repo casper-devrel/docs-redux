@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This page describes the possibilities of using the [contract hash](https://docs.rs/casper-types/3.0.0/casper_types/contracts/struct.ContractHash.html) vs. the [contract package hash](https://docs.rs/casper-types/3.0.0/casper_types/contracts/struct.ContractPackageHash.html) (package hash for short) when calling a contract or managing calls from other contracts. Contracts can allow, block, or track calls from other contracts. As noted in [Upgrading and Maintaining Smart Contracts](./upgrading-contracts.md#the-contract-package), the contract package contains various contract versions. The contract hash is a BLAKE2b hash of a contract, and the contract package hash is the BLAKE2b hash of a contract package.
 
-<p align="center"><img src={useBaseUrl("/image/package-representation-extended.png")} alt="package-representation" width="400"/></p>
+![Package Representation](./contract-hash-vs-package-hash/package-representation-extended.png)
 
 Depending on what a contract needs to accomplish, it may save and manage the contract hash, package hash, or both. This behavior depends on what the contract needs to do, so a given contract might:
 

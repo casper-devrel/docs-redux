@@ -13,9 +13,7 @@ Let's review the difference between associated keys to an Account and authorizat
 - When a node receives a transaction, it checks that the transaction has the required authorization keys under `approvals` before including it in a block.
 - Different transactions executing the same smart contract can have different authorization keys.
 
-<p align="center">
-<img src={"/image/authorization-keys.png"} alt="Image showing associated keys and authorization keys" width="400"/> 
-</p>
+![Auth Keys](./list-auth-keys/authorization-keys.png)
 
 Here is a sample JSON representation of an Account's associated keys:
 

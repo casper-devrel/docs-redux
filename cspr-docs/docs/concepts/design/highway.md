@@ -18,10 +18,7 @@ An empty unit still carries an implicit vote. The citations determine which bloc
 
 Over time, the units form a Directed Acyclic Graph (DAG), where units are the vertices and citations are the edges.
 
-<p align="center">
-<img src={"/image/design/highway-dag.png"} alt="Image showing the DAG" width="600"/>
-</p>
-
+![DAG](./highway/highway-dag.png)
 
 Nodes must cite the latest unit received from every node, including their latest unit. If a validator does not follow the process and thus equivocates, their bid gets deactivated. However, the validator is not slashed. When a node equivocates, it can still send units but may not be a validator.
 
@@ -31,9 +28,7 @@ The Highway protocol proceeds in rounds with a minimum round length. Different n
 
 In each round, the assigned leader proposes a list of transactions to be included in a block. A block is finalized if there is a summit among the cited units. A summit is a structure within the graph characterized by a quorum *q*, a percentage of the participating validator weight, and a level *k*. Level *k* represents the depth in the graph. For a given fault tolerance threshold *t* (FTT), finality is defined as:
 
-<p align="center">
-<img src={"/image/design/highway-finality.png"} alt="Image showing the finality equation" width="200"/>
-</p>
+![Finality Equation](./highway/highway-finality.png)
 
 If *q* is close to *n*, meaning the whole network participates, a block can be finalized with a high fault tolerance threshold (FTT).
 

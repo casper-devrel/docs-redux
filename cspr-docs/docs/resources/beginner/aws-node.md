@@ -11,7 +11,7 @@ The following tutorial outlines the process for launching a [Casper Node through
 
 You will first need to subscribe to the Casper node software through the AWS Marketplace. There is no associated cost with this subscription.
 
-![Step 01](/image/tutorials/aws-node/CasperAWS01.png)
+![Step 01](./aws-node/CasperAWS01.png)
 
 If you are not currently signed in to an AWS account, you will need to either sign in or create an account to subscribe.
 
@@ -19,11 +19,11 @@ You need to accept the terms and conditions listed to continue with the subscrip
 
 After accepting the terms, it may take a few moments for AWS to process your request. In this event, you will see the `Continue to Configuration` button grayed out, as shown below:
 
-![Step 04](/image/tutorials/aws-node/CasperAWS02.png)
+![Step 04](./aws-node/CasperAWS02.png)
 
 Once the system processes your request, the button will light orange, and you may continue to the configuration options.
 
-![Step 05](/image/tutorials/aws-node/CasperAWS03.png)
+![Step 05](./aws-node/CasperAWS03.png)
 
 ## Step 2 - Initial Configuration
 
@@ -31,7 +31,7 @@ The `Configuration` page allows you to choose your fulfillment option, software 
 
 The window on the right will show an estimation of the infrastructure costs from AWS for operating the Casper node, given the EC2 instance type you previously chose.
 
-![Step 06](/image/tutorials/aws-node/CasperAWS04.png)
+![Step 06](./aws-node/CasperAWS04.png)
 
 ## Step 3 - Launch Configuration
 
@@ -39,7 +39,7 @@ The `Launch` page will show your previously selected configuration details and a
 
 Below this, you will see a drop-down menu with the title "Choose Action":
 
-![Step 08](/image/tutorials/aws-node/CasperAWS05.png)
+![Step 08](./aws-node/CasperAWS05.png)
 
 This drop-down menu includes the following options:
 
@@ -61,14 +61,14 @@ Additional drop-down menus include:
 
 ### EC2 Key Pair Settings
 
-![Step 11](/image/tutorials/aws-node/CasperAWS06.png)
+![Step 11](./aws-node/CasperAWS06.png)
 
 You will need an EC2 key pair to launch your Casper node. If you do not already have an EC2 key pair, you can create one directly from this page by clicking "Create a key pair in EC2". This will bring you to the EC2 console, where you can click "Create key pair". This will automatically download your keys in the selected file type, and you can choose the new key pair on the previous page.
 
-![Step 12](/image/tutorials/aws-node/CasperAWS07.png)
+![Step 12](./aws-node/CasperAWS07.png)
 
 ### Launching Your Node
 
 If you are satisfied with your configuration choices and all options are correctly filled out, you can hit the orange `Launch` button to launch your AWS-hosted Casper node.
 
-![Step 13](/image/tutorials/aws-node/CasperAWS08.png)
+![Step 13](./aws-node/CasperAWS08.png)
