@@ -1,5 +1,3 @@
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 # Authorization Keys
 
 This topic explains the usage of authorization keys when signing a transaction and how to access them from a smart contract. Try the [Working with Authorization Keys](../resources/advanced/list-auth-keys-tutorial.md) tutorial for an example.

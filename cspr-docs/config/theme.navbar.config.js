@@ -12,30 +12,35 @@ module.exports = {
     },
     items: [
         {
+            type: "docsVersion",
             to: `${routePrefix}/concepts`,
             activeBasePath: `${routePrefix}/concepts`,
             label: "Concepts",
             position: "left",
         },
         {
-            to: `${routePrefix}/developers`,
+            type: "docsVersion",
+            to: `/developers`,
             activeBasePath: `${routePrefix}/developers`,
             label: "Developers",
             position: "left",
         },
         {
+            type: "docsVersion",
             to: `${routePrefix}/operators`,
             activeBasePath: `${routePrefix}/operators`,
             label: "Operators",
             position: "left",
         },
         {
+            type: "docsVersion",
             to: `${routePrefix}/users`,
             activeBasePath: `${routePrefix}/users`,
             label: "Users",
             position: "left",
         },
         {
+            type: "docsVersion",
             to: `${routePrefix}/resources`,
             activeBasePath: `${routePrefix}/resources`,
             label: "Resources",
