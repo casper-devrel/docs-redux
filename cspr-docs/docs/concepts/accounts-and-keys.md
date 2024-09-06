@@ -112,7 +112,7 @@ The Casper Signer has been replaced with the Casper Wallet and will be deprecate
 
 ## Funding your Account
 
-Once you create your account, you can [fund the account's main purse](../developers/prerequisites.md#funding-an-account-fund-your-account) to finish the process of setting it up. 
+Once you create your account, you can [fund the account's main purse](../developers/prerequisites.md#fund-your-account) to finish the process of setting it up. 
 
 :::note
 
@@ -284,7 +284,4 @@ casper-client get-account-info --help
 
 Using the block explorer for [Mainnet](https://cspr.live/) or [Testnet](https://testnet.cspr.live/), open the Account in question, and expand the `Raw Data` section. Look for the `main_purse` field and find the corresponding URef. If you do not see data in the `Raw Data` section, then the account has not been funded yet.
 
-<p align="center">
-<img src={"/image/design/main_purse_uref.png"} alt="Image showing an account's main purse" width="500"/>
-</p>
-
+![Main purse](./account-and-keys/main_purse_uref.png)

@@ -2,10 +2,7 @@
 title: Contract Upgrades
 slug: /resources/tutorials/beginner/upgrade-contract
 ---
-
 # Upgrading a Contract
-
-import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This tutorial examines how to upgrade an existing contract, a process similar to upgrading any other software. You can change an unlocked [contract package](https://docs.rs/casper-types/latest/casper_types/struct.ContractPackage.html) by adding a new contract and updating the default contract version that the contract package should use. You will need to know the contract package hash and use the [add_contract_version](https://docs.rs/casper-contract/latest/casper_contract/contract_api/storage/fn.add_contract_version.html) API. You can also create a [locked contract package](#locked-contract-package) that cannot be versioned and is therefore not upgradable.
 
@@ -113,7 +110,7 @@ make build-contract
 
 ### Step 4. Install the contract
 
-[Install the contract](../../developers/cli/installing-contracts.md) on the network via a deploy and verify the deploy status. You can also [monitor the event stream](../../developers/cli/sending-transactions.md#monitoring-the-event-stream-for-deploys) to see when your deploy is accepted.
+[Install the contract](../../developers/cli/installing-contracts.md) on the network via a deploy and verify the deploy status. You can also [monitor the event stream](../../developers/cli/sending-transactions.md#monitoring-the-event-stream-for-transactions) to see when your deploy is accepted.
 
 To observe the upgrade workflow, you can install the second contract version on the chain. This version contains the `counter_decrement` entry point.
 
@@ -330,8 +327,8 @@ casper-client put-deploy \
 :::note
 
 There are two ways to call versioned contracts:
-1. [Calling Contracts by Package Hash](/developers/writing-onchain-code/calling-contracts/#StoredVersionedContractByHash)
-2. [Calling Contracts by Package Name](/developers/writing-onchain-code/calling-contracts/#StoredVersionedContractByName)
+1. [Calling Contracts by Package Hash](../../developers/writing-onchain-code/calling-contracts.md#storedcontractbyhash)
+2. [Calling Contracts by Package Name](../../developers/writing-onchain-code/calling-contracts.md#storedcontractbyname)
 
 :::
 

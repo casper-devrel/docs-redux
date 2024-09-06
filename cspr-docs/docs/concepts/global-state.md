@@ -14,7 +14,7 @@ Each finalized block causes changes to the network's global state because of the
 
 ## Merkle Trie Structure {#global-state-trie}
 
-![Global State](/image/design/global-state.png)
+![Global State](./global-state/global-state.png)
 
 At a high level, a Merkle trie is a key-value store data structure that can be shared piece-wise in a verifiable way (via a construction called a Merkle proof). Each node is labeled by the hash of its data. Leaf nodes are labeled with the hash of their data. Non-leaf nodes are labeled with the hash of the labels of their child nodes.
 

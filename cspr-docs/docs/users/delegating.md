@@ -1,7 +1,5 @@
 # Delegating Tokens
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 A feature of Proof-of-Stake protocols is that token holders can actively participate in the protocol through a mechanism known as **delegating** or **staking** with a validator. CSPR holders can stake their tokens with any validator on a Casper network. Alternatively, it is possible to stake tokens via an exchange or custody provider.
 
 Node operators stake their tokens to earn eligibility to propose and approve blocks on the network. They also run and maintain servers connected to the network. If they win a validator slot, they become validators and help enable the Proof-of-Stake aspect of the network, a process different from mining tokens. Validators thus earn rewards for participating and for securing the network.
@@ -49,7 +47,7 @@ max_delegators_per_validator = 1200
 
 As a prospective delegator, it is essential to select a validating node that you can trust. Block explorers such as [cspr.live](https://cspr.live) provide [validator performance statistics](https://cspr.live/validators), including a performance score, total stake, number of delegators, and fees. Please do your due diligence before staking tokens with a validator.
 
-<img class="align-center" src={useBaseUrl("/image/tutorials/staking/1.validators.png")} alt="4.3" width="500" />
+![Validators](./delegating/1.validators.png) 
 
 ## First-time Delegation
 
@@ -61,8 +59,7 @@ When you set up a delegation transaction, it is essential to have enough funds i
 
 As a result, when performing a [delegation using the command line](../developers/cli/delegate.md), we recommend you specify a little more than the base transaction payment to ensure that the transaction will go through without failure.
 
-<p align="center"><img src={useBaseUrl("/image/economic-delegationDetails.png")}  alt="details" width="400" /></p>
-
+![**Figure 2** : On Testnet or Mainnet, the transaction fee for a delegation is a little bit higher than 2.5 CSPR.](./delegating/economic-delegationDetails.png)
 <p align="center">
 **Figure 2** : On Testnet or Mainnet, the transaction fee for a delegation is a little bit higher than 2.5 CSPR.
 </p>

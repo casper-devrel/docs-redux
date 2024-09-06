@@ -121,7 +121,7 @@ A `Map` serializes as a list of key-value tuples. There must be a well-defined o
     
 :::warning
 
-When passing a URef to another entity on chain, you must ensure that the `AccessRights` are set correctly. If the URef represents a [purse](../glossary/P.md#purse-purse), `AccessRights` impact who can deposit and withdraw CSPR.
+When passing a URef to another entity on chain, you must ensure that the `AccessRights` are set correctly. If the URef represents a [purse](../glossary/P.md#purse), `AccessRights` impact who can deposit and withdraw CSPR.
 
 :::
     

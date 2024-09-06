@@ -2,8 +2,6 @@
 title: Ledger and CSPR.live
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 # Using Ledger and CSPR.live
 
 This guide will help you connect your Ledger device to a Casper account using the [cspr.live](https://cspr.live/) block explorer to send and receive CSPR tokens.
@@ -20,48 +18,38 @@ To use the Ledger device with the [cspr.live](https://cspr.live/) block explorer
 2. Open the Casper app on the Ledger device as shown above.
 3. While keeping the Casper app open, navigate to [cspr.live/sign-in](https://cspr.live/sign-in).
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/flow/cspr-signin.png")} alt="Sign into cspr.live" width="800" />
-</p>
+![Sign into cspr.live](./ledger-cspr-live/flow/cspr-signin.png)
 
 4. Click on the **Connect** button in the Ledger section.
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/flow/cspr-connect.png")} alt="Choose to connect with Ledger" width="800" />
-</p>
+![Choose to connect with ledger](./ledger-cspr-live/flow/cspr-connect.png)
 
 5. Click the **Connect to Ledger wallet** button next.
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/flow/connect-ledger.png")} alt="Connect to Ledger Wallet in CSPR Live" width="800" />
-</p>
+![Connect to Ledger Wallet in CSPR Live](./ledger-cspr-live/flow/connect-ledger.png)
 
 6. Select an account you want to use.
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/flow/connect-select-account.png")} alt="Choose an account to connect" width="800" />
-</p>
+![Choose an account to connect](./ledger-cspr-live/flow/connect-select-account.png)
 
 7. Your Ledger device is now connected to the block explorer, displaying your account details.
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/flow/account-connected.png")} alt="Account connected" width="800" />
-</p>
+![Account connected](./ledger-cspr-live/flow/account-connected.png)
 
 ## Viewing Account Details {#view-account-details}
 
 1. Open [cspr.live](https://cspr.live).
 2. Click on the account in the upper-right corner of the page.
 
-<img src={useBaseUrl("/image/tutorials/ledger/flow/view-account.png")} alt="3-view-account" width="800" />
+![3-view-account](./ledger-cspr-live/flow/view-account.png)
 
 3.  Click on the **View Account** button.
 
-<img src={useBaseUrl("/image/tutorials/ledger/flow/view-account-button.png")} alt="6-view-account-button" width="800" />
+![5-view-account-button](./ledger-cspr-live/flow/view-account-button.png)
 
 4. You are presented with a page displaying details about your account. Check your account's main purse balance in the **Liquid** row under **Total Balance**.
 
-<img src={useBaseUrl("/image/tutorials/ledger/flow/account-details.png")} alt="4-account-details" width="800" />
+![4-account-details](./ledger-cspr-live/flow/account-details.png)
 
 ## Receiving Tokens {#receive-tokens}
 
@@ -70,11 +58,11 @@ To receive tokens, you need to provide the sender with your account's public key
 1. Open the account details page as described [here](#view-account-details) and copy the public key in the **Public Key** row.
 2. Alternatively, click on the drop-down menu on your account address.
 
-<img src={useBaseUrl("/image/tutorials/ledger/flow/view-account.png")} alt="View account" width="800" />
+![View account](./ledger-cspr-live/flow/view-account.png)
 
 3. Click on the **Copy Public Key** button and share it with the sender.
 
-<img src={useBaseUrl("/image/tutorials/ledger/flow/copy-public-key.png")} alt="Copy public key" width="800" />
+![Copy public key](./ledger-cspr-live/flow/copy-public-key.png)
 
 ## Sending Tokens {#send-tokens}
 
@@ -82,32 +70,24 @@ To receive tokens, you need to provide the sender with your account's public key
 2. Sign in with your Ledger device.
 3. Click on **Wallet** and then **Transfer CSPR**.
 
-<img src={useBaseUrl("/image/tutorials/ledger/flow/transfer-wallet.png")} alt="5-transfer-wallet" width="800" />
+![5-transfer-wallet](./ledger-cspr-live/flow/transfer-wallet.png)
 
 4. Fill in the details for the transfer.
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/cspr-live/1-transfer-details.png")} alt="1-transfer-details" width="500" />
-</p>
+![1-transfer-details](./ledger-cspr-live/cspr-live/1-transfer-details.png)
 
 5. Click on the **Next** button.
 6. On the next page, click **Confirm and transfer**.
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/cspr-live/2-transfer-confirm.png")} alt="2-transfer-confirm" width="500" />
-</p>
+![2-transfer-confirm](./ledger-cspr-live/cspr-live/2-transfer-confirm.png)
 
 7.  On the **Sign transaction** page, click on the **Sign with Ledger** button.
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/cspr-live/3-transfer-sign.png")} alt="3-transfer-sign" width="500" />
-</p>
+![3-transfer-sign](./ledger-cspr-live/cspr-live/3-transfer-sign.png)
 
 8. Your Ledger hardware wallet will present you with transfer details. Verify the transfer details (txn hash, chain ID, source **account**, fee, target, and amount). Meanwhile, the block explorer will show this message:
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/cspr-live/3-transfer-submitted.png")} alt="3-transfer-sign" width="500" />
-</p>
+![3-transfer-sign](./ledger-cspr-live/cspr-live/3-transfer-submitted.png)
 
 **Verify the transaction on your Ledger device**
 
@@ -115,74 +95,50 @@ Press the right button on your Ledger Device to review the transaction details (
 
 1. Verify the **Txn hash** - ensure it matches the value displayed on [cspr.live](https://cspr.live).
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/device/3-txn-1.jpg")} alt="3-txn-1" width="400" />
-</p>
+![3-txn-1](./ledger-cspr-live/device/3-txn-1.jpg)
 
 The Txn hash value continues on a second screen.
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/device/4-txn-2.jpg")} alt="4-txn-2" width="400" />
-</p>
+![4-txn-2](./ledger-cspr-live/device/4-txn-2.jpg)
 
 2.  The next page displays transaction **Type** - for CSPR transfers, that will be **Token transfer**.
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/device/5-type.jpg")} alt="5-type" width="400" />
-</p>
+![5-type](./ledger-cspr-live/device/5-type.jpg)
 
 3. Verify the **Chain ID**, which identifies the network to which you want to send the transaction.
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/device/7-chain.jpg")} alt="7-chain" width="400" />
-</p>
+![7-chain](./ledger-cspr-live/device/7-chain.jpg)
 
 4. Verify the **Account**, the account's public key initiating the transaction.
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/device/8-account-1.jpg")} alt="8-account-1" width="400" />
-</p>
+![8-account-1](./ledger-cspr-live/device/8-account-1.jpg)
 
 The Account value continues on a second screen.
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/device/9-account-2.jpg")} alt="9-account-2" width="400" />
-</p>
+![9-account-2](./ledger-cspr-live/device/9-account-2.jpg)
 
 5. Verify the **Fee**. For CSPR token transfers, that value should be constant and equal to 100,000,000 motes = 0.1 CSPR.
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/device/10-fee.jpg")} alt="10-fee" width="400" />
-</p>
+![10-fee](./ledger-cspr-live/device/10-fee.jpg)
 
 6. Verify the **Target**, the recipient's public key. Compare this value with the one in the block explorer.
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/device/11-target-1.jpg")} alt="11-target-1" width="400" />
-</p>
+![11-target-1](./ledger-cspr-live/device/11-target-1.jpg)
 
 The Target value continues on a second screen.
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/device/12-target-2.jpg")} alt="12-target-2" width="400" />
-</p>
+![12-target-2](./ledger-cspr-live/device/12-target-2.jpg)
 
 7.  Verify the **Amount** you want to transfer.
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/device/13-amount.jpg")} alt="13-amount" width="400" />
-</p>
+![13-amount](./ledger-cspr-live/device/13-amount.jpg)
 
 8. If you want to approve the transaction, click both buttons on the Ledger device while on the **APPROVE** screen.
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/device/15-approve.jpg")} alt="15-approve" width="400" />
-</p>
+![15-approve](./ledger-cspr-live/device/15-approve.jpg)
 
 After approving the transaction with your Ledger hardware wallet, the [cspr.live](https://cspr.live) block explorer will display a "Transfer completed" page.
 
-<p align="center">
-<img src={useBaseUrl("/image/tutorials/ledger/cspr-live/4-transfer-completed.png")} alt="4-transfer-completed" width="500" />
-</p>
+![4-transfer-completed](./ledger-cspr-live/cspr-live/4-transfer-completed.png)
 
 You can now check your account to see a list of all the completed transfers.

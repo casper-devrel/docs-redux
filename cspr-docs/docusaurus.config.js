@@ -13,13 +13,13 @@ const {
   themeAlgoliaConfig,
 } = require("./config");
 
-import { themes as prismThemes } from 'prism-react-renderer';
+import { themes as prismThemes } from "prism-react-renderer";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Casper Docs - Redux',
-  tagline: 'Casper Documentation',
-  favicon: 'icon/favicon.ico',
+  title: "Casper Docs - Redux",
+  tagline: "Casper Documentation",
+  favicon: "icon/favicon.ico",
   url: globalConfig.siteUrl,
   baseUrl: globalConfig.baseUrl,
   // GitHub pages deployment config.
@@ -29,11 +29,11 @@ const config = {
   // projectName: 'docs-redux',
   // deploymentBranch: 'gh-pages',
   trailingSlash: true,
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "warn",
+  onBrokenMarkdownLinks: "warn",
   onDuplicateRoutes: "throw",
   markdown: {
-    format: "detect"
+    format: "detect",
   },
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -44,29 +44,35 @@ const config = {
   // },
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
         docs: {
           path: "docs",
-          sidebarPath: './config/sidebar.config.js',
+          sidebarPath: "./config/sidebar.config.js",
           //sidebarPath: './sidebars.auto.js',
-          routeBasePath: (!globalConfig.routePrefix) ? "/" : globalConfig.routePrefix, // IMPORTANT: Turn on docs-only mode
-          exclude: ["./contract-dsl/archived", "./economics/archived", "./theory"]
+          routeBasePath: !globalConfig.routePrefix
+            ? "/"
+            : globalConfig.routePrefix, // IMPORTANT: Turn on docs-only mode
+          exclude: [
+            "./contract-dsl/archived",
+            "./economics/archived",
+            "./theory",
+          ],
         },
         blog: {
-          path: './blog',
-          routeBasePath: 'blog',
-          blogTitle: 'Casper Developer Relations Blog',
-          blogDescription: 'A blog about all things to do with developing on the Casper Blockchain',
-          postsPerPage: 'ALL',
-          blogSidebarTitle: 'All posts',
-          blogSidebarCount: 'ALL',
-        }
-        ,
+          path: "./blog",
+          routeBasePath: "blog",
+          blogTitle: "Casper Developer Relations Blog",
+          blogDescription:
+            "A blog about all things to do with developing on the Casper Blockchain",
+          postsPerPage: "ALL",
+          blogSidebarTitle: "All posts",
+          blogSidebarCount: "ALL",
+        },
         // pages: {
         //   path: 'src/pages',
         //   routeBasePath: '',
@@ -91,7 +97,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       colorMode: {
-        defaultMode: 'dark',
+        defaultMode: "dark",
         disableSwitch: false,
         respectPrefersColorScheme: true,
       },

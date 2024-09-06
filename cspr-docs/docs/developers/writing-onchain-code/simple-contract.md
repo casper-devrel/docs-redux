@@ -244,7 +244,7 @@ const CONTRACT_KEY: &str = "counter";
 const COUNT_KEY: &str = "count";
 ```
 
-#### Defining the contract entry points
+#### Defining the contract entry points {#step-4-defining-the-contract-entry-points}
 
 Entry points provide access to contract code installed in global state. Either [session code](./contract-vs-session.md#what-is-session-code) or another smart contract may call these entry points. A contract must have at least one entry point and may have more than one entry point. Entry points are defined by their name, and those names should be clear and self-describing. Each entry point is equivalent to a static main entry point in a traditional program.
 

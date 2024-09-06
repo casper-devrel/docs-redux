@@ -44,7 +44,7 @@ Casper networks support configurable fee, refund, and pricing strategies to ince
 
 A Wasm module is not natively able to create any effects outside of reading or writing from its own linear memory. Wasm modules must import functions from the host environment they are running in to enable other desired effects, such as reading or writing to global state.
 
-![Casper Network Runtime](/image/design/casper-runtime.png)
+![Casper Network Runtime](./casper-design/casper-runtime.png)
 
 All these features are accessible via functions in the [Casper External FFI](https://docs.rs/casper-contract/latest/casper_contract/ext_ffi/index.html).
 
@@ -52,11 +52,11 @@ All these features are accessible via functions in the [Casper External FFI](htt
 
 `URef`s are generated using a [cryptographically secure random number generator](https://rust-random.github.io/rand/rand_chacha/struct.ChaCha20Rng.html) using the [ChaCha algorithm](https://cr.yp.to/chacha.html). The random number generator is seeded by taking the `blake2b256` hash of the transaction hash concatenated with an index representing the current phase of execution (to prevent collisions between `URef`s generated in different phases of the same transaction).
 
-![Generating URefs](/image/design/generating-urefs.png)
+![Generating URefs](./casper-design/generating-urefs.png)
 
 ## Accounts {#accounts-head}
 
-The Casper blockchain uses an on-chain account-based model, uniquely identified by an `AccountHash` derived from a specific `PublicKey`. The [global state trie store](#global-state-trie) requires all keys to be the same length, so the AccountHash is a 32-byte derivative used to abstract any of the supported public key variants.
+The Casper blockchain uses an on-chain account-based model, uniquely identified by an `AccountHash` derived from a specific `PublicKey`. The [global state trie store](./../global-state.md#global-state-trie) requires all keys to be the same length, so the AccountHash is a 32-byte derivative used to abstract any of the supported public key variants.
 
 The Casper platform supports two types of keys for creating accounts and signing transactions: 
 - [Ed25519](../accounts-and-keys.md#eddsa-keys) keys, which use the Edwards-curve Digital Signature Algorithm (EdDSA) and are 66 bytes long
@@ -70,10 +70,7 @@ This chapter describes the permission model for accounts and their local storage
 
 Account creation automatically happens upon transferring tokens to a yet unused `PublicKey`. On account creation, the balance of its main purse is equal to the number of tokens transferred during the creation process. Its action thresholds are equal to 1, and there is one associated key. The associated key is the `PublicKey` used to create the account. In this way, an account is essentially a context object encapsulating the main purse, used to pay for transactions. However, an account may have an additional purse beyond the main purse.
 
-
-<p align="center">
-<img src={"/image/design/account-structure.png"} alt="Image showing the account data structure" width="200"/> 
-</p>
+![Account Data Structure](./casper-design/account-structure.png)
 
 An `Account` contains the following data:
 
@@ -150,7 +147,7 @@ The ability to pass `URef`s between contexts via `call_contract` / `ret`, allows
 
 ### `URef`s and Purses
 
-Purses represent a unique type of `URef` used for accounting measures within a Casper network. `URef`s exist as a top-level entity, meaning that individual entities do not own ‘URef’s. As described above, entities possess certain `Access Rights`, allowing them to interact with the given `URef`. While an account entity will possess an associated `URef` representing their main purse, this `URef` exists as a [`Unit`](../serialization/primitives.md#unit-clvalue-unit) and corresponds to a *balance* key within the Casper *mint*. The individual balance key within the Casper mint is the account entity's purse, with transfers authorized solely through the associated `URef` and the `Access Rights` granted to it.
+Purses represent a unique type of `URef` used for accounting measures within a Casper network. `URef`s exist as a top-level entity, meaning that individual entities do not own ‘URef’s. As described above, entities possess certain `Access Rights`, allowing them to interact with the given `URef`. While an account entity will possess an associated `URef` representing their main purse, this `URef` exists as a [`Unit`](../serialization/primitives.md#clvalue-unit) and corresponds to a *balance* key within the Casper *mint*. The individual balance key within the Casper mint is the account entity's purse, with transfers authorized solely through the associated `URef` and the `Access Rights` granted to it.
 
 Through this logic, the Casper mint holds all motes on the network and transfers between balance keys at the behest of entities as required.
 
@@ -220,7 +217,7 @@ The [block header](../serialization/structures.md#block-header) contains the fol
 
 #### Body {#body}
 
-The block body contains an **ordered** list of transaction hashes. All transactions, including `mint`, `auction`, `install_upgrade` and `standard` transactions, can be broadly categorized as some unit of work that, when executed and committed, affect change to [Global State](#global-state-intro). A valid block may contain no transactions.
+The block body contains an **ordered** list of transaction hashes. All transactions, including `mint`, `auction`, `install_upgrade` and `standard` transactions, can be broadly categorized as some unit of work that, when executed and committed, affect change to [Global State](./../global-state.md#global-state-intro). A valid block may contain no transactions.
 
 The block body also contains the public key of the validator that proposed the block.
 
@@ -238,9 +235,8 @@ A blockchain system generally needs a supply of tokens available to pay for comp
 
 The number of tokens used to calculate seigniorage is the initial supply of tokens at genesis.
 
-<p align="center">
-<img src={"/image/design/token-lifecycle.png"} alt="Image showing the token lifecycle" width="700"/> 
-</p>
+
+![Token Lifecycle](./casper-design/token-lifecycle.png)
 
 ### Divisibility of Tokens {#tokens-divisibility}
 

@@ -13,7 +13,7 @@ You must ensure the following prerequisites are met.
 1. Set up all the prerequisites listed [here](../../prerequisites.md), including:
     - A funded [Account](../../prerequisites.md#setting-up-an-account) on Testnet or Mainnet
     - A valid _node address_ from the [Testnet peers](https://testnet.cspr.live/tools/peers) or [Mainnet peers](https://cspr.live/tools/peers)
-    - The Casper [command-line client](../../prerequisites.md#the-casper-command-line-client)
+    - The Casper [command-line client](../../prerequisites.md#install-casper-client)
 2. Set up the source account for multi-signature deploys, as outlined in the [Two-Party Multi-Signature Deploys](../../../resources/advanced/two-party-multi-sig.md) workflow
 3. Get the path of the source account's _secret key_ file
 4. Get the target account's _public key_ in hex format
@@ -26,7 +26,7 @@ The high-level flow to transfer tokens using the Casper CLI client and a deploy 
 2. The `sign-deploy` command adds additional signatures for a multi-signature transfer
 3. The `send-deploy` command sends the deploy containing the transfer to the network
 
-<img src={useBaseUrl("/image/deploy-flow.png")} alt="Deployment flow" style={{backgroundColor:"#e6e6e6", padding:"0.25em"}} />
+![Deployment flow](./multisig-deploy-transfer/deploy-flow.png)
 
 ### Creating the transfer {#creating-the-transfer}
 
@@ -245,7 +245,7 @@ Towards the end of the following output, you can observe that there is an **appr
 
 </details>
 
-### Sending the deploy {#sending-the-deploy}
+### Sending the deploy {#sending-the-transaction}
 
 The next step is to send the deploy for processing on the network. As described in the [Prerequisites](#prerequisites) section, you need to get an active node address from the corresponding network to complete this task. The following example uses the node `https://rpc.testnet.casperlabs.io/` from the Testnet.
 

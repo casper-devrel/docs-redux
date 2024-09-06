@@ -34,7 +34,7 @@ With the following command, you can start watching the event stream for DeployAc
 curl -s http://65.21.235.219:9999/events/deploys
 ```
 
-## Sending a Deploy to the Network {#sending-the-deploy}
+## Sending a Deploy to the Network {#sending-the-transaction}
 
 You can call the Casper client's `put-deploy` command to put the compiled contract on the chain. In this example, the Deploy will execute in the account's context. See the [advanced features](#advanced-features) section for key delegation.
 

@@ -16,7 +16,7 @@ Here is how the tutorial is structured:
 ## Prerequisites {#prerequisites}
 
 1.  You have completed the [Getting Started tutorial](../../../developers/writing-onchain-code/getting-started.md) to set up your development environment, including tools like _cmake_ (version 3.1.4+), _cargo_, and _Rust_.
-2. You have installed the [Casper client](../../../developers/prerequisites.md#the-casper-command-line-client) to send transactions to the chain.
+2. You have installed the [Casper client](../../../developers/prerequisites.md#install-casper-client) to send transactions to the chain.
 3. You were able to [set up and fund an account](../../../developers/prerequisites.md#setting-up-an-account) on the Casper Testnet. Make note of two critical pieces of information that you will need to complete this tutorial:
    - The location of your account’s **secret_key.pem** file
    - Your **account hash** identifier

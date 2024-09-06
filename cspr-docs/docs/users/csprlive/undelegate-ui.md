@@ -19,15 +19,15 @@ You can access the undelegation functionality in three ways.
 
 **Option 1:** Click **Wallet** from the top navigation menu and then click **Undelegate Stake**.
 
-<img class="align-center" src={useBaseUrl("/image/tutorials/undelegate/1.wallet-undelegate.png")} alt="Undelegate from Wallet" width="150"/>
+![Undelegate from Wallet](./undelegate-ui/1.wallet-undelegate.png)
 
 **Option 2:** Click **Validators** from the top navigation menu. Using the validators table, find the validator you wish to undelegate from, and click the **Undelegate Stake** button.
 
-<img class="align-center" src={useBaseUrl("/image/tutorials/undelegate/2.validator-undelegate.png")} alt="Undelegate from Validator"/>
+![Undelegate from Validator](./undelegate-ui/2.validator-undelegate.png)
 
 **Option 3:** Open your account details and select the **Delegations** tab. Click the **Undelegate** button next to the validator from whom you wish to undelegate.
 
-<img class="align-center" src={useBaseUrl("/image/tutorials/undelegate/3.account-undelegate.png")} alt="Undelegate from Account View"/>
+![Undelegate from Account](./undelegate-ui/3.account-undelegate.png)
 
 ## Stepping through the Undelegation Process
 
@@ -39,28 +39,28 @@ The following instructions will take you through the undelegation process, start
 2.  Enter the amount of Casper tokens you want to undelegate.
 3.  Click **Next**.
 
-<img class="align-center" src={useBaseUrl("/image/tutorials/undelegate/4.undelegate-details.png")} alt="Undelegation details" width="400"/>
+![Undelegation details](./undelegate-ui/4.undelegate-details.png)
 
 **Step 2 - Confirm the undelegation**
 
 1.  Review the undelegation details.
 2.  If everything looks correct, click **Confirm and undelegate stake**. If you wish to make changes, return to the previous screen.
 
-<img class="align-center" src={useBaseUrl("/image/tutorials/undelegate/5.confirm-undelegation.png")} alt="Confirm undelegation" width="400"/>
+![Confirm undelegation](./undelegate-ui/5.confirm-undelegation.png)
 
 **Step 3 - Sign the undelegation**
 
 1.  Click **Sign with Casper Wallet** to sign the undelegation.
 
-<img class="align-center" src={useBaseUrl("/image/tutorials/undelegate/6.sign-undelegation.png")} alt="Sign the undelegation" width="400"/>
+![Sign the undelegation](./undelegate-ui/6.sign-undelegation.png)
 
 2.  Once the Casper Wallet opens, **check the deploy hash**. Ensure the deploy hash in the "Signature Request" window matches the deploy hash in the "Sign undelegation" window before continuing.
 
-<img class="align-center" src={useBaseUrl("/image/tutorials/undelegate/7.confirm-hash.png")} alt="Confirm deploy hash" />
+![Confirm deploy hash](./undelegate-ui/7.confirm-hash.png)
 
 3.  Click **Sign** in the Signature Request window to finalize the undelegation. The stake undelegation initiates as soon as the corresponding deploy is signed. Here is the expected output:
 
-<img class="align-center" src={useBaseUrl("/image/tutorials/undelegate/8.undelegation-confirmed.png")} alt="Undelegation confirmed" width="400"/>
+![Undelegation confirmed](./undelegate-ui/8.undelegation-confirmed.png)
 
 It may take 1-2 minutes for the undelegation details to become available. Click "Deploy Details" for more information. 
 

@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Casper platform uses [event streaming](../../operators/setup/node-events.md) to signal state changes in smart contracts and nodes. Using the [Casper Sidecar](#the-casper-sidecar) service and client-side SDKs, dApps actively listening for emitted events can consume them and perform actions based on event data.
 
-Smart contracts can also emit contract-level events, as explained [here](../writing-onchain-code/emitting-contract-events.md). DApps can consume these events by listening to the event stream, detecting [TransactionProcessed](#deployprocessed) events, and parsing the `messages` array storing String-representations of the emitted events.
+Smart contracts can also emit contract-level events, as explained [here](../writing-onchain-code/emitting-contract-events.md). DApps can consume these events by listening to the event stream, detecting [TransactionProcessed](#contract-level-events) events, and parsing the `messages` array storing String-representations of the emitted events.
 
 ## The Casper Sidecar
 
@@ -22,7 +22,7 @@ The Casper Sidecar is an application running alongside the node process. It allo
 * A [JSON-RPC API](https://github.com/casper-network/casper-sidecar/blob/feat-2.0/README.md#the-rpc-api-server) to interact with a Casper node.
 * [Legacy emulation](https://github.com/casper-network/casper-sidecar/blob/feat-2.0/LEGACY_SSE_EMULATION.md) for clients using older versions of the SSE API.
 
-<img class="align-center" src={useBaseUrl("/image/operators/sidecar-diagram.png")} alt="Sidecar components and architecture diagram" width="800"/>
+![Sidecar components and architecture](./monitor-and-consume-events/sidecar-diagram.png)
 
 Visit [GitHub](https://github.com/casper-network/casper-sidecar/) for the latest source code and information on:
 
@@ -102,7 +102,7 @@ You can find node addresses of active online peers to replace `NODE_ADDRESS`, by
 Replace `EVENT_NAME` with one of the event types listed [below](#event-types).
 
 
-### Detecting Contract-Level Events
+### Detecting Contract-Level Events {#contract-level-events}
 
 The Sidecar streams messages emitted by a contract in a human-readable format. These messages are visible as part of the `TransactionProcessed` event after the corresponding block is processed and added to the blockchain. For more details, see [Verifying a Topic](../writing-onchain-code/emitting-contract-events.md#verifying-a-topic) and [Verifying a Message](../writing-onchain-code/emitting-contract-events.md#verifying-a-message).
 
@@ -209,9 +209,10 @@ The Sidecar also offers a JSON-RPC API server for clients to interact with a Cas
 
 The Sidecar offers a REST API to query stored events. You can discover the specific endpoints of the REST API using [OpenAPI](https://github.com/casper-network/casper-sidecar/tree/feat-2.0?tab=readme-ov-file#openapi-specification) and [Swagger](https://github.com/casper-network/casper-sidecar/tree/feat-2.0?tab=readme-ov-file#swagger-documentation). The [usage instructions](https://github.com/casper-network/casper-sidecar/blob/feat-2.0/USAGE.md) in the repository provide more details.
 
-<img class="align-center" src={useBaseUrl("/image/operators/sidecar-swagger-1.png")} alt="Sidecar components and architecture diagram" width="800"/>
 
-<img class="align-center" src={useBaseUrl("/image/operators/sidecar-swagger-2.png")} alt="Sidecar components and architecture diagram" width="800"/>
+![Sidecar components and architecture diagram 1](./monitor-and-consume-events/sidecar-swagger-1.png)
+
+![Sidecar components and architecture diagram 2](./monitor-and-consume-events/sidecar-swagger-2.png)
 
 ## Troubleshooting Tips
 

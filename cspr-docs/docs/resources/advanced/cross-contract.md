@@ -94,7 +94,7 @@ make: *** [test] Error 101
 
 Then it is useful to check if the dependencies in `Cargo.toml` are still up to date.
 
-<img class="align-center" src={useBaseUrl("/image/tutorials/cross-contract/CargoToml.png")} width="600" alt="CargoToml" />
+![CargoToml](./cross-contract/CargoToml.png)
 
 If you see the red cross, it means the version is not up to date and has to be updated.
 
