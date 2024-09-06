@@ -3,7 +3,7 @@ title: Cross-Contract Communication
 slug: /resources/tutorials/advanced/cross-contract
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 # Cross-Contract Communication
 

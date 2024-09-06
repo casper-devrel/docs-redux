@@ -2,7 +2,7 @@
 title: Funding Mainnet Accounts
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 # Funding Mainnet Accounts from an Exchange
 
@@ -14,7 +14,7 @@ This guide demonstrates a withdrawal from [Coinlist](https://coinlist.co/) to th
 
 Before starting, copy the public key where you wish to transfer funds. The screenshot below shows the account page on https://cspr.live/ and the field you need to specify in the withdrawal request from Coinlist.
 
-![Account public key from CSPR.Live](./funding-from-exchanges/1.account-public-key.png)
+![Account public key from CSPR.Live](./_funding-from-exchanges/1.account-public-key.png)
 
 ## Transfers from Coinlist to Casper Mainnet
 
@@ -23,19 +23,19 @@ Try these steps with a small amount of CSPR first. After one successful transfer
 1. Log into your [https://coinlist.co](https://coinlist.co) account.
 2. Go to the "Wallet" tab.
 
-![Coinlist Wallet tab](./funding-from-exchanges/2.coinlist-wallet.png)
+![Coinlist Wallet tab](./_funding-from-exchanges/2.coinlist-wallet.png)
 
 3. Click on the "CSPR" section.
 
-![CSPR on Coinlist](./funding-from-exchanges/3.cspr-section-coinlist.png)
+![CSPR on Coinlist](./_funding-from-exchanges/3.cspr-section-coinlist.png)
 
 4. Click on the "Withdraw" button.
 
-![Withdraw on Coinlist](./funding-from-exchanges/4.withdraw-coinlist.png)
+![Withdraw on Coinlist](./_funding-from-exchanges/4.withdraw-coinlist.png)
 
 5. Enter the public key of the Mainnet account in the "Recipient Address" field of the withdrawal request.
 
-![Withdrawal fields on Coinlist](./funding-from-exchanges/5.withdraw-fields-coinlist.png)
+![Withdrawal fields on Coinlist](./_funding-from-exchanges/5.withdraw-fields-coinlist.png)
 
 6. Enter 0 in the "Transfer ID" field or another value that is meaningful to you. **You MUST enter a value, or the transfer will fail!**
 

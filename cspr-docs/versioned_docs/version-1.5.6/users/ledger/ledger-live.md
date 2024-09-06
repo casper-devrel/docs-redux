@@ -2,7 +2,7 @@
 title: Ledger and Ledger Live
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 # Using Ledger and Ledger Live
 

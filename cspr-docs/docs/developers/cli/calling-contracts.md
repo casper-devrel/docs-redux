@@ -2,7 +2,7 @@
 title: Calling Contracts
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 # Calling Smart Contracts with the Rust Client
 

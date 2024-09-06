@@ -2,7 +2,7 @@
 title: Call Stacks
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 # Understanding Call Stacks
 
@@ -22,7 +22,7 @@ If session code calls a contract, which in turn calls another contract, then the
 
 In this example, the first contract would be the `immediate caller` of the second contract, meaning it interacted directly with it. The session code would remain the `caller`.
 
-![Call Stack](./callstack/callstack.png)
+![Call Stack](./_callstack/callstack.png)
 
 ## Limitations
 

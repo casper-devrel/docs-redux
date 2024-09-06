@@ -4,7 +4,7 @@ title: Gas Cost
 
 # Gas and Resources
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 ## What is gas?
 

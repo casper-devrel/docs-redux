@@ -2,7 +2,7 @@
 title: Querying Global State
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 # Querying Global State
 

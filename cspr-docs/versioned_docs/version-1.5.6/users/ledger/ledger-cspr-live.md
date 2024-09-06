@@ -2,7 +2,7 @@
 title: Ledger and CSPR.live
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 # Using Ledger and CSPR.live
 

@@ -2,7 +2,7 @@
 title: Installing Contracts
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 # Installing Smart Contracts
 

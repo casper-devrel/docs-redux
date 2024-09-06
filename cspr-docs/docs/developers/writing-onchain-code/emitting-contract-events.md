@@ -2,7 +2,7 @@
 title: Contract-Level Events
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 # Enabling Contracts to Emit Events 
 

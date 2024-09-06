@@ -1,6 +1,6 @@
 # Writing a Basic Smart Contract in Rust
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 ## What is a Smart Contract?
 

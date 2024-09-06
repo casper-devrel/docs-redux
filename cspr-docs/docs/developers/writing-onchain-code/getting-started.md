@@ -2,7 +2,7 @@
 title: Getting Started with Rust
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 # Getting Started with Rust Casper Contracts
 

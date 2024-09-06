@@ -5,7 +5,7 @@ slug: /resources/tutorials/beginner/upgrade-contract
 
 # Upgrading a Contract
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 This tutorial examines how to upgrade an existing contract, a process similar to upgrading any other software. You can change an unlocked [contract package](https://docs.rs/casper-types/latest/casper_types/struct.ContractPackage.html) by adding a new contract and updating the default contract version that the contract package should use. You will need to know the contract package hash and use the [add_contract_version](https://docs.rs/casper-contract/latest/casper_contract/contract_api/storage/fn.add_contract_version.html) API. You can also create a [locked contract package](#locked-contract-package) that cannot be versioned and is therefore not upgradable.
 

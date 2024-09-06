@@ -1,6 +1,6 @@
 
 # Upgrading and Maintaining Smart Contracts
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 Our smart contract packaging tools enable you to:
 

@@ -3,7 +3,7 @@ title: Build on Casper
 slug: build-on-casper/introduction
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 # Building on Casper
 
