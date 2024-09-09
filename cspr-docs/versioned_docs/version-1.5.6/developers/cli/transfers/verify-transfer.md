@@ -4,7 +4,7 @@ title: Verifying a Transfer
 
 # Verifying a Transfer
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 ## Prerequisites
 

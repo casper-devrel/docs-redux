@@ -2,7 +2,7 @@
 title: Funding Mainnet Accounts
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 # Funding Mainnet Accounts from an Exchange
 

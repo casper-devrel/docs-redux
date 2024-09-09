@@ -3,7 +3,7 @@ title: Monitoring Events with the Casper Sidecar
 ---
 
 import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 <!--TODO once the Sidecar's feat-2.0 merges, update all related links to the dev branch.-->
 

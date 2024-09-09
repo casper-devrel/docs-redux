@@ -3,7 +3,7 @@ title: Fungible Tokens
 slug: /resources/tutorials/beginner/cep18
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 # Fungible Tokens (CEP-18) Implementation and Usage
 

@@ -2,7 +2,7 @@
 title: CEP-78 Contract Details
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 # Querying NFT Contracts
 

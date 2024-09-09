@@ -2,7 +2,7 @@
 title: Contract Hash vs. Package Hash
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 # Using the Contract Hash vs. the Package Hash
 

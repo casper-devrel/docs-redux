@@ -284,4 +284,4 @@ casper-client get-account-info --help
 
 Using the block explorer for [Mainnet](https://cspr.live/) or [Testnet](https://testnet.cspr.live/), open the Account in question, and expand the `Raw Data` section. Look for the `main_purse` field and find the corresponding URef. If you do not see data in the `Raw Data` section, then the account has not been funded yet.
 
-![Main purse](./account-and-keys/main_purse_uref.png)
+![Main purse](./_account-and-keys/main_purse_uref.png)

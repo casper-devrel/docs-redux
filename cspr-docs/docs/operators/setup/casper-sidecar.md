@@ -2,7 +2,7 @@
 title: Sidecar Setup
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 # The Casper Sidecar
 
@@ -15,7 +15,7 @@ The Casper Sidecar is an application running alongside the node process. It allo
 
 Visit GitHub for the latest source code and information on [system architecture](https://github.com/casper-network/casper-sidecar/blob/feat-2.0/README.md#system-components--architecture), [configurations](https://github.com/casper-network/casper-sidecar/blob/feat-2.0/README.md#configuring-the-sidecar), [testing](https://github.com/casper-network/casper-sidecar/blob/feat-2.0/README.md#running-and-testing-the-sidecar) and [troubleshooting](https://github.com/casper-network/casper-sidecar/blob/feat-2.0/README.md#troubleshooting-tips).
 
-![Sidecar components and architecture diagram](./casper-sidecar/sidecar-diagram.png)
+![Sidecar components and architecture diagram](./_casper-sidecar/sidecar-diagram.png)
 
 ## Configuring the Sidecar Service {#configuring-the-sidecar}
 

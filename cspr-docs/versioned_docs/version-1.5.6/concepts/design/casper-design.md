@@ -1,7 +1,7 @@
 ---
 title: Network Design
 ---
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 # Casper Network Design
 

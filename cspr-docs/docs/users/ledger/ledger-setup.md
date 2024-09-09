@@ -25,19 +25,19 @@ Install the Casper app on the Ledger device by following the steps below. You ca
 
 1. In Ledger Live, open My Ledger at the bottom of the left-hand menu.
 
-![Open My Ledger](./ledger-cspr-live/ledger-live/open-my-ledger.png)
+![Open My Ledger](./_ledger-cspr-live/ledger-live/open-my-ledger.png)
 
 2. Connect the Ledger device to your computer and unlock it by entering your device PIN.
 
-![Unlock your Ledger device](./ledger-cspr-live/ledger-live/casper-unlock.png)
+![Unlock your Ledger device](./_ledger-cspr-live/ledger-live/casper-unlock.png)
 
 3. If asked, allow Ledger manager on your device.
 
-![Allow Ledger](./ledger-cspr-live/ledger-live/allow-ledger.png)
+![Allow Ledger](./_ledger-cspr-live/ledger-live/allow-ledger.png)
 
 4.  Find **Casper** in the app catalog.
 
-![Find the Casper app](./ledger-cspr-live/ledger-live/find-casper.png)
+![Find the Casper app](./_ledger-cspr-live/ledger-live/find-casper.png)
 
 :::important
 
@@ -52,13 +52,13 @@ Please search "Casper," not "CSPR" when searching for the app in the "My Ledger"
    - Your device will display **"Processing..."**
    - The app installation is confirmed.
 
-![Casper installation confirmed](./ledger-cspr-live/ledger-live/casper-installed.png)
+![Casper installation confirmed](./_ledger-cspr-live/ledger-live/casper-installed.png)
 
 6. Open the Casper App on your Ledger device by clicking both buttons on the device, and keep it open while doing the next steps.
 
-![Select Casper on Ledger](./ledger-cspr-live/ledger-live/select-casper.png)
+![Select Casper on Ledger](./_ledger-cspr-live/ledger-live/select-casper.png)
 
-![Casper app is ready](./ledger-cspr-live/ledger-live/casper-ready.png)
+![Casper app is ready](./_ledger-cspr-live/ledger-live/casper-ready.png)
 
 ## Sending and Receiving Tokens
 

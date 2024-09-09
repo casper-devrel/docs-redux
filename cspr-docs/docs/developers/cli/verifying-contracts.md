@@ -2,7 +2,7 @@
 title: Verifying Contracts
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 # Verifying Smart Contracts
 

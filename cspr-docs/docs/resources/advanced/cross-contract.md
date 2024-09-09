@@ -3,8 +3,6 @@ title: Cross-Contract Communication
 slug: /resources/tutorials/advanced/cross-contract
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 # Cross-Contract Communication
 
 This tutorial assumes that you have worked through the following examples. If you have not already done so, then we recommend that you do so now:
@@ -94,7 +92,7 @@ make: *** [test] Error 101
 
 Then it is useful to check if the dependencies in `Cargo.toml` are still up to date.
 
-![CargoToml](./cross-contract/CargoToml.png)
+![CargoToml](./_cross-contract/CargoToml.png)
 
 If you see the red cross, it means the version is not up to date and has to be updated.
 

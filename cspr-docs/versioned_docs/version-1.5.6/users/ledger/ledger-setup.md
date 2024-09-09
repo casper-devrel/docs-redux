@@ -5,7 +5,7 @@ slug: /workflow/ledger-setup/
 
 # Ledger Setup with Casper
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 A Ledger device is a hardware wallet considered one of the most secure ways to store your digital assets. Ledger uses an offline, or cold storage, method of generating private keys, making it a preferred method for many crypto users. 
 

@@ -3,7 +3,7 @@ title: Staking vs. Delegating
 slug: /staking
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 # Staking vs. Delegating {#staking-vs-delegating}
 

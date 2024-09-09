@@ -4,7 +4,7 @@ title: Fast Sync
 
 # Introducing Fast Sync
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 A Casper Network requires new nodes to download and execute every block to join the network. From genesis (start of the Mainnet), the node executes each deploy in every block. This process continues until the node has arrived at the current state of the blockchain. Syncing a node this way can take a very long time.
 

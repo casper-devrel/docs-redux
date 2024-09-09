@@ -2,7 +2,7 @@
 title: Inactive and Faulty Nodes 
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 # Inactive vs. Faulty Validator Nodes
 

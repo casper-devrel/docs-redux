@@ -3,7 +3,7 @@ title: Delegate Tokens
 slug: /users/delegate-ui
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 # Delegating Tokens with a Block Explorer
 

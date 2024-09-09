@@ -4,15 +4,13 @@ title: Fast Sync
 
 # Introducing Fast Sync
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 A Casper Network requires new nodes to download and execute every block to join the network. From genesis (start of the Mainnet), the node executes each transaction in every block. This process continues until the node has arrived at the current state of the blockchain. Syncing a node this way can take a very long time.
 
 We have introduced a fast syncing process (fast sync) to provide a faster alternative to joining a Casper network. Fast sync does not start syncing at the genesis block; instead, the operator verifies a recent block and provides a [trusted hash](../setup/basic-node-configuration.md#trusted-hash-for-synchronizing) to the node software. The global state, account balances, and all other on-chain information is the storage layer of the blockchain and is massive in size, so fast sync downloads the global state of only the most recent block. The following section briefly describes the fast sync process.
 
 ## How Fast Sync Works
 
-![Fast-sync process](./fast-sync/fast-sync-process.png)
+![Fast-sync process](./_fast-sync/fast-sync-process.png)
 
 For fast sync, operators must provide the trusted hash of a block in the `config.toml` file. An example can be found [here](https://github.com/casper-network/casper-node/blob/f7d8228de3cb56a3fe705f5a787d3dbf03ff7998/resources/production/config-example.toml#L7).
 

@@ -47,7 +47,7 @@ max_delegators_per_validator = 1200
 
 As a prospective delegator, it is essential to select a validating node that you can trust. Block explorers such as [cspr.live](https://cspr.live) provide [validator performance statistics](https://cspr.live/validators), including a performance score, total stake, number of delegators, and fees. Please do your due diligence before staking tokens with a validator.
 
-![Validators](./delegating/1.validators.png) 
+![Validators](./_delegating/1.validators.png) 
 
 ## First-time Delegation
 
@@ -59,7 +59,7 @@ When you set up a delegation transaction, it is essential to have enough funds i
 
 As a result, when performing a [delegation using the command line](../developers/cli/delegate.md), we recommend you specify a little more than the base transaction payment to ensure that the transaction will go through without failure.
 
-![**Figure 2** : On Testnet or Mainnet, the transaction fee for a delegation is a little bit higher than 2.5 CSPR.](./delegating/economic-delegationDetails.png)
+![**Figure 2** : On Testnet or Mainnet, the transaction fee for a delegation is a little bit higher than 2.5 CSPR.](./_delegating/economic-delegationDetails.png)
 <p align="center">
 **Figure 2** : On Testnet or Mainnet, the transaction fee for a delegation is a little bit higher than 2.5 CSPR.
 </p>

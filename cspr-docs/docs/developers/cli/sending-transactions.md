@@ -2,7 +2,7 @@
 title: Sending Transactions
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 # Sending Transactions using the Casper Client
 

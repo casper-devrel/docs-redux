@@ -4,7 +4,7 @@ slug: /concepts/economics/delegation
 
 # Delegation Details
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 This section provides a detailed explanation of the delegation cost mechanism, how the gas cost relates with delegations, where to find the details etc. Please note that the cost amounts are likely to change with time and you may have to check the latest release details to get the most up-to-date and accurate details.
 

@@ -1,6 +1,6 @@
 # Quickstart
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 Here is a list of commands for developers who already meet the prerequisites and want to quickly send a sample contract to the [Testnet](https://testnet.cspr.live/). Consult the [complete documentation](/writing-contracts) for context and additional help.
 

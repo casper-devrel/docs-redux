@@ -1,6 +1,6 @@
 # Contracts and Session Code
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 ## What is Session Code? {#what-is-session-code}
 
