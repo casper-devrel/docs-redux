@@ -42,6 +42,12 @@ module.exports = {
             position: "left",
         },
         {
+            type: "docSidebar",
+            sidebarId: "tutorials",
+            label: "Tutorials",
+            position: "left",
+        },
+        {
             to: `https://github.com/casper-devrel/docs-redux/issues/new?assignees=&labels=docs-v2-feedback&projects=&template=feedback.yml&title=Docs+Feedback`,
             label: "Feedback",
             position: "right",
