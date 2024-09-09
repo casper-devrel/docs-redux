@@ -10,7 +10,7 @@ The Casper Mainnet is a Proof-of-Stake blockchain that allows validators to stak
 
 **Permission-less bonding:** For validators to begin staking and earning rewards, they must win a staking auction by competing with current and prospective validators to supply one of the forthcoming top stakes for a given era. This process is permissionless, meaning validators can join and leave the auction without restrictions, except for a waiting period to unlock staked tokens.
 
-**Unbonding:** To detach from the Casper Mainnet, it takes seven eras for both validators and delegators. Neither validators nor delegators receive rewards for the seven eras required for unbonding, as they are not actively contributing to the network's security during that time. However, during the unbonding period, they may receive rewards for participating in past eras. Read about rewards distribution [here](./consensus.md#rewards-distribution-distribution). The current unbonding period on the Casper Mainnet is 14 hours, based on the chainspec settings.
+**Unbonding:** To detach from the Casper Mainnet, it takes seven eras for both validators and delegators. Neither validators nor delegators receive rewards for the seven eras required for unbonding, as they are not actively contributing to the network's security during that time. However, during the unbonding period, they may receive rewards for participating in past eras. Read about rewards distribution [here](./consensus.md#distribution). The current unbonding period on the Casper Mainnet is 14 hours, based on the chainspec settings.
 
 **Eras and block times:** An era on the Casper Mainnet is roughly 2 hours long. Casper's Zug consensus allows validators to propose blocks as quickly as network conditions allow. We anticipate block times to last between 8 seconds and 1 minute.
 
@@ -18,7 +18,7 @@ The Casper Mainnet is a Proof-of-Stake blockchain that allows validators to stak
 
 **Reward calculations:** Reward calculations depend only on the linear structure of the blockchain and published finality signatures rather than block time or consensus mechanism. Reward calculations assume a known constant token supply inflation with nominal platform operation.
 
-**Reward cycle:** Rewards are [calculated and distributed](./consensus.md#rewards-distribution-distribution) to validators and delegators at the end of an era for all blocks in that era and several eligible blocks from the previous era. The algorithm looks back into blocks from the previous era to compensate for the delay in creating and distributing finality signatures.
+**Reward cycle:** Rewards are [calculated and distributed](./consensus.md#distribution) to validators and delegators at the end of an era for all blocks in that era and several eligible blocks from the previous era. The algorithm looks back into blocks from the previous era to compensate for the delay in creating and distributing finality signatures.
 
 **Token supply and inflation:** Mainnet launched with ten billion CSPR at genesis. The target annual supply growth rate is 8%.
 

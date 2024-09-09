@@ -11,7 +11,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 
 The Casper platform uses [event streaming](../../operators/setup/node-events.md) to signal state changes in smart contracts and nodes. Using the [Casper Sidecar](#the-casper-sidecar) service and client-side SDKs, dApps actively listening for emitted events can consume them and perform actions based on event data.
 
-Smart contracts can also emit contract-level events, as explained [here](../writing-onchain-code/emitting-contract-events.md). DApps can consume these events by listening to the event stream, detecting [TransactionProcessed](#deployprocessed) events, and parsing the `messages` array storing String-representations of the emitted events.
+Smart contracts can also emit contract-level events, as explained [here](../writing-onchain-code/emitting-contract-events.md). DApps can consume these events by listening to the event stream, detecting [TransactionProcessed](#contract-level-events) events, and parsing the `messages` array storing String-representations of the emitted events.
 
 ## The Casper Sidecar
 
@@ -102,7 +102,7 @@ You can find node addresses of active online peers to replace `NODE_ADDRESS`, by
 Replace `EVENT_NAME` with one of the event types listed [below](#event-types).
 
 
-### Detecting Contract-Level Events
+### Detecting Contract-Level Events {#contract-level-events}
 
 The Sidecar streams messages emitted by a contract in a human-readable format. These messages are visible as part of the `TransactionProcessed` event after the corresponding block is processed and added to the blockchain. For more details, see [Verifying a Topic](../writing-onchain-code/emitting-contract-events.md#verifying-a-topic) and [Verifying a Message](../writing-onchain-code/emitting-contract-events.md#verifying-a-message).
 

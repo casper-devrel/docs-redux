@@ -5,7 +5,7 @@ slug: /transactions
 
 # Transactions
 
-Transactions are [a new structure](../developers/json-rpc/types_chain.md#transaction) that allows users to enact changes in global state on a Casper network. Introduced with the Condor release, Transactions supersede legacy [Deploys](./glossary/D.md#deploy-deploy), allowing for a variety of Wasm-less interactions with the blockchain. These new interactions are more efficient than Deploys and provide a level of convenience that was not previously available.
+Transactions are [a new structure](../developers/json-rpc/types_chain.md#transaction) that allows users to enact changes in global state on a Casper network. Introduced with the Condor release, Transactions supersede legacy [Deploys](./glossary/D.md#deploy), allowing for a variety of Wasm-less interactions with the blockchain. These new interactions are more efficient than Deploys and provide a level of convenience that was not previously available.
 
 The existing Deploy model is deprecated as of Condor, and support will be removed entirely in a future major release. However, Condor will continue to accept valid Deploys and will attempt to execute them. Most existing deploys that function today will continue to do so. However, deploys that depend on a data type or FFI function that has been altered or removed will fail to execute.
 
@@ -166,7 +166,7 @@ casper-client put-txn invocable-entity
 
 ### Invocable Entity Alias
 
-`invocable-entity-alias` allows a user to invoke an entry point on the given [`AddressableEntity`](./addressable-entity.md) directly using an alias stored in their [`named keys`](./glossary/N.md#namedkeys-named-keys).
+`invocable-entity-alias` allows a user to invoke an entry point on the given [`AddressableEntity`](./addressable-entity.md) directly using an alias stored in their [`named keys`](./glossary/N.md#named-keys).
 
 <details>
 <summary><b>Casper Client Command</b></summary>
@@ -212,7 +212,7 @@ casper-client put-txn package
 
 ### Package Name
 
-`package-name` allows a user to invoke an entry point on the given contract [`package`](../developers/writing-onchain-code/upgrading-contracts.md#the-contract-package) using an alias stored in their [`named keys`](./glossary/N.md#namedkeys-named-keys).
+`package-name` allows a user to invoke an entry point on the given contract [`package`](../developers/writing-onchain-code/upgrading-contracts.md#the-contract-package) using an alias stored in their [`named keys`](./glossary/N.md#named-keys).
 
 <details>
 <summary><b>Casper Client Command</b></summary>
@@ -260,7 +260,7 @@ casper-client put-txn session
 
 ### Transfer
 
-`transfer` allows a user to transfer the designated number of [motes](./glossary/M.md#motes-motes) to a target address.
+`transfer` allows a user to transfer the designated number of [motes](./glossary/M.md#motes) to a target address.
 
 <details>
 <summary><b>Casper Client Command</b></summary>

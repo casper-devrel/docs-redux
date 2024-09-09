@@ -35,7 +35,7 @@ Note that only validators can create valid blocks.
 
 A block is "finalized" if validators with more than two-thirds of the total network weight agree on adding it to the blockchain.
 
-For an observer to see a conflicting block as finalized, several validators whose total weight exceeds one-third of the total network weight would have to collude and show different information in a way that would ultimately be detected and punished (see [eviction](./E.md#eviction-eviction)).
+For an observer to see a conflicting block as finalized, several validators whose total weight exceeds one-third of the total network weight would have to collude and show different information in a way that would ultimately be detected and punished (see [eviction](./E.md#eviction)).
 
 ## Block gossiping {#block-gossiping}
 

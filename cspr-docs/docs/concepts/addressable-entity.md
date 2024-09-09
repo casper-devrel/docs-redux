@@ -1,10 +1,18 @@
+---
+title: Addressable Entities
+# slug: /addressable-entities
+---
+
 # Addressable Entities
 
 ## What is an Addressable Entity?
 
-Casper 2.0 introduces the concept of an [`AddressableEntity`](../concepts/glossary/A.md#addressable-entity) that will supplant the individual `Account` and `Contract` types for any new usage.
+The [`AddressableEntity`](../concepts/glossary/A.md#addressable-entity) data structure encapsulates the behaviour and data associated with several related concepts within the Casper type system. 
+Casper 2.0 introduces the concept of an [`AddressableEntity`](../concepts/glossary/A.md#addressable-entity) which replaces the existing [`Account`](./glossary/A.md#account) and [`Contract`](./glossary/S.md#smart-contract) types.
 
-The merger of the `Account` and `Contract` concepts will allow for some new possibilities that were previously not available individually to `Accounts` or `Contracts`. Within the context for any given `AddressableEntity`, the `EntityType` will identify if it is an `Account`, a user-deployed `SmartContract`, or a `System` contract such as `Mint` or `HandlePayment`.
+The merger of the `Account` and `Contract` concepts allows for some new possibilities. 
+
+For any given `AddressableEntity`, the `EntityType` will identify if it is an `Account`, a user-deployed `SmartContract`, or a `System` contract such as `Mint` or `HandlePayment`.
 
 This `EntityType` will dictate what the addressable entity can and cannot do.
 

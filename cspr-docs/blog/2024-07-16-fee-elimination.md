@@ -3,7 +3,7 @@ title: Fee Elimination in Condor
 description: A discussion of the Fee Elimination feature in Casper 2.0
 slug: condor-fee-elimination
 date: 2024-07-16T22:00
-authors: [ dylanireland, alexanderlimonov ]
+authors: [ dylanireland, melpadden ]
 tags: [condor, features, tokenomics]
 hide_table_of_contents: false
 ---
@@ -13,10 +13,12 @@ The Casper 2.0 (aka Condor) network upgrade introduces new options to the way a 
 
 <!-- truncate -->
 
-## Gas
-Public distributed blockchain networks that support smart contracts generally use a concept commonly known as "[gas](https://docs.casper.network/concepts/glossary/G/#gas)", which can be thought of as "the ability to do work on-chain". Gas is acquired in finite quantities and used to meter and limit resource consumption by individual transactors. A transactor's available gas is consumed by their on-chain usage of computation, data storage, and possibly other chain-specific resources. The public Casper Network and its testnet have used such a gas model since their geneses.
+## Concepts
+Public distributed blockchain networks that support smart contracts generally employ a concept known as "[gas](https://docs.casper.network/concepts/glossary/G/#gas)", which can be thought of as "the ability to do work on-chain". The problem addressed by this mechanism is that **any finite resource on a publicly accessible computer network must be rate-limited**, because a resource made available without limit is a denial of service attack vector. 
 
-## Casper 1.x: Payment, Gas Price, Fees and Refunds
+Gas is acquired in finite quantities and used to meter and limit resource consumption by individual transactors. A transactor's available gas is consumed by their on-chain usage of computation, data storage, and possibly other chain-specific resources. The public Casper Network and its testnet have used such a gas model since their geneses.
+
+## Payment, Gas Price, Fees
 On Casper 1.x, every transaction is subject to gas consumption. The transactor must specify an amount of token that is converted to gas and used to pay for execution. All gas consumed in each block is allotted to the [proposer](#proposer) of that block in the form of transaction [fees](#fees). The model also includes tables to allow calculation of gas costs, and support for some portion of unconsumed gas to be refunded to transactors. We refer to these concepts using the following terms:
 
 * **Gas Limit**: An amount of gas, specified by the transactor, at which to cancel a transaction.
@@ -25,7 +27,7 @@ On Casper 1.x, every transaction is subject to gas consumption. The transactor m
 * **Payment**: The amount of token specified by the transactor to pay for the execution of a transaction.
 * **Refund**: All or a portion of the remaining token after gas is purchased for execution.
 
-> [!NOTE]
+> 
 > The Casper node software supports a number of configurable options which govern how gas may be calculated for a given transaction. A discussion of these is outside the scope of this article. This article is concerned with how these gas costs are dealt with, once calculated. Gas cost options will be the subject of another article.
 
 ## Fee Elimination
@@ -42,7 +44,7 @@ A hold may be thought of as a temporary freeze on some portion of the funds in a
 
 The Casper Node 2.0 software currently supports two hold release models: **Accrued** and **Amortized**. 
 
-> [!NOTE]
+> 
 > The Condor node architecture allows for any time-based function to be developed and used to calculate hold releases. However, for simplicity, this article will deal with the two currently available options.
 
 #### Accrued

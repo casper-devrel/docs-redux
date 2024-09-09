@@ -7,7 +7,7 @@ slug: /resources/tokens/cep18/tests
 
 The testing framework in this tutorial uses the [Casper engine test support](https://crates.io/crates/casper-engine-test-support) crate for testing the contract implementation against the Casper execution environment.
 
-The following section reviews the [GitHub testing folder](https://github.com/casper-ecosystem/cep18/tree/master/tests), which creates a testing framework for the Casper [Fungible Token](https://github.com/casper-ecosystem/cep18) project. You can find more details about testing Casper contracts [here](/developers/writing-onchain-code/testing-contracts/).
+The following section reviews the [GitHub testing folder](https://github.com/casper-ecosystem/cep18/tree/master/tests), which creates a testing framework for the Casper [Fungible Token](https://github.com/casper-ecosystem/cep18) project. You can find more details about testing Casper contracts [here](../../../developers/writing-onchain-code/testing-contracts.md).
 
 The following is an example of a complete test expecting a failed transfer:
 
@@ -62,14 +62,14 @@ name = "tests"
 In Github, you will find an [example](https://github.com/casper-ecosystem/cep18/tree/dev/cep18) containing a Casper Fungible Token [contract](https://github.com/casper-ecosystem/cep18/blob/dev/cep18/src/main.rs) implementation with the corresponding [tests](https://github.com/casper-ecosystem/cep18/tree/dev/tests/src). The tests follow this sequence:
 
 - [Step 1](#setting-up-the-testing-context) - Specify the starting state of the blockchain.
-- [Step 2](#deploying-the-contract) - Deploy the compiled contract to the blockchain and query it.
-- [Step 3](#invoking-contract-entrypoints) - Create additional deploys for calling each of the entrypoints in the contract.
+- [Step 2](#installing-the-contract) - Deploy the compiled contract to the blockchain and query it.
+- [Step 3](#creating-helper-functions) - Create additional deploys for calling each of the entrypoints in the contract.
 
 The test fixture accomplishes these steps by simulating a real-world deploy that stores the contract on the blockchain and then invoking the contract's entrypoints.
 
 ### Setting up the Testing Context
 
-The code in the [utility directory](https://github.com/casper-ecosystem/cep18/tree/dev/tests/src/utility) initializes the blockchain's [global state](/concepts/glossary/G/#global-state) with all the data and entrypoints the smart contract needs.
+The code in the [utility directory](https://github.com/casper-ecosystem/cep18/tree/dev/tests/src/utility) initializes the blockchain's [global state](../../../concepts/glossary/G.md#global-state) with all the data and entrypoints the smart contract needs.
 
 Expand the example below to see a subset of the required constants for this project. The testing framework defines constants via the [`constants.rs`](https://github.com/casper-ecosystem/cep18/blob/dev/tests/src/utility/constants.rs) file within the `utility` directory. For the most up-to-date version of the code, visit [GitHub](https://github.com/casper-ecosystem/cep18).
 
@@ -215,7 +215,7 @@ The previous step has simulated sending a real deploy on the network. The next c
 
 These are followed by functions that check specific aspects of the CEP-18 contract. These include `test_cep18_transfer`, `make_cep18_approve_request` and `test_approve_for`.
 
-The following code snippet is an example function that tests the ability to transfer CEP-18 tokens from the default address to the two other addresses established in [contract installation](#installing-the-contract-deploying-the-contract):
+The following code snippet is an example function that tests the ability to transfer CEP-18 tokens from the default address to the two other addresses established in [contract installation](#installing-the-contract):
 
 <details>
 <summary>Example helper function</summary>

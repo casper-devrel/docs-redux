@@ -6,7 +6,7 @@ title: Installing Contracts
 
 # Installing Smart Contracts
 
-This document details the process of installing [Casper smart contracts](../writing-onchain-code/simple-contract.md) using the [Casper command-line client](../prerequisites.md#the-casper-command-line-client) and the `put-transaction session` command.
+This document details the process of installing [Casper smart contracts](../writing-onchain-code/simple-contract.md) using the [Casper command-line client](../prerequisites.md#install-casper-client) and the `put-deploy` command.
 
 ## Prerequisites
 

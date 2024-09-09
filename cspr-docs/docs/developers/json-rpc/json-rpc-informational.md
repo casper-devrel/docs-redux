@@ -44,7 +44,7 @@ The result from `chain_get_block` depends on block availability from a given nod
 |Parameter|Type|Description|
 |---------|----|-----------| 
 |api_version|String|The RPC API version.|
-|[block](types_chain.md#jsonblock)|Object|The Block, if found. (Optional)|
+|[block](types_chain.md#jsonblockwithsignatures)|Object|The Block, if found. (Optional)|
 
 <details>
 
@@ -394,7 +394,7 @@ This method returns the raw bytes of the chainspec.toml, genesis accounts.toml, 
 |Parameter|Type|Description|
 |---------|----|-----------| 
 |api_version|String|The RPC API version.|
-|[chainspec_bytes](types_chain.md#ChainspecRawBytes)|Object|The raw bytes of the chainspec.toml, genesis accounts.toml, and global_state.toml files.|
+|[chainspec_bytes](types_chain.md#chainspecrawbytes)|Object|The raw bytes of the chainspec.toml, genesis accounts.toml, and global_state.toml files.|
 
 <details>
 
@@ -428,7 +428,7 @@ Please note that adding a `--vv` flag will return the full chainspec bytes.
 
 :::caution
 
-**DEPRECATED**: Use [info_get_transaction](#info_get_transaction-info-get-transaction) instead.
+**DEPRECATED**: Use [info_get_transaction](#info_get_transaction) instead.
 
 :::
 
@@ -606,7 +606,7 @@ This method returns the reward for a given era and a validator or delegator.
 |Parameter|Type|Description|
 |---------|----|-----------|
 |[validator](types_chain.md#publickey)|String|The public key of the validator.|
-|[era_identifier](types_chain.md#eraientifier)|Object|The era identifier. If `None`, the last finalized era is used. (Optional)|
+|[era_identifier](types_chain.md#eraidentifier)|Object|The era identifier. If `None`, the last finalized era is used. (Optional)|
 |[delegator](types_chain.md#publickey)|String|The public key of the delegator. If `Some`, the rewards for the delegator are returned. If `None`, the rewards for the validator are returned. (Optional)|
 
 <details>
@@ -647,7 +647,7 @@ This method returns the reward for a given era and a validator or delegator.
 |---------|----|-----------|    
 |api_version|String|The RPC API version.|
 |[era_id](types_chain.md#eraid)|Integer|The era for which the reward was calculated.|
-|[reward_amount](types_chain.md#U512)|Integer|The total reward amount in the requested era.|
+|[reward_amount](types_chain.md#u512)|Integer|The total reward amount in the requested era.|
 
 <details>
 
@@ -1058,7 +1058,7 @@ This method allows for you to query for a value stored under certain keys in glo
 |Parameter|Type|Description|
 |---------|----|-----------|     
 |api_version|String|The RPC API version.|
-|[block_header](types_chain.md#jsonblockheader)|Object|The Block header if a Block hash was provided. (Optional)|
+|[block_header](types_chain.md#blockheaderv2)|Object|The Block header if a Block hash was provided. (Optional)|
 |[stored_value](types_chain.md#storedvalue)|Object|The stored value.|
 |[merkle_proof](types_chain.md#merkle-proof)|String|The merkle proof.|
 
@@ -1149,7 +1149,7 @@ This method returns a JSON representation of an [Account](../../concepts/design/
 
 |Parameter|Type|Description|
 |---------|----|-----------|
-|[account_identifier](types_chain.md#AccountIdentifier)|String|The public key or account hash of the Account.|
+|[account_identifier](types_chain.md#accountidentifier)|String|The public key or account hash of the Account.|
 |[block_identifier](types_chain.md#blockidentifier)|Object|The Block hash. (Optional)|
 
 <details>
@@ -1313,7 +1313,7 @@ You may query a stored value directly using the dictionary address.
 
 ## state_get_entity
 
-This method returns a JSON representation of an [AddressableEntity](types_chain.md#addressablentity) from the network at a given [Block](../../concepts/design/casper-design.md#block-structure-head). If you do not specify a `block_identifier`, you will receive the state of the entity at the highest state root hash. The `block_identifier` must refer to a Block after the entity's creation, or the method will return an empty response.
+This method returns a JSON representation of an [AddressableEntity](types_chain.md#addressableentity) from the network at a given [Block](../../concepts/design/casper-design.md#block-structure-head). If you do not specify a `block_identifier`, you will receive the state of the entity at the highest state root hash. The `block_identifier` must refer to a Block after the entity's creation, or the method will return an empty response.
 
 |Parameter|Type|Description|
 |---------|----|-----------|
@@ -1355,7 +1355,7 @@ This method returns a JSON representation of an [AddressableEntity](types_chain.
 |Parameter|Type|Description|
 |---------|----|-----------|    
 |api_version|String|The RPC API version.|
-|[entity](types_chain.md##addressableentity)|Object|A JSON representation of the AddressableEntity.| 
+|[entity](types_chain.md#addressableentity)|Object|A JSON representation of the AddressableEntity.| 
 |[merkle_proof](types_chain.md#merkleproof)|String|The merkle proof.|
 
 <details>
@@ -1462,7 +1462,7 @@ This method returns a list of peers connected to the node.
 |Parameter|Type|Description|
 |---------|----|-----------| 
 |api_version|String|The RPC API version.|
-|[peers](types_chain.md#peersmap)|Array|The node ID and network address of each connected peer.|
+|[peers](types_chain.md#peers)|Array|The node ID and network address of each connected peer.|
 
 <details>
 
@@ -1517,8 +1517,8 @@ This method returns the current status of a node.
 |Parameter|Type|Description|
 |---------|----|-----------| 
 |api_version|String|The RPC API version.|
-|[available_block_range](types_chain.md#AvailableBlockRange)|Object|The available block range in storage.|
-|[block_sync](types_chain.md#BlockSynchronizerStatus)|Object|The status of the block synchronizer builders.|
+|[available_block_range](types_chain.md#availableblockrange)|Object|The available block range in storage.|
+|[block_sync](types_chain.md#blocksynchronizerstatus)|Object|The status of the block synchronizer builders.|
 |build_version|String|The compiled node version.|
 |chainspec_name|String|The chainspec name, used to identify the currently connected network.|
 |[last_added_block_info](types_chain.md#minimalblockinfo)|Object|The minimal info of the last Block from the linear chain. (Optional)|

@@ -155,7 +155,7 @@ $(get_path_to_client) put-transaction package \
 
 ## Verifying Correct Contract Behavior
 
-After calling your installed contract, you can verify that the contract behaved as expected by observing the associated change in [global state](../../developers/cli/installing-contracts.md#querying-global-state). Depending on how your contract functions, this can have different meanings and results. If we use our counter contract from the [basic counter contract tutorial](../../resources/beginner/counter/commands/), the NCTL process would have the following flow:
+After calling your installed contract, you can verify that the contract behaved as expected by observing the associated change in [global state](../../developers/cli/installing-contracts.md#querying-global-state). Depending on how your contract functions, this can have different meanings and results. If we use our counter contract from the [basic counter contract tutorial](../../resources/beginner/counter/walkthrough.md), the NCTL process would have the following flow:
 
 1) Send a `Transaction` to install the "Counter" smart contract.
 

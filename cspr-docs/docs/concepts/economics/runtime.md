@@ -21,7 +21,7 @@ Any finite resource on a publicly accessible computer network must be rate-limit
 
 We are researching the optimal structure for spot and futures gas markets, and interested readers should consult the relevant [CEPs](https://github.com/casper-network/ceps). In the meantime, this section outlines some basic features of the platform that would underpin any allocation scheme. Currently, gas is allocated according to a first-in, first-out transaction model.
 
-### Consensus before execution & basics of payment {#consensus-before-execution--basics-of-payment}
+### Consensus before execution & basics of payment {#consensus-before-execution-basics-of-payment}
 
 The Zug and Highway protocols reach consensus on a block before it is executed, introducing a subtle difference from platforms like Ethereum. In addition, transactions sent to a Casper network can only be selected based on claimed rather than used gas.
 

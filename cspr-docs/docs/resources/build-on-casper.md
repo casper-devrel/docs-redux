@@ -3,8 +3,6 @@ title: Build on Casper
 slug: build-on-casper/introduction
 ---
 
-
-
 # Building on Casper
 
 This guide intends to briefly show you the current features and advantages of building on the Casper Mainnet.
@@ -77,7 +75,7 @@ The Casper [Mainnet](https://cspr.live) is a public, open-source, community-driv
 We also offer several tools to run AWS instances of Casper nodes.
 
 ## SDK Client Libraries {#sdk-client-libraries}
-In addition to the default [command-line Rust client](../developers/prerequisites.md#the-casper-command-line-client), the Casper community is building [other clients](/sdk) in JavaScript, Java, Golang, Python, C#, and other languages. 
+In addition to the default [command-line Rust client](../developers/prerequisites.md#install-casper-client), the Casper community is building [other clients](/sdk) in JavaScript, Java, Golang, Python, C#, and other languages. 
 
 ## No Gas Fees {#no-gas-fees}
 Casper seeks to eliminate volatility and improve developer and enterprise experiences by [eliminating transaction fees](../concepts/economics/fee-elimination.md) on Mainnet. This feature seeks to promote active and diverse network behavior and we are researching innovative pricing models that will favor dApp developers as the ecosystem grows.

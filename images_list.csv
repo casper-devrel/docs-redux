@@ -12,7 +12,6 @@
 ./cspr-docs/static/image/design/highway-dag.png
 ./cspr-docs/static/image/design/account-structure.png
 ./cspr-docs/static/image/design/zug-example.png
-./cspr-docs/static/image/design/global-state.png
 ./cspr-docs/static/image/design/cspr-token.png
 ./cspr-docs/static/image/design/main_purse_uref.png
 ./cspr-docs/static/image/list3creatingcontracts.png
@@ -20,7 +19,6 @@
 ./cspr-docs/static/image/list4callingcontracts.png
 ./cspr-docs/static/image/package-representation.png
 ./cspr-docs/static/image/list1kvstoreapi.png
-./cspr-docs/static/image/counter-overview-testnet.png
 ./cspr-docs/static/image/gossip-2.png
 ./cspr-docs/static/image/operators/sidecar-swagger-1.png
 ./cspr-docs/static/image/operators/sidecar-swagger-2.png
@@ -217,5 +215,4 @@
 ./cspr-docs/static/image/fig1dapparch.png
 ./cspr-docs/static/image/test-compile-result.png
 ./cspr-docs/static/image/fig16justifications-1.png
-./cspr-docs/static/image/counter-overview.png
 ./cspr-docs/static/image/developers/message_keys.png

@@ -9,11 +9,11 @@ This tutorial introduces an implementation of the CEP-18 standard for the Casper
 
 The [Ethereum Request for Comment (ERC-20)](https://eips.ethereum.org/EIPS/eip-20#specification) standard is an integral part of the Ethereum ecosystem. This standard allows for building new tokens based on smart contracts. These ERC-20 tokens are blockchain-based assets that have value and can be transferred or recorded.
 
-The Casper Fungible Token standard is the Casper Platform's ER-C20 equivalent. It defines a set of rules that dictate the total supply of tokens, how the tokens are transferred, how transactions are approved, and how token data is accessed.
+The Casper Fungible Token standard is the Casper Platform's ERC-20 equivalent. It defines a set of rules that dictate the total supply of tokens, how the tokens are transferred, how transactions are approved, and how token data is accessed.
 
 The following functions implement the rules defined by Casper Fungible Tokens: `totalSupply`, `transfer`, `transferFrom`, `approve`, `balanceOf`, and `allowance`. A portion of this tutorial reviews the [contract](https://github.com/casper-ecosystem/cep18/blob/master/cep18/src/main.rs) and the [casper_fungible_token](https://docs.rs/casper-erc20-crate/latest/casper_erc20_crate/) library.
 
-The [Writing Rust Contracts on Casper](/developers/writing-onchain-code/simple-contract/) document outlines many aspects of this tutorial and should be read first.
+The [Writing Rust Contracts on Casper](../../../developers/writing-onchain-code/simple-contract.md) document outlines many aspects of this tutorial and should be read first.
 
 ## Preparation
 
@@ -36,7 +36,7 @@ rustup target add wasm32-unknown-unknown
 info: component 'rust-std' for target 'wasm32-unknown-unknown' is up to date
 ```
 
-If you do not see this message, check the [Getting Started Guide](/developers/writing-onchain-code/getting-started/).
+If you do not see this message, check the [Getting Started Guide](../../../developers/writing-onchain-code/getting-started.md).
 
 Next, compile your contract and run the contract unit tests.
 
@@ -123,24 +123,24 @@ Contract methods are:
 
 ## Installing the Contract
 
-After customizing your instance of the CEP-18 token contract, it's time to install it in global state. Installing the Fungible Token contract is similar to installing other smart contracts, while only the Wasm files and parameters will differ. Refer to the [Sending Deploys to a Casper network using the Rust Client](/developers/cli/sending-transactions/) section to learn more about install contracts.
+After customizing your instance of the CEP-18 token contract, it's time to install it in global state. Installing the Fungible Token contract is similar to installing other smart contracts, while only the Wasm files and parameters will differ. Refer to the [Sending Deploys to a Casper network using the Rust Client](../../../developers/cli/sending-transactions.md) section to learn more about install contracts.
 
 ### Deploy Prerequisites {#deploy-prerequisites}
 
-- Set up your machine as per the [prerequisites](/developers/prerequisites/)
-- Ensure you have [set up an account](/concepts/accounts-and-keys/#creating-accounts-and-keys) with a public and secret key pair to initiate the deploy
-- Since we are deploying to the Casper Testnet, ensure your [Testnet faucet account](https://testnet.cspr.live/tools/faucet) contains enough CSPR tokens to perform the contract execution. Follow the guide to [fund your account](/developers/prerequisites/#fund-your-account) or to [transfer tokens](/developers/cli/transfers/) as needed
-- Install the [Casper command-line client](/developers/prerequisites/#install-casper-client) to interact with the network
+- Set up your machine as per the [prerequisites](../../../developers/prerequisites.md)
+- Ensure you have [set up an account](../../../concepts/accounts-and-keys.md#creating-accounts-and-keys) with a public and secret key pair to initiate the deploy
+- Since we are deploying to the Casper Testnet, ensure your [Testnet faucet account](https://testnet.cspr.live/tools/faucet) contains enough CSPR tokens to perform the contract execution. Follow the guide to [fund your account](../../../developers/prerequisites.md#fund-your-account) or to [transfer tokens](../../../developers/cli/transfers/direct-token-transfer.md) as needed
+- Install the [Casper command-line client](../../../developers/prerequisites.md#install-casper-client) to interact with the network
 
 ### Basic Flow {#basic-flow}
 
 Here are the basic steps to install the Casper Fungible Token contract on a Casper Network.
 
-- [Clone the contract](#cloning-the-token-contract-cloning-the-token-contract)
-- [Get the IP address of a node](#getting-an-ip-address-from-a-testnet-peer-getting-an-ip-address)
-- [View the network state](#viewing-the-network-status-viewing-network-status)
-- [Install the contract via a deploy](#installing-the-contract-deploying-the-contract)
-- [View the network state](#querying-the-network-status-querying-the-network-status)
+- [Clone the contract](#cloning-the-token-contract)
+- [Get the IP address of a node](#getting-an-ip-address)
+- [View the network state](#viewing-network-status)
+- [Install the contract via a deploy](#deploying-the-contract)
+- [View the network state](#querying-the-network-status)
 
 ### Cloning the Token Contract {#cloning-the-token-contract}
 
@@ -176,7 +176,7 @@ make test
 
 ### Getting an IP Address from a Testnet Peer {#getting-an-ip-address}
 
-We will use a Testnet [peer](https://testnet.cspr.live/tools/peers) to send the deploy. Read the guide to [acquiring a node address](/developers/prerequisites/#acquire-node-address-from-network-peers) if needed.
+We will use a Testnet [peer](https://testnet.cspr.live/tools/peers) to send the deploy. Read the guide to [acquiring a node address](../../../developers/prerequisites.md#acquire-node-address-from-network-peers) if needed.
 
 ### Viewing the Network Status {#viewing-network-status}
 
@@ -184,7 +184,7 @@ This query captures any information related to the state of the blockchain at th
 
 **Getting the state root hash**
 
-Get the state root hash, which marks a snapshot of the network state at a moment in time. Use the [Node IP address](/developers/prerequisites/#acquire-node-address-from-network-peers) taken from a Testnet peer.
+Get the state root hash, which marks a snapshot of the network state at a moment in time. Use the [Node IP address](../../../developers/prerequisites.md#acquire-node-address-from-network-peers) taken from a Testnet peer.
 
 ```bash
 casper-client get-state-root-hash --node-address http://<HOST:PORT>

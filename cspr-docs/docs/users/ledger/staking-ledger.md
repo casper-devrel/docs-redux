@@ -3,8 +3,6 @@ title: Delegate with Ledger
 slug: /users/staking-ledger
 ---
 
-
-
 # Delegating with Ledger Devices
 
 ## Ledger Initialization {#1-initialization}

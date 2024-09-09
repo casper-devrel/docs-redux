@@ -56,7 +56,7 @@ All these features are accessible via functions in the [Casper External FFI](htt
 
 ## Accounts {#accounts-head}
 
-The Casper blockchain uses an on-chain account-based model, uniquely identified by an `AccountHash` derived from a specific `PublicKey`. The [global state trie store](#global-state-trie) requires all keys to be the same length, so the AccountHash is a 32-byte derivative used to abstract any of the supported public key variants.
+The Casper blockchain uses an on-chain account-based model, uniquely identified by an `AccountHash` derived from a specific `PublicKey`. The [global state trie store](./../global-state.md#global-state-trie) requires all keys to be the same length, so the AccountHash is a 32-byte derivative used to abstract any of the supported public key variants.
 
 The Casper platform supports two types of keys for creating accounts and signing transactions: 
 - [Ed25519](../accounts-and-keys.md#eddsa-keys) keys, which use the Edwards-curve Digital Signature Algorithm (EdDSA) and are 66 bytes long
@@ -147,7 +147,7 @@ The ability to pass `URef`s between contexts via `call_contract` / `ret`, allows
 
 ### `URef`s and Purses
 
-Purses represent a unique type of `URef` used for accounting measures within a Casper network. `URef`s exist as a top-level entity, meaning that individual entities do not own ‘URef’s. As described above, entities possess certain `Access Rights`, allowing them to interact with the given `URef`. While an account entity will possess an associated `URef` representing their main purse, this `URef` exists as a [`Unit`](../serialization/primitives.md#unit-clvalue-unit) and corresponds to a *balance* key within the Casper *mint*. The individual balance key within the Casper mint is the account entity's purse, with transfers authorized solely through the associated `URef` and the `Access Rights` granted to it.
+Purses represent a unique type of `URef` used for accounting measures within a Casper network. `URef`s exist as a top-level entity, meaning that individual entities do not own ‘URef’s. As described above, entities possess certain `Access Rights`, allowing them to interact with the given `URef`. While an account entity will possess an associated `URef` representing their main purse, this `URef` exists as a [`Unit`](../serialization/primitives.md#clvalue-unit) and corresponds to a *balance* key within the Casper *mint*. The individual balance key within the Casper mint is the account entity's purse, with transfers authorized solely through the associated `URef` and the `Access Rights` granted to it.
 
 Through this logic, the Casper mint holds all motes on the network and transfers between balance keys at the behest of entities as required.
 
@@ -217,7 +217,7 @@ The [block header](../serialization/structures.md#block-header) contains the fol
 
 #### Body {#body}
 
-The block body contains an **ordered** list of transaction hashes. All transactions, including `mint`, `auction`, `install_upgrade` and `standard` transactions, can be broadly categorized as some unit of work that, when executed and committed, affect change to [Global State](#global-state-intro). A valid block may contain no transactions.
+The block body contains an **ordered** list of transaction hashes. All transactions, including `mint`, `auction`, `install_upgrade` and `standard` transactions, can be broadly categorized as some unit of work that, when executed and committed, affect change to [Global State](./../global-state.md#global-state-intro). A valid block may contain no transactions.
 
 The block body also contains the public key of the validator that proposed the block.
 

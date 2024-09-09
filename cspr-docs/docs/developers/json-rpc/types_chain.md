@@ -30,7 +30,7 @@ Required Parameters:
 
 ## AccountAssociatedKeys
 
-A [collection of weighted public keys](#array-of-associatedkey) (represented as account hashes) associated with an account.
+A [collection of weighted public keys](#array_of_associatedkey) (represented as account hashes) associated with an account.
 
 ## AccountAssociatedKeyWeight
 
@@ -419,7 +419,7 @@ Required Parameters:
 
 * [`bytes`](#bytes)
 
-* [`kind`](#ByteCodeKind)
+* [`kind`](#bytecodekind)
 
 ## ByteCodeHash
 
@@ -573,9 +573,9 @@ Required properties:
 
 * [`header`](#deployheader)
 
-* [`payment`](#executabledeployitem-executabledeployitem)
+* [`payment`](#executabledeployitem)
 
-* [`session`](#executabledeployitem-executabledeployitem)
+* [`session`](#executabledeployitem)
 
 ## DeployHash
 
@@ -667,7 +667,7 @@ Hex-encoded hash digest.
 
 ## Effects
 
-A log of all [transforms](#tranform) produced during execution.
+A log of all [transforms](#transformv2) produced during execution.
 
 ## EntityActionThresholds
 
@@ -707,7 +707,7 @@ Identifier of an addressable entity.
 
 One of:
 
-* [`PublicKey`](#publickey-publickey)
+* [`PublicKey`](#publickey)
 
 * [`AccountHash`](#accounthash)
 
@@ -731,7 +731,7 @@ An addressable entity or a legacy account.
 
 One of:
 
-* [`AddressableEntity`](#addressablentity) An addressable entity.
+* [`AddressableEntity`](#addressableentity) An addressable entity.
 
 * [`Account`](#account) A legacy account.
 
@@ -741,7 +741,7 @@ An entity version associated with the given hash.
 
 Required Parameters:
 
-* [`addressable_entity_hash`](#addressableenetityhash)
+* [`addressable_entity_hash`](#addressableentityhash)
 
 * [`entity_version_key`](#entityversionkey)
 
@@ -769,7 +769,7 @@ Required Parameters:
 
 * `name`
 
-* [`ret`](#cltype)
+* [`ret`](../../concepts/serialization/primitives.md#clvalue-cltype)
 
 ## EntryPoint2
 
@@ -787,7 +787,7 @@ Required Parameters:
 
 * `name` The string name of the entrypoint.
 
-* [`ret`](#cltype)
+* [`ret`](../../concepts/serialization/primitives.md#clvalue-cltype)
 
 ## EntryPointAccess
 
@@ -867,9 +867,9 @@ Required Parameters:
 
 * `next_era_gas_price` The gas price for the next era as a `uint8` integer. Minimum 0.0 motes.
 
-* [`next_era_validator_weights`](#array-of-validatorweight) The validators for the upcoming era and their respective weights.
+* [`next_era_validator_weights`](#array_of_validatorweight) The validators for the upcoming era and their respective weights.
 
-* [`rewards`](#U512) The rewards distributed to the validators.
+* [`rewards`](#u512) The rewards distributed to the validators.
 
 ## EraID
 
@@ -1059,7 +1059,7 @@ Required Parameters:
 
 * [`block`](#block) The block.
 
-* [`proofs`](#array-of-blockproof) The proofs of the block, i.e. a collection of validators' signatures of the block hash.
+* [`proofs`](#array_of_blockproof) The proofs of the block, i.e. a collection of validators' signatures of the block hash.
 
 ## JsonEraValidators
 
@@ -1173,7 +1173,7 @@ Required Parameters:
 
 ## NamedKeys
 
-A [collection of named keys](#array-of-namedkey).
+A [collection of named keys](#namedkey).
 
 ## NamedKeyValue
 
@@ -1237,13 +1237,13 @@ Entity definition, metadata and security container.
 
 Required Parameters:
 
-* [`disabled_versions`](#EntityVersionKey) Collection of disabled entity versions. The runtime will not permit disabled entity versions to be executed.
+* [`disabled_versions`](#entityversionkey) Collection of disabled entity versions. The runtime will not permit disabled entity versions to be executed.
 
 * [`groups`](#array_of_namedusergroup) Mapping maintaining the set of URefs associated with each user group, used to control access to methods in a particular version of the entity. A method is callable by any context which knows any of the URefs associated with the method's user group.
 
 * [`lock_status`](#packagestatus) A flag that determines whether a entity is locked.
 
-* [`versions`](#array-of-entityversionandhash) All versions (enabled & disabled).
+* [`versions`](#array_of_entityversionandhash) All versions (enabled & disabled).
 
 ## Parameter
 
@@ -1251,7 +1251,7 @@ Parameter to an entry point.
 
 Required Parameters:
 
-* [`cl_type`](#cltype)
+* [`cl_type`](../../concepts/serialization/primitives.md#clvalue-cltype)
 
 * `name`
 
@@ -1417,7 +1417,7 @@ Representation of a value stored in global state.
 
 * [`EraInfo`](#erainfo) Information about an era.
 
-* [`Bid`](#bid-bid) A bid.
+* [`Bid`](#bid) A bid.
 
 * [`Withdraw`](#unbondingpurse) A withdraw.
 
@@ -1431,7 +1431,7 @@ Representation of a value stored in global state.
 
 * [`ByteCode`] A record of byte code.
 
-* [`MessageTopic`](#messagetopics) A variant that stores a message topic.
+* [`MessageTopic`](#messagetopic) A variant that stores a message topic.
 
 * [`Message`](#messagechecksum) A variant that stores a message digest.
 
@@ -1464,7 +1464,7 @@ Timestamp formatted as per RFC 3339.
 
 ## TopicNameHash
 
-The hash of the name of the [message topic](#messagetopics).
+The hash of the name of the [message topic](#messagetopic).
 
 ## Transaction
 
@@ -1476,7 +1476,7 @@ Contains one of:
 
 or
 
-* [`Version1`](#TransactionV1)
+* [`Version1`](#transactionv1)
 
 ## TransactionEntryPoint
 
@@ -1610,7 +1610,7 @@ Required Parameters:
 
 * [`hash`](#transactionV1hash)
 
-* [`header`](##transactionV1header)
+* [`header`](#transactionV1header)
 
 ## TransactionV1Body
 
@@ -1640,7 +1640,7 @@ Required Parameters:
 
 * `chain_name`
 
-* [`initiator_addr`](#initiator_addr)
+* [`initiator_addr`](#initiatoraddr)
 
 * [`pricing_mode`](#pricingmode)
 
@@ -1856,7 +1856,7 @@ Required Parameters:
 
 Optional Parameters:
 
-* [`new_validator`](#newvalidator) The redelegated validator's public key.
+* [`new_validator`](#publickey) The redelegated validator's public key.
 
 ## URef
 
