@@ -10,6 +10,10 @@ hide_table_of_contents: false
 
 # Validator rewards with Casper 2.0
 
+In this post we discuss the changes to validator rewards in Casper v2.0.
+
+<!-- truncate -->
+
 ## Economics of consensus
 
 Proof of Stake consensus protocols explicitly impose an assumption that a critical portion of the validator set, by weight, remains honest. Normally, just as it is in Highway and will be in Zug, there is a requirement that at least 2/3 of the weight remain honest for the chain to continue to operate normally. 
