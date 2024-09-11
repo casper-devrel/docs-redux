@@ -51,7 +51,7 @@ const config = {
           customCss: "./src/css/custom.css",
         },
         docs: {
-          path: "docs",
+          path: "./docs",
           sidebarPath: "./config/sidebar.config.js",
           //sidebarPath: './sidebars.auto.js',
           routeBasePath: !globalConfig.routePrefix
@@ -62,6 +62,8 @@ const config = {
             "./economics/archived",
             "./theory",
           ],
+          showLastUpdateTime: true,
+          showLastUpdateAuthor: true
         },
         blog: {
           path: "./blog",
