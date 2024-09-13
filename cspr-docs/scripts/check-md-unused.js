@@ -47,7 +47,7 @@ class UnusedMarkdownChecker {
                 this.updateOccurrences(filepath, urls);
             }
         });
-        const sidebarMapping = require("./config/sidebar.config");
+        const sidebarMapping = require("../config/sidebar.config");
         const keys = Object.keys(sidebarMapping);
         const sidebarUrls = [];
         keys.forEach((key) => {

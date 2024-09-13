@@ -10,7 +10,7 @@ const fs = require("fs");
 //----------------------------------
 // Constants
 //----------------------------------
-const SITE_REQUEST_INTERVAL = 750; // in milliseconds
+const SITE_REQUEST_INTERVAL = 100; // in milliseconds
 const excludedFolders = ["./source/blog/**/*", "./source/i18n/**/*"];
 //----------------------------------
 //  Private Vars
@@ -23,7 +23,7 @@ let browser;
  */
 class MarkdownExternalUrlChecker {
     static async execute() {
-        const files = glob.sync("./source/**/@(*.md|*.mdx)", {
+        const files = glob.sync("./docs/**/@(*.md|*.mdx)", {
             ignore: excludedFolders,
         });
         console.log(`Found ${files.length} markdown files. Collecting all external urls...`);

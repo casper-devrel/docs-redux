@@ -4,7 +4,7 @@ title: Highway Consensus
 
 # The Highway Consensus Protocol
 
-The [Highway](https://arxiv.org/pdf/2101.02159.pdf) consensus protocol was used on the Casper Mainnet until the [Zug](./zug.md) consensus protocol was introduced in version 2.0 of the Casper node software. Consensus in Casper is described in more detail [here](./consensus.md). This page describes the Highway consensus protocol at a high level. Private networks can choose between Zug and Highway, depending on their needs.
+The [Highway](https://arxiv.org/pdf/2101.02159) consensus protocol was used on the Casper Mainnet until the [Zug](./zug.md) consensus protocol was introduced in version 2.0 of the Casper node software. Consensus in Casper is described in more detail [here](./consensus.md). This page describes the Highway consensus protocol at a high level. Private networks can choose between Zug and Highway, depending on their needs.
 
 ## Unit Broadcasting
 
