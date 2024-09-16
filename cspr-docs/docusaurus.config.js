@@ -63,7 +63,14 @@ const config = {
             "./theory",
           ],
           showLastUpdateTime: true,
-          showLastUpdateAuthor: true
+          showLastUpdateAuthor: true,
+          lastVersion: 'current',
+          // versions: {
+          //   current: {
+          //     label: '1.0.0',
+          //     path: '1.0.0',
+          //   },
+          // },
         },
         blog: {
           path: "./blog",

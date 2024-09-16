@@ -29,7 +29,7 @@ class UnusedMarkdownChecker {
         console.log("  - No other markdown file points to it");
         console.log(`  - The file is not present in the sidebar${style.cyanBright.close}`);
 
-        let filepaths = glob.sync("./source/**/@(*.md|*.mdx)", {
+        let filepaths = glob.sync("./docs/**/@(*.md|*.mdx)", {
             ignore: excludedFolders,
         });
 
