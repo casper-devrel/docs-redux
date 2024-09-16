@@ -6,9 +6,9 @@ title: URef Access Rights
 
 ## Understanding Access Rights
 
-An [Unforgeable Reference](/concepts/design/casper-design/#uref-head) or **URef** is a key type used for storage on a Casper network. They can store any value other than `Account` and exist as a top-level entity. As such, no individual account may *own* a URef, they can only hold the necessary `AccessRights` to interact with a given URef.
+An [Unforgeable Reference](../../concepts/design/casper-design/#uref-head) or **URef** is a key type used for storage on a Casper network. They can store any value other than `Account` and exist as a top-level entity. As such, no individual account may *own* a URef, they can only hold the necessary `AccessRights` to interact with a given URef.
 
-[`AccessRights`](/concepts/serialization-standard/#clvalue-uref) determine how an entity on a Casper network may interact with a URef. They appear as a single byte suffix after the concatenation of te URef's address. As an example, the following is an example of a URef with no associated access rights:
+[`AccessRights`](../../concepts/serialization-standard/#clvalue-uref) determine how an entity on a Casper network may interact with a URef. They appear as a single byte suffix after the concatenation of te URef's address. As an example, the following is an example of a URef with no associated access rights:
 
 ```bash
 uref-974019c976b5f26412ce486158d2431967af35d91387dae8cbcd43c20fce6452-000
@@ -54,9 +54,9 @@ For URefs that represent a purse, access rights determine the ability to read or
 
 ## Security Considerations for dApp Developers
 
-When developing a [dApp](/developers/dapps/dapp/) that interacts with tokens in any way, it will be necessary to work with various URef `AccessRights` for associated purse URefs.
+When developing a [dApp](../dapps/dapp/) that interacts with tokens in any way, it will be necessary to work with various URef `AccessRights` for associated purse URefs.
 
-[This tutorial outlines our recommendations when transferring tokens to a contract.](/resources/tutorials/advanced/transfer-token-to-contract/)
+[This tutorial outlines our recommendations when transferring tokens to a contract.](../../resources/tutorials/advanced/transfer-token-to-contract/)
 
 When passing a URef to another entity in any way, ensure that you are only passing the URef with the appropriate `AccessRights`. The following example code shows the syntax for creating a URef with any given access rights combination. In this example, only the `new_uref` should be passed to another entity.
 

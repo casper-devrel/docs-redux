@@ -2,3 +2,14 @@ condor:
   label: 'Condor'
   permalink: '/condor'
   description: 'Blog posts related to the Condor upgrade'
+  
+validators:
+  label: 'Validators'
+  permalink: '/validators'
+  description: 'Validators'
+
+setup:
+  label: 'Set-up'
+  permalink: '/setup'
+  description: 'Getting set up on Casper'
+
