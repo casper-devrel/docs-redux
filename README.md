@@ -7,3 +7,6 @@ Welcome to the documentation website for the [Casper Network](https://casper.net
 
 Preliminary hosting here: 
 [https://casper-devrel.github.io/docs-redux/](https://casper-devrel.github.io/docs-redux/)
+
+[http://casperdocs.paddentech.com/](http://casperdocs.paddentech.com/)
+
