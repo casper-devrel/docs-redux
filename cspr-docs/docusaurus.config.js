@@ -50,6 +50,11 @@ const config = {
         theme: {
           customCss: "./src/css/custom.css",
         },
+        googleTagManager: {
+          containerId: !globalConfig.containerId
+          ? "GTM-XXXXX"
+          : globalConfig.containerId
+        },
         docs: {
           path: "./docs",
           sidebarPath: "./config/sidebar.config.js",

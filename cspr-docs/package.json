@@ -20,11 +20,11 @@
     "check:unused": "node ./scripts/check-md-unused.js",
     "version:gen": "docusaurus docs:version 2.0.0",
     "version:del": "rm -r ./versioned_docs/version-2.0.0 && rm ./versioned_sidebars/version-2.0.0-sidebars.json"
-    
   },
   "dependencies": {
     "@actions/core": "^1.10.1",
     "@docusaurus/core": "^3.5.2",
+    "@docusaurus/plugin-google-tag-manager": "^3.5.2",
     "@docusaurus/preset-classic": "^3.5.2",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",

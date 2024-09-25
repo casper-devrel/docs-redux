@@ -9,6 +9,7 @@ const projectName = process.env.PROJECT_NAME;
 const url = process.env.URL;
 const baseUrl = process.env.BASE_URL;
 const isLocal = process.env.LOCAL == "true";
+const containerId = process.env.CONTAINER_ID;
 
 const globalConfig = {
     cfgPath : cfgPath,
@@ -17,6 +18,8 @@ const globalConfig = {
     projectName : projectName,
     siteUrl: url,
     baseUrl: baseUrl,
-    isLocal: isLocal
+    isLocal: isLocal,
+    containerId: containerId
+
 }
 export default globalConfig;
